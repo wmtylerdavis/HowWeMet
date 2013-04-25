@@ -1,0 +1,25 @@
+dependencies: \
+  /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Facebook-iOS-SDK/src/FBPlacePickerViewController.m \
+  /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Facebook-iOS-SDK/src/FBError.h \
+  /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Facebook-iOS-SDK/src/FBGraphObjectPagingLoader.h \
+  /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Facebook-iOS-SDK/src/FBGraphObjectTableDataSource.h \
+  /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Facebook-iOS-SDK/src/FBGraphObject.h \
+  /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Facebook-iOS-SDK/src/FBGraphObjectTableSelection.h \
+  /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Facebook-iOS-SDK/src/FBInsights+Internal.h \
+  /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Facebook-iOS-SDK/src/FBInsights.h \
+  /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Facebook-iOS-SDK/src/FBSession.h \
+  /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Facebook-iOS-SDK/src/FBLogger.h \
+  /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Facebook-iOS-SDK/src/FBPlacePickerViewController.h \
+  /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Facebook-iOS-SDK/src/FBGraphPlace.h \
+  /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Facebook-iOS-SDK/src/FBGraphLocation.h \
+  /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Facebook-iOS-SDK/src/FBCacheDescriptor.h \
+  /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Facebook-iOS-SDK/src/FBViewController.h \
+  /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Facebook-iOS-SDK/src/FBRequest.h \
+  /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Facebook-iOS-SDK/src/FBRequestConnection.h \
+  /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Facebook-iOS-SDK/src/FBUtility.h \
+  /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Facebook-iOS-SDK/src/FBFetchedAppSettings.h \
+  /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Facebook-iOS-SDK/src/FBPlacePickerCacheDescriptor.h \
+  /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Facebook-iOS-SDK/src/FBSession+Internal.h \
+  /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Facebook-iOS-SDK/src/FBSystemAccountStoreAdapter.h \
+  /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Facebook-iOS-SDK/src/FBSessionInsightsState.h \
+  /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Facebook-iOS-SDK/src/FBSettings.h

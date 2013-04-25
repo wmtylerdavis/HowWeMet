@@ -1,0 +1,962 @@
+THowWeMet
+v5
+r1
+cCheck dependencies
+cCpResource /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/ResourceRules.plist DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/ResourceRules.plist
+cProcessInfoPlistFile /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/Info.plist HowWeMet/HowWeMet-Info.plist
+cProcessPCH /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/PrecompiledHeaders/HowWeMet-Prefix-cpdzvlxfvzhaiohkiifmmcebbdtd/HowWeMet-Prefix.pch.pth HowWeMet/HowWeMet-Prefix.pch normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/Objects-normal/armv7s/main.o /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/main.m normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/Objects-normal/armv7s/HWMAppDelegate.o /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HWMAppDelegate.m normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/Objects-normal/armv7s/HWMViewController.o /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HWMViewController.m normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/Objects-normal/armv7s/HWMHomeViewController.o /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HWMHomeViewController.m normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/Objects-normal/armv7s/HWMLeftViewController.o /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HWMLeftViewController.m normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/Objects-normal/armv7s/HWMRightViewController.o /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HWMRightViewController.m normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cLd /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/HowWeMet normal armv7s
+cGenerateDSYMFile /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app.dSYM /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/HowWeMet
+cCopyPNGFile /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/Default@2x.png HowWeMet/Default@2x.png
+cCopyPNGFile /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/Default.png HowWeMet/Default.png
+cCopyStringsFile /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/en.lproj/InfoPlist.strings HowWeMet/en.lproj/InfoPlist.strings
+cCopyPNGFile /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/Default-568h@2x.png HowWeMet/Default-568h@2x.png
+cCompileXIB /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/en.lproj/HWMViewController.xib
+cCompileXIB /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HWMHomeViewController.xib
+cCompileXIB /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HWMLeftViewController.xib
+cCompileXIB /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HWMRightViewController.xib
+cCopyPNGFile /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/iconSmall.png iconSmall.png
+cCopyPNGFile /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/iconBig.png iconBig.png
+cPhaseScriptExecution "Copy Pods Resources" /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/Script-BCCE6AD7954A448DB3C586A3.sh
+cProcessProductPackaging "/Users/williamtylerdavis/Library/MobileDevice/Provisioning Profiles/8F2940FC-D7AD-4BC3-9424-E02950B17241.mobileprovision" /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/embedded.mobileprovision
+cProcessProductPackaging "/Users/williamtylerdavis/Library/MobileDevice/Provisioning Profiles/8F2940FC-D7AD-4BC3-9424-E02950B17241.mobileprovision" /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/embedded.mobileprovision
+cTouch /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app
+cProcessProductPackaging /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/Entitlements.plist /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/HowWeMet.xcent
+cCodeSign /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk
+c00000000514E30880000000000000110
+t1364078728
+s272
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/Entitlements.plist
+c000000005109CDD300000000000001A7
+t1359597011
+s423
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/ResourceRules.plist
+c000000005109CDD300000000000001E5
+t1359597011
+s485
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/AdSupport.framework/AdSupport
+c000000005109CDD40000000000008BE0
+t1359597012
+s35808
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/AudioToolbox.framework/AudioToolbox
+c000000005109CDD500000000006B1F40
+t1359597013
+s7020352
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/CFNetwork.framework/CFNetwork
+c000000005109CDD500000000002C8530
+t1359597013
+s2917680
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/CoreData.framework/CoreData
+c000000005109CDD60000000000512940
+t1359597014
+s5318976
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c000000005109CDD50000000000322700
+t1359597013
+s3286784
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/CoreLocation.framework/CoreLocation
+c000000005109CDD50000000000114910
+t1359597013
+s1132816
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c000000005109CDD6000000000062AD10
+t1359597014
+s6466832
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000005109CDD600000000000015F7
+t1359597014
+s5623
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
+c000000005109CDD6000000000012C360
+t1359597014
+s1229664
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/QuartzCore.framework/QuartzCore
+c000000005109CDD700000000003596B0
+t1359597015
+s3511984
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/Security.framework/Security
+c000000005109CDD700000000000A8A40
+t1359597015
+s690752
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/Social.framework/Social
+c000000005109CDD700000000001889F0
+t1359597015
+s1608176
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/StoreKit.framework/StoreKit
+c000000005109CDD700000000000495D0
+t1359597015
+s300496
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/SystemConfiguration.framework/SystemConfiguration
+c000000005109CDD700000000000CAFB0
+t1359597015
+s831408
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
+c000000005109CDD70000000000000E8D
+t1359597015
+s3725
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c000000005109CDD900000000011BCDF0
+t1359597017
+s18599408
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/iAd.framework/iAd
+c000000005109CDD6000000000005E840
+t1359597014
+s387136
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/usr/include/Availability.h
+c000000005109CDDE0000000000001B73
+t1359597022
+s7027
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/usr/lib/libz.1.1.3.dylib
+c000000005109CDE00000000000022520
+t1359597024
+s140576
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/HowWeMet.xcent
+t1366761908
+s426
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/Objects-normal/armv7s/HWMAppDelegate.o
+t1366764581
+s151948
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/Objects-normal/armv7s/HWMHomeViewController.o
+t1366761905
+s68752
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/Objects-normal/armv7s/HWMLeftViewController.o
+t1366761905
+s68752
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/Objects-normal/armv7s/HWMRightViewController.o
+t1366761905
+s68768
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/Objects-normal/armv7s/HWMViewController.o
+t1366761905
+s70340
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/Objects-normal/armv7s/HowWeMet.LinkFileList
+c00000000517721B0000000000000040B
+t1366761904
+s1035
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/Objects-normal/armv7s/main.o
+t1366761905
+s3436
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/Script-BCCE6AD7954A448DB3C586A3.sh
+c00000000517721B0000000000000002F
+t1366761904
+s47
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/PrecompiledHeaders/HowWeMet-Prefix-cpdzvlxfvzhaiohkiifmmcebbdtd/HowWeMet-Prefix.pch.pth
+t1366761905
+s4603016
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app
+t1366764587
+s1224
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app.dSYM
+t1366764583
+s102
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/Default-568h@2x.png
+t1366761908
+s7014
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/Default.png
+t1366761908
+s3688
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/Default@2x.png
+t1366761908
+s6316
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/HWMHomeViewController.nib
+t1366761908
+s822
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/HWMLeftViewController.nib
+t1366761908
+s822
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/HWMRightViewController.nib
+t1366761908
+s822
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/HowWeMet
+t1366764587
+s4148800
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/Info.plist
+t1366761904
+s1314
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/PkgInfo
+t1366761904
+s8
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/ResourceRules.plist
+t1366761904
+s485
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/embedded.mobileprovision
+t1366761908
+s9623
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/en.lproj/HWMViewController.nib
+t1366761908
+s862
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/en.lproj/InfoPlist.strings
+t1366761908
+s42
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/iconBig.png
+t1366761908
+s11404
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/iconSmall.png
+t1366761908
+s7513
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/libPods.a
+c00000000517721B00000000000FBC6A0
+t1366761904
+s16500384
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/Default-568h@2x.png
+c000000005062328600000000000048A2
+t1348612742
+s18594
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/Default.png
+c0000000050623286000000000000198C
+t1348612742
+s6540
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/Default@2x.png
+c00000000506232860000000000003EEB
+t1348612742
+s16107
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HWMAppDelegate.h
+c000000005172F4E7000000000000041A
+t1366488295
+s1050
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HWMAppDelegate.m
+c0000000051772D8F000000000000474A
+t1366764943
+s18250
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HWMHomeViewController.h
+c000000005172EBED00000000000000E6
+t1366485997
+s230
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HWMHomeViewController.m
+c000000005172EBED00000000000002E9
+t1366485997
+s745
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HWMHomeViewController.xib
+c000000005172EBED000000000000175A
+t1366485997
+s5978
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HWMLeftViewController.h
+c000000005172EC5100000000000000E6
+t1366486097
+s230
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HWMLeftViewController.m
+c000000005172EC5100000000000002E9
+t1366486097
+s745
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HWMLeftViewController.xib
+c000000005172EC51000000000000175A
+t1366486097
+s5978
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HWMRightViewController.h
+c000000005172EC5F00000000000000E8
+t1366486111
+s232
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HWMRightViewController.m
+c000000005172EC5F00000000000002ED
+t1366486111
+s749
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HWMRightViewController.xib
+c000000005172EC5F000000000000175D
+t1366486111
+s5981
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HWMViewController.h
+c000000005175E70600000000000000F6
+t1366681350
+s246
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HWMViewController.m
+c000000005175E70700000000000002AB
+t1366681351
+s683
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HowWeMet-Prefix.pch
+c0000000051728401000000000000013F
+t1366459393
+s319
+i<Availability.h>
+i<UIKit/UIKit.h>
+i<Foundation/Foundation.h>
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/en.lproj/HWMViewController.xib
+c0000000051728401000000000000178B
+t1366459393
+s6027
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/en.lproj/InfoPlist.strings
+c0000000051728401000000000000002D
+t1366459393
+s45
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/main.m
+c00000000517284010000000000000157
+t1366459393
+s343
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Parse.framework/Headers/PFACL.h
+c00000000516D96B60000000000001AA6
+t1366136502
+s6822
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Parse.framework/Headers/PFAnalytics.h
+c00000000516D96B60000000000000630
+t1366136502
+s1584
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Parse.framework/Headers/PFAnonymousUtils.h
+c00000000516D96B6000000000000094B
+t1366136502
+s2379
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Parse.framework/Headers/PFCloud.h
+c00000000516D96B60000000000000847
+t1366136502
+s2119
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Parse.framework/Headers/PFConstants.h
+c00000000516D96B60000000000001EE4
+t1366136502
+s7908
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Parse.framework/Headers/PFFacebookUtils.h
+c00000000516D96B60000000000002C3E
+t1366136502
+s11326
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Parse.framework/Headers/PFFile.h
+c00000000516D96B60000000000001AE3
+t1366136502
+s6883
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Parse.framework/Headers/PFGeoPoint.h
+c00000000516D96B60000000000000A6D
+t1366136502
+s2669
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Parse.framework/Headers/PFImageView.h
+c00000000516D96B60000000000000366
+t1366136502
+s870
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Parse.framework/Headers/PFInstallation.h
+c00000000516D96B60000000000000B47
+t1366136502
+s2887
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Parse.framework/Headers/PFLogInView.h
+c00000000516D96B60000000000000A90
+t1366136502
+s2704
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Parse.framework/Headers/PFLogInViewController.h
+c00000000516D96B60000000000000E55
+t1366136502
+s3669
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Parse.framework/Headers/PFObject.h
+c00000000516D96B60000000000004DB7
+t1366136502
+s19895
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Parse.framework/Headers/PFProduct.h
+c00000000516D96B6000000000000068E
+t1366136502
+s1678
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Parse.framework/Headers/PFProductTableViewController.h
+c00000000516D96B6000000000000023A
+t1366136502
+s570
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Parse.framework/Headers/PFPurchase.h
+c00000000516D96B60000000000000A6A
+t1366136502
+s2666
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Parse.framework/Headers/PFPush.h
+c00000000516D96B6000000000000453E
+t1366136502
+s17726
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Parse.framework/Headers/PFQuery.h
+c00000000516D96B60000000000005380
+t1366136502
+s21376
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Parse.framework/Headers/PFQueryTableViewController.h
+c00000000516D96B6000000000000153A
+t1366136502
+s5434
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Parse.framework/Headers/PFRelation.h
+c00000000516D96B600000000000003E8
+t1366136502
+s1000
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Parse.framework/Headers/PFRole.h
+c00000000516D96B60000000000000B58
+t1366136502
+s2904
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Parse.framework/Headers/PFSignUpView.h
+c00000000516D96B600000000000007E1
+t1366136502
+s2017
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Parse.framework/Headers/PFSignUpViewController.h
+c00000000516D96B60000000000000B96
+t1366136502
+s2966
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Parse.framework/Headers/PFSubclassing.h
+c00000000516D96B600000000000007DA
+t1366136502
+s2010
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Parse.framework/Headers/PFTableViewCell.h
+c00000000516D96B60000000000000299
+t1366136502
+s665
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Parse.framework/Headers/PFTwitterUtils.h
+c00000000516D96B60000000000001FBC
+t1366136502
+s8124
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Parse.framework/Headers/PFUser.h
+c00000000516D96B600000000000028EC
+t1366136502
+s10476
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Parse.framework/Headers/PF_EGORefreshTableHeaderView.h
+c00000000516D96B600000000000008B0
+t1366136502
+s2224
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Parse.framework/Headers/PF_Twitter.h
+c00000000516D96B600000000000005E1
+t1366136502
+s1505
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Parse.framework/Headers/Parse.h
+c00000000516D96B6000000000000081E
+t1366136502
+s2078
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Parse.framework/Parse
+c00000000516D96B6000000000120509C
+t1366136502
+s18895004
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/Facebook-iOS-SDK/FacebookSDK/FBAccessTokenData.h
+c00000000517285870000000000000F69
+t1366459783
+s3945
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/Facebook-iOS-SDK/FacebookSDK/FBCacheDescriptor.h
+c00000000517285870000000000000555
+t1366459783
+s1365
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/Facebook-iOS-SDK/FacebookSDK/FBError.h
+c00000000517285870000000000002868
+t1366459783
+s10344
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/Facebook-iOS-SDK/FacebookSDK/FBFrictionlessRecipientCache.h
+c00000000517285870000000000000B7F
+t1366459783
+s2943
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/Facebook-iOS-SDK/FacebookSDK/FBFriendPickerViewController.h
+c000000005172858700000000000023C1
+t1366459783
+s9153
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/Facebook-iOS-SDK/FacebookSDK/FBGraphLocation.h
+c00000000517285870000000000000758
+t1366459783
+s1880
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/Facebook-iOS-SDK/FacebookSDK/FBGraphObject.h
+c00000000517285870000000000002462
+t1366459783
+s9314
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/Facebook-iOS-SDK/FacebookSDK/FBGraphPlace.h
+c00000000517285870000000000000606
+t1366459783
+s1542
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/Facebook-iOS-SDK/FacebookSDK/FBGraphUser.h
+c00000000517285870000000000000860
+t1366459783
+s2144
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/Facebook-iOS-SDK/FacebookSDK/FBInsights.h
+c0000000051728587000000000000275B
+t1366459783
+s10075
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/Facebook-iOS-SDK/FacebookSDK/FBLoginView.h
+c0000000051728587000000000000160E
+t1366459783
+s5646
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/Facebook-iOS-SDK/FacebookSDK/FBNativeDialogs.h
+c00000000517285870000000000001D7E
+t1366459783
+s7550
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/Facebook-iOS-SDK/FacebookSDK/FBOpenGraphAction.h
+c00000000517285870000000000000C3B
+t1366459783
+s3131
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/Facebook-iOS-SDK/FacebookSDK/FBPlacePickerViewController.h
+c00000000517285870000000000002111
+t1366459783
+s8465
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/Facebook-iOS-SDK/FacebookSDK/FBProfilePictureView.h
+c00000000517285870000000000000994
+t1366459783
+s2452
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/Facebook-iOS-SDK/FacebookSDK/FBRequest.h
+c00000000517285870000000000004322
+t1366459783
+s17186
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/Facebook-iOS-SDK/FacebookSDK/FBRequestConnection.h
+c00000000517285870000000000003847
+t1366459783
+s14407
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/Facebook-iOS-SDK/FacebookSDK/FBSession.h
+c00000000517285870000000000008B35
+t1366459783
+s35637
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/Facebook-iOS-SDK/FacebookSDK/FBSettings.h
+c000000005172858700000000000012F3
+t1366459783
+s4851
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/Facebook-iOS-SDK/FacebookSDK/FBUserSettingsViewController.h
+c00000000517285870000000000001002
+t1366459783
+s4098
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/Facebook-iOS-SDK/FacebookSDK/FBViewController.h
+c00000000517285870000000000000F63
+t1366459783
+s3939
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/Facebook-iOS-SDK/FacebookSDK/FBWebDialogs.h
+c0000000051728587000000000000234A
+t1366459783
+s9034
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/Facebook-iOS-SDK/FacebookSDK/FacebookSDK.h
+c0000000051728587000000000000150C
+t1366459783
+s5388
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/Facebook-iOS-SDK/FacebookSDK/NSError+FBError.h
+c00000000517285870000000000000919
+t1366459783
+s2329
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/JASidePanels/JASidePanelController.h
+c00000000517285870000000000001C92
+t1366459783
+s7314
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/iconBig.png
+c0000000051771E820000000000003065
+t1366761090
+s12389
+
+N/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/iconSmall.png
+c0000000051771EDF0000000000001DD5
+t1366761183
+s7637
+
+N/Users/williamtylerdavis/Library/MobileDevice/Provisioning Profiles/8F2940FC-D7AD-4BC3-9424-E02950B17241.mobileprovision
+c000000005109E6C50000000000002597
+t1359603397
+s9623
+
+NHowWeMet/HowWeMet-Info.plist
+c0000000051771EF20000000000000699
+t1366761202
+s1689
+
+CBuild AST from /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HWMAppDelegate.m
+r0
+
+CBuild AST from /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HWMHomeViewController.m
+r0
+
+CBuild AST from /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HWMLeftViewController.m
+r0
+
+CBuild AST from /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HWMRightViewController.m
+r0
+
+CBuild AST from /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HWMViewController.m
+r0
+
+CBuild AST from /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/main.m
+r0
+
+CCheck dependencies
+r0
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies804acd0f6527b741^4a28c1106527b741^---0#1#0#--18"Check dependencies36"EF0C0CC7-E513-48BA-B728-4B8B08CA10E1-
+
+CCodeSign /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app
+s388457749.489179
+e388457750.911827
+r1
+xCodeSign
+x/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection63"CodeSign DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app8b537d156527b741^9c6ee9166527b741^---0#0#0#-19%DVTDocumentLocation2@125"file://localhost/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/0000000000000000^943"CodeSign DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app    cd /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet    setenv CODESIGN_ALLOCATE /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/codesign_allocate    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/codesign --force --sign 004cb40d4975d700e9cb96d7fe9414d9ea44ce2f --resource-rules=/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/ResourceRules.plist --entitlements /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/HowWeMet.xcent /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app36"979B9DF5-ACC7-4212-9982-1249A925062C-
+
+CCompileC DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/Objects-normal/armv7s/HWMAppDelegate.o /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HWMAppDelegate.m normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s388457744.843444
+e388457746.215066
+r1
+xCompileC
+xDerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/Objects-normal/armv7s/HWMAppDelegate.o
+x/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HWMAppDelegate.m
+xnormal
+xarmv7s
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection87"Compile /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HWMAppDelegate.me125d8106527b741^a93337126527b741^---0#0#0#-19%DVTDocumentLocation2@95"file://localhost/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HWMAppDelegate.m0000000000000000^3581"CompileC DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/Objects-normal/armv7s/HWMAppDelegate.o HowWeMet/HWMAppDelegate.m normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch armv7s -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -miphoneos-version-min=5.0 -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/HowWeMet.hmap -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/include -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/ALToastView -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/Facebook-iOS-SDK -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/Facebook-iOS-SDK/FacebookSDK -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/JASidePanels -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/uservoice-iphone-sdk -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/DerivedSources/armv7s -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/DerivedSources -F/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos -F/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet -include /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/PrecompiledHeaders/HowWeMet-Prefix-cpdzvlxfvzhaiohkiifmmcebbdtd/HowWeMet-Prefix.pch -MMD -MT dependencies -MF /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/Objects-normal/armv7s/HWMAppDelegate.d --serialize-diagnostics /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/Objects-normal/armv7s/HWMAppDelegate.dia -c /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HWMAppDelegate.m -o /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/Objects-normal/armv7s/HWMAppDelegate.o36"CB1D6350-90F2-4AB4-94FD-F013FEC148B0-
+
+CCompileC DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/Objects-normal/armv7s/HWMHomeViewController.o /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HWMHomeViewController.m normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s388454705.287654
+e388454705.525723
+r1
+xCompileC
+xDerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/Objects-normal/armv7s/HWMHomeViewController.o
+x/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HWMHomeViewController.m
+xnormal
+xarmv7s
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection94"Compile /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HWMHomeViewController.md8f058315927b741^9a9486315927b741^---0#0#0#-19%DVTDocumentLocation2@102"file://localhost/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HWMHomeViewController.m0000000000000000^3623"CompileC DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/Objects-normal/armv7s/HWMHomeViewController.o HowWeMet/HWMHomeViewController.m normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch armv7s -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -miphoneos-version-min=5.0 -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/HowWeMet.hmap -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/include -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/ALToastView -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/Facebook-iOS-SDK -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/Facebook-iOS-SDK/FacebookSDK -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/JASidePanels -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/uservoice-iphone-sdk -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/DerivedSources/armv7s -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/DerivedSources -F/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos -F/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet -include /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/PrecompiledHeaders/HowWeMet-Prefix-cpdzvlxfvzhaiohkiifmmcebbdtd/HowWeMet-Prefix.pch -MMD -MT dependencies -MF /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/Objects-normal/armv7s/HWMHomeViewController.d --serialize-diagnostics /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/Objects-normal/armv7s/HWMHomeViewController.dia -c /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HWMHomeViewController.m -o /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/Objects-normal/armv7s/HWMHomeViewController.o36"C7EF2782-BED9-4A23-8658-39BAE9283585-
+
+CCompileC DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/Objects-normal/armv7s/HWMLeftViewController.o /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HWMLeftViewController.m normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s388454705.288079
+e388454705.430867
+r1
+xCompileC
+xDerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/Objects-normal/armv7s/HWMLeftViewController.o
+x/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HWMLeftViewController.m
+xnormal
+xarmv7s
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection94"Compile /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HWMLeftViewController.m56ef58315927b741^2b516e315927b741^---0#0#0#-19%DVTDocumentLocation2@102"file://localhost/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HWMLeftViewController.m0000000000000000^3623"CompileC DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/Objects-normal/armv7s/HWMLeftViewController.o HowWeMet/HWMLeftViewController.m normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch armv7s -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -miphoneos-version-min=5.0 -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/HowWeMet.hmap -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/include -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/ALToastView -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/Facebook-iOS-SDK -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/Facebook-iOS-SDK/FacebookSDK -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/JASidePanels -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/uservoice-iphone-sdk -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/DerivedSources/armv7s -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/DerivedSources -F/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos -F/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet -include /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/PrecompiledHeaders/HowWeMet-Prefix-cpdzvlxfvzhaiohkiifmmcebbdtd/HowWeMet-Prefix.pch -MMD -MT dependencies -MF /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/Objects-normal/armv7s/HWMLeftViewController.d --serialize-diagnostics /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/Objects-normal/armv7s/HWMLeftViewController.dia -c /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HWMLeftViewController.m -o /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/Objects-normal/armv7s/HWMLeftViewController.o36"61793A67-969D-45AC-883C-29D95084881B-
+
+CCompileC DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/Objects-normal/armv7s/HWMRightViewController.o /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HWMRightViewController.m normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s388454705.288139
+e388454705.431314
+r1
+xCompileC
+xDerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/Objects-normal/armv7s/HWMRightViewController.o
+x/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HWMRightViewController.m
+xnormal
+xarmv7s
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection95"Compile /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HWMRightViewController.m24ef58315927b741^db6a6e315927b741^---0#0#0#-19%DVTDocumentLocation2@103"file://localhost/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HWMRightViewController.m0000000000000000^3629"CompileC DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/Objects-normal/armv7s/HWMRightViewController.o HowWeMet/HWMRightViewController.m normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch armv7s -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -miphoneos-version-min=5.0 -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/HowWeMet.hmap -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/include -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/ALToastView -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/Facebook-iOS-SDK -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/Facebook-iOS-SDK/FacebookSDK -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/JASidePanels -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/uservoice-iphone-sdk -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/DerivedSources/armv7s -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/DerivedSources -F/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos -F/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet -include /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/PrecompiledHeaders/HowWeMet-Prefix-cpdzvlxfvzhaiohkiifmmcebbdtd/HowWeMet-Prefix.pch -MMD -MT dependencies -MF /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/Objects-normal/armv7s/HWMRightViewController.d --serialize-diagnostics /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/Objects-normal/armv7s/HWMRightViewController.dia -c /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HWMRightViewController.m -o /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/Objects-normal/armv7s/HWMRightViewController.o36"BB659687-9728-4F00-A0BE-B54DFA06CB66-
+
+CCompileC DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/Objects-normal/armv7s/HWMViewController.o /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HWMViewController.m normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s388454705.287617
+e388454705.716952
+r1
+xCompileC
+xDerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/Objects-normal/armv7s/HWMViewController.o
+x/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HWMViewController.m
+xnormal
+xarmv7s
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection90"Compile /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HWMViewController.ma7cc49315927b741^4089b7315927b741^---0#0#0#-19%DVTDocumentLocation2@98"file://localhost/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HWMViewController.m0000000000000000^3599"CompileC DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/Objects-normal/armv7s/HWMViewController.o HowWeMet/HWMViewController.m normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch armv7s -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -miphoneos-version-min=5.0 -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/HowWeMet.hmap -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/include -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/ALToastView -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/Facebook-iOS-SDK -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/Facebook-iOS-SDK/FacebookSDK -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/JASidePanels -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/uservoice-iphone-sdk -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/DerivedSources/armv7s -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/DerivedSources -F/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos -F/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet -include /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/PrecompiledHeaders/HowWeMet-Prefix-cpdzvlxfvzhaiohkiifmmcebbdtd/HowWeMet-Prefix.pch -MMD -MT dependencies -MF /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/Objects-normal/armv7s/HWMViewController.d --serialize-diagnostics /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/Objects-normal/armv7s/HWMViewController.dia -c /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HWMViewController.m -o /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/Objects-normal/armv7s/HWMViewController.o36"04FA257F-FA57-4521-9E01-D1226C2D8693-
+
+CCompileC DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/Objects-normal/armv7s/main.o /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/main.m normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s388454705.432257
+e388454705.657518
+r1
+xCompileC
+xDerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/Objects-normal/armv7s/main.o
+x/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/main.m
+xnormal
+xarmv7s
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection77"Compile /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/main.m8dd56e315927b741^d652a8315927b741^---0#0#0#-19%DVTDocumentLocation2@85"file://localhost/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/main.m0000000000000000^3521"CompileC DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/Objects-normal/armv7s/main.o HowWeMet/main.m normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch armv7s -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -miphoneos-version-min=5.0 -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/HowWeMet.hmap -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/include -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/ALToastView -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/Facebook-iOS-SDK -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/Facebook-iOS-SDK/FacebookSDK -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/JASidePanels -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/uservoice-iphone-sdk -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/DerivedSources/armv7s -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/DerivedSources -F/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos -F/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet -include /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/PrecompiledHeaders/HowWeMet-Prefix-cpdzvlxfvzhaiohkiifmmcebbdtd/HowWeMet-Prefix.pch -MMD -MT dependencies -MF /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/Objects-normal/armv7s/main.d --serialize-diagnostics /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/Objects-normal/armv7s/main.dia -c /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/main.m -o /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/Objects-normal/armv7s/main.o36"CB8A0450-E2C5-4249-AAF4-44E823246D77-
+
+CCompileXIB /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HWMHomeViewController.xib
+s388454708.239676
+e388454708.285176
+r1
+xCompileXIB
+x/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HWMHomeViewController.xib
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection98"Compiling /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HWMHomeViewController.xib7a893d345927b741^3b0149345927b741^---0#0#0#-19%DVTDocumentLocation2@104"file://localhost/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HWMHomeViewController.xib0000000000000000^904"CompileXIB HowWeMet/HWMHomeViewController.xib    cd /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 5.0    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    setenv XCODE_DEVELOPER_USR_PATH /Applications/Xcode.app/Contents/Developer/usr/bin/..    /Applications/Xcode.app/Contents/Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/HWMHomeViewController.nib /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HWMHomeViewController.xib --sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk36"00EA330D-C816-4265-9853-4E4D83C518CC-
+
+CCompileXIB /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HWMLeftViewController.xib
+s388454708.286536
+e388454708.309712
+r1
+xCompileXIB
+x/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HWMLeftViewController.xib
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection98"Compiling /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HWMLeftViewController.xibff7a49345927b741^e3544f345927b741^---0#0#0#-19%DVTDocumentLocation2@104"file://localhost/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HWMLeftViewController.xib0000000000000000^904"CompileXIB HowWeMet/HWMLeftViewController.xib    cd /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 5.0    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    setenv XCODE_DEVELOPER_USR_PATH /Applications/Xcode.app/Contents/Developer/usr/bin/..    /Applications/Xcode.app/Contents/Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/HWMLeftViewController.nib /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HWMLeftViewController.xib --sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk36"EFC992B0-13A9-41E9-8F2C-AC16A7C86CF9-
+
+CCompileXIB /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HWMRightViewController.xib
+s388454708.311312
+e388454708.348179
+r1
+xCompileXIB
+x/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HWMRightViewController.xib
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection99"Compiling /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HWMRightViewController.xibc8ce4f345927b741^bb2559345927b741^---0#0#0#-19%DVTDocumentLocation2@105"file://localhost/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HWMRightViewController.xib0000000000000000^907"CompileXIB HowWeMet/HWMRightViewController.xib    cd /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 5.0    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    setenv XCODE_DEVELOPER_USR_PATH /Applications/Xcode.app/Contents/Developer/usr/bin/..    /Applications/Xcode.app/Contents/Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/HWMRightViewController.nib /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HWMRightViewController.xib --sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk36"10DCAB3A-4FD4-406E-BA6A-C1BA3BA964A5-
+
+CCompileXIB /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/en.lproj/HWMViewController.xib
+s388454708.152966
+e388454708.237889
+r1
+xCompileXIB
+x/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/en.lproj/HWMViewController.xib
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection103"Compiling /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/en.lproj/HWMViewController.xib2e5727345927b741^9be73c345927b741^---0#0#0#-19%DVTDocumentLocation2@109"file://localhost/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/en.lproj/HWMViewController.xib0000000000000000^919"CompileXIB HowWeMet/en.lproj/HWMViewController.xib    cd /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 5.0    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    setenv XCODE_DEVELOPER_USR_PATH /Applications/Xcode.app/Contents/Developer/usr/bin/..    /Applications/Xcode.app/Contents/Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/en.lproj/HWMViewController.nib /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/en.lproj/HWMViewController.xib --sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk36"E524D004-2CF5-46D1-9EA0-32991AB20052-
+
+CCopyPNGFile /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/Default-568h@2x.png HowWeMet/Default-568h@2x.png
+s388454708.147059
+e388454708.584655
+r1
+xCopyPNGFile
+x/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/Default-568h@2x.png
+xHowWeMet/Default-568h@2x.png
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection115"CopyPNGFile DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/Default-568h@2x.png HowWeMet/Default-568h@2x.pngf2d225345927b741^54ad95345927b741^---0#0#0#-19%DVTDocumentLocation2@98"file://localhost/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/Default-568h@2x.png0000000000000000^699"CopyPNGFile "DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/Default-568h@2x.png" "HowWeMet/Default-568h@2x.png"    cd /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/copypng -compress "" "/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/Default-568h@2x.png" "/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/Default-568h@2x.png"36"E34EA660-C1AA-45DF-B7EE-B92E68F17F5F-
+
+CCopyPNGFile /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/Default.png HowWeMet/Default.png
+s388454708.146543
+e388454708.526785
+r1
+xCopyPNGFile
+x/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/Default.png
+xHowWeMet/Default.png
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection99"CopyPNGFile DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/Default.png HowWeMet/Default.pngf3af25345927b741^73db86345927b741^---0#0#0#-19%DVTDocumentLocation2@90"file://localhost/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/Default.png0000000000000000^659"CopyPNGFile DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/Default.png HowWeMet/Default.png    cd /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/copypng -compress "" /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/Default.png /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/Default.png36"D95901AF-2A28-4F79-A53A-340D06F9CEB7-
+
+CCopyPNGFile /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/Default@2x.png HowWeMet/Default@2x.png
+s388454708.147045
+e388454708.570318
+r1
+xCopyPNGFile
+x/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/Default@2x.png
+xHowWeMet/Default@2x.png
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection105"CopyPNGFile DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/Default@2x.png HowWeMet/Default@2x.png1bd525345927b741^e7ff91345927b741^---0#0#0#-19%DVTDocumentLocation2@93"file://localhost/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/Default@2x.png0000000000000000^679"CopyPNGFile "DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/Default@2x.png" "HowWeMet/Default@2x.png"    cd /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/copypng -compress "" "/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/Default@2x.png" "/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/Default@2x.png"36"F45F1596-EB9C-4A6C-B164-92DCAA8D46A9-
+
+CCopyPNGFile /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/iconBig.png iconBig.png
+s388454708.515234
+e388454708.553623
+r1
+xCopyPNGFile
+x/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/iconBig.png
+xiconBig.png
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection90"CopyPNGFile DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/iconBig.png iconBig.png82fd83345927b741^d8b98d345927b741^---0#0#0#-19%DVTDocumentLocation2@81"file://localhost/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/iconBig.png0000000000000000^641"CopyPNGFile DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/iconBig.png iconBig.png    cd /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/copypng -compress "" /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/iconBig.png /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/iconBig.png36"17DF2850-B66D-41A0-8BAA-9632218D0816-
+
+CCopyPNGFile /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/iconSmall.png iconSmall.png
+s388454708.349523
+e388454708.513971
+r1
+xCopyPNGFile
+x/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/iconSmall.png
+xiconSmall.png
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection94"CopyPNGFile DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/iconSmall.png iconSmall.pngf69759345927b741^38a283345927b741^---0#0#0#-19%DVTDocumentLocation2@83"file://localhost/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/iconSmall.png0000000000000000^649"CopyPNGFile DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/iconSmall.png iconSmall.png    cd /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/copypng -compress "" /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/iconSmall.png /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/iconSmall.png36"C444029D-EC96-4F09-BCB4-A26F63C4B95B-
+
+CCopyStringsFile /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/en.lproj/InfoPlist.strings HowWeMet/en.lproj/InfoPlist.strings
+s388454708.146554
+e388454708.151622
+r1
+xCopyStringsFile
+x/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/en.lproj/InfoPlist.strings
+xHowWeMet/en.lproj/InfoPlist.strings
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection40"Copy HowWeMet/en.lproj/InfoPlist.strings4fae25345927b741^70d026345927b741^---0#0#0#-19%DVTDocumentLocation2@105"file://localhost/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/en.lproj/InfoPlist.strings0000000000000000^630"CopyStringsFile DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/en.lproj/InfoPlist.strings HowWeMet/en.lproj/InfoPlist.strings    cd /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copyStrings --validate --inputencoding utf-8 --outputencoding binary --outdir /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/en.lproj -- HowWeMet/en.lproj/InfoPlist.strings36"BA4F1D89-CDD5-4281-A003-4DEC321760C2-
+
+CCpResource /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/ResourceRules.plist DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/ResourceRules.plist
+s388454704.972063
+e388454704.976761
+r1
+xCpResource
+x/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/ResourceRules.plist
+xDerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/ResourceRules.plist
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection79"Copy DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/ResourceRules.plist2cf1f8305927b741^bf0cfa305927b741^---0#0#0#-19%DVTDocumentLocation2@144"file://localhost/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/ResourceRules.plist000000000080d041^800"CpResource /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/ResourceRules.plist DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/ResourceRules.plist    cd /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/ResourceRules.plist /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app36"863A56BE-1B67-41CB-BC7B-94CAE80FEEDC-
+
+CGenerateDSYMFile /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app.dSYM /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/HowWeMet
+s388457747.800786
+e388457748.638697
+r1
+xGenerateDSYMFile
+x/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app.dSYM
+x/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/HowWeMet
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection122"Generate /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app.dSYMe220cd136527b741^aeb9a3146527b741^---0#0#0#-19%DVTDocumentLocation2@130"file://localhost/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app.dSYM/0000000000000000^725"GenerateDSYMFile DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app.dSYM DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/HowWeMet    cd /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dsymutil /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/HowWeMet -o /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app.dSYM36"533B795D-D8E4-4EEE-BD13-6E2484E82E6E-
+
+CLd /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/HowWeMet normal armv7s
+s388457746.222778
+e388457747.792908
+r1
+xLd
+x/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/HowWeMet
+xnormal
+xarmv7s
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection122"Link /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/HowWeMet642239126527b741^09ffca136527b741^---0#0#0#--1754"Ld DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/HowWeMet normal armv7s    cd /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet    setenv IPHONEOS_DEPLOYMENT_TARGET 5.0    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch armv7s -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk -L/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos -F/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos -F/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet -filelist /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/Objects-normal/armv7s/HowWeMet.LinkFileList -dead_strip -ObjC -lsqlite3.0 -framework CoreLocation -framework QuartzCore -framework SystemConfiguration -weak_framework Accounts -weak_framework AdSupport -weak_framework Social -fobjc-arc -fobjc-link-runtime -miphoneos-version-min=5.0 -framework SystemConfiguration -framework StoreKit -framework Security -framework QuartzCore -framework MobileCoreServices -lz.1.1.3 -framework CoreGraphics -framework CFNetwork -framework AudioToolbox -framework CoreData -framework CoreLocation -framework AdSupport -framework iAd -framework Social -framework UIKit -framework Foundation -lPods -framework Parse -o /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/HowWeMet36"2250C5EA-892F-4A13-A0D4-ED3736E0A38B-
+
+CPhaseScriptExecution "Copy Pods Resources" /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/Script-BCCE6AD7954A448DB3C586A3.sh
+s388457748.659569
+e388457749.355845
+r1
+xPhaseScriptExecution
+xCopy Pods Resources
+x/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/Script-BCCE6AD7954A448DB3C586A3.sh
+ocp -R /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Facebook-iOS-SDK/src/FacebookSDKResources.bundle /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app
+ocp -R /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/uservoice-iphone-sdk/Resources/en.lproj /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app
+ocp -R /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/uservoice-iphone-sdk/Resources/fr.lproj /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app
+ocp -R /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/uservoice-iphone-sdk/Resources/it.lproj /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app
+ocp -R /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/uservoice-iphone-sdk/Resources/nl.lproj /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app
+ocp -R /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/uservoice-iphone-sdk/Resources/uv_article.png /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app
+ocp -R /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/uservoice-iphone-sdk/Resources/uv_article@2x.png /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app
+ocp -R /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/uservoice-iphone-sdk/Resources/uv_default_avatar.png /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app
+ocp -R /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/uservoice-iphone-sdk/Resources/uv_default_avatar@2x.png /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app
+ocp -R /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/uservoice-iphone-sdk/Resources/uv_idea.png /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app
+ocp -R /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/uservoice-iphone-sdk/Resources/uv_idea@2x.png /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app
+ocp -R /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/uservoice-iphone-sdk/Resources/uv_logo.png /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app
+ocp -R /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/uservoice-iphone-sdk/Resources/uv_logo@2x.png /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app
+ocp -R /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/uservoice-iphone-sdk/Resources/uv_vote_chicklet.png /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app
+ocp -R /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/uservoice-iphone-sdk/Resources/uv_vote_chicklet@2x.png /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app
+ocp -R /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/uservoice-iphone-sdk/Resources/uv_vote_chicklet_empty.png /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app
+ocp -R /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/uservoice-iphone-sdk/Resources/uv_vote_chicklet_empty@2x.png /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app
+ocp -R /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/uservoice-iphone-sdk/Resources/uv_x.png /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app
+ocp -R /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/uservoice-iphone-sdk/Resources/uv_x@2x.png /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app
+ocp -R /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/uservoice-iphone-sdk/Resources/zh-Hant.lproj /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection45"Run custom shell script 'Copy Pods Resources'2fdca9146527b741^f0175b156527b741^-4425"cp -R /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Facebook-iOS-SDK/src/FacebookSDKResources.bundle /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.appcp -R /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/uservoice-iphone-sdk/Resources/en.lproj /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.appcp -R /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/uservoice-iphone-sdk/Resources/fr.lproj /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.appcp -R /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/uservoice-iphone-sdk/Resources/it.lproj /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.appcp -R /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/uservoice-iphone-sdk/Resources/nl.lproj /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.appcp -R /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/uservoice-iphone-sdk/Resources/uv_article.png /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.appcp -R /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/uservoice-iphone-sdk/Resources/uv_article@2x.png /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.appcp -R /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/uservoice-iphone-sdk/Resources/uv_default_avatar.png /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.appcp -R /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/uservoice-iphone-sdk/Resources/uv_default_avatar@2x.png /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.appcp -R /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/uservoice-iphone-sdk/Resources/uv_idea.png /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.appcp -R /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/uservoice-iphone-sdk/Resources/uv_idea@2x.png /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.appcp -R /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/uservoice-iphone-sdk/Resources/uv_logo.png /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.appcp -R /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/uservoice-iphone-sdk/Resources/uv_logo@2x.png /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.appcp -R /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/uservoice-iphone-sdk/Resources/uv_vote_chicklet.png /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.appcp -R /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/uservoice-iphone-sdk/Resources/uv_vote_chicklet@2x.png /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.appcp -R /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/uservoice-iphone-sdk/Resources/uv_vote_chicklet_empty.png /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.appcp -R /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/uservoice-iphone-sdk/Resources/uv_vote_chicklet_empty@2x.png /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.appcp -R /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/uservoice-iphone-sdk/Resources/uv_x.png /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.appcp -R /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/uservoice-iphone-sdk/Resources/uv_x@2x.png /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.appcp -R /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/uservoice-iphone-sdk/Resources/zh-Hant.lproj /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app20(21%IDEActivityLogMessage2@223"cp -R /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Facebook-iOS-SDK/src/FacebookSDKResources.bundle /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app-388457748#0#223#-0#-----2@214"cp -R /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/uservoice-iphone-sdk/Resources/en.lproj /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app-388457748#223#214#-0#-----2@214"cp -R /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/uservoice-iphone-sdk/Resources/fr.lproj /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app-388457748#437#214#-0#-----2@214"cp -R /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/uservoice-iphone-sdk/Resources/it.lproj /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app-388457749#651#214#-0#-----2@214"cp -R /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/uservoice-iphone-sdk/Resources/nl.lproj /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app-388457749#865#214#-0#-----2@220"cp -R /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/uservoice-iphone-sdk/Resources/uv_article.png /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app-388457749#1079#220#-0#-----2@223"cp -R /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/uservoice-iphone-sdk/Resources/uv_article@2x.png /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app-388457749#1299#223#-0#-----2@227"cp -R /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/uservoice-iphone-sdk/Resources/uv_default_avatar.png /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app-388457749#1522#227#-0#-----2@230"cp -R /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/uservoice-iphone-sdk/Resources/uv_default_avatar@2x.png /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app-388457749#1749#230#-0#-----2@217"cp -R /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/uservoice-iphone-sdk/Resources/uv_idea.png /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app-388457749#1979#217#-0#-----2@220"cp -R /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/uservoice-iphone-sdk/Resources/uv_idea@2x.png /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app-388457749#2196#220#-0#-----2@217"cp -R /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/uservoice-iphone-sdk/Resources/uv_logo.png /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app-388457749#2416#217#-0#-----2@220"cp -R /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/uservoice-iphone-sdk/Resources/uv_logo@2x.png /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app-388457749#2633#220#-0#-----2@226"cp -R /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/uservoice-iphone-sdk/Resources/uv_vote_chicklet.png /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app-388457749#2853#226#-0#-----2@229"cp -R /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/uservoice-iphone-sdk/Resources/uv_vote_chicklet@2x.png /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app-388457749#3079#229#-0#-----2@232"cp -R /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/uservoice-iphone-sdk/Resources/uv_vote_chicklet_empty.png /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app-388457749#3308#232#-0#-----2@235"cp -R /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/uservoice-iphone-sdk/Resources/uv_vote_chicklet_empty@2x.png /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app-388457749#3540#235#-0#-----2@214"cp -R /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/uservoice-iphone-sdk/Resources/uv_x.png /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app-388457749#3775#214#-0#-----2@217"cp -R /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/uservoice-iphone-sdk/Resources/uv_x@2x.png /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app-388457749#3989#217#-0#-----2@219"cp -R /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/uservoice-iphone-sdk/Resources/zh-Hant.lproj /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app-388457749#4206#219#-0#-----0#0#0#--24341"PhaseScriptExecution "Copy Pods Resources" DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/Script-BCCE6AD7954A448DB3C586A3.sh    cd /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet    setenv ACTION build    setenv AD_HOC_CODE_SIGNING_ALLOWED NO    setenv ALTERNATE_GROUP staff    setenv ALTERNATE_MODE u+w,go-w,a+rX    setenv ALTERNATE_OWNER williamtylerdavis    setenv ALWAYS_SEARCH_USER_PATHS YES    setenv APPLE_INTERNAL_DEVELOPER_DIR /AppleInternal/Developer    setenv APPLE_INTERNAL_DIR /AppleInternal    setenv APPLE_INTERNAL_DOCUMENTATION_DIR /AppleInternal/Documentation    setenv APPLE_INTERNAL_LIBRARY_DIR /AppleInternal/Library    setenv APPLE_INTERNAL_TOOLS /AppleInternal/Developer/Tools    setenv APPLY_RULES_IN_COPY_FILES NO    setenv ARCHS armv7s    setenv ARCHS_STANDARD_32_64_BIT "armv7 armv7s"    setenv ARCHS_STANDARD_32_BIT "armv7 armv7s"    setenv ARCHS_UNIVERSAL_IPHONE_OS "armv7 armv7s"    setenv AVAILABLE_PLATFORMS "iphonesimulator macosx iphoneos"    setenv BUILD_COMPONENTS "headers build"    setenv BUILD_DIR /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products    setenv BUILD_ROOT /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products    setenv BUILD_STYLE     setenv BUILD_VARIANTS normal    setenv BUILT_PRODUCTS_DIR /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos    setenv CACHE_ROOT /var/folders/pj/j457mcmn6xbcvzyc1vd_23b00000gn/C/com.apple.Xcode.501    setenv CCHROOT /var/folders/pj/j457mcmn6xbcvzyc1vd_23b00000gn/C/com.apple.Xcode.501    setenv CHMOD /bin/chmod    setenv CHOWN /usr/sbin/chown    setenv CLANG_CXX_LANGUAGE_STANDARD gnu++0x    setenv CLANG_CXX_LIBRARY libc++    setenv CLANG_ENABLE_OBJC_ARC YES    setenv CLANG_WARN_CONSTANT_CONVERSION YES    setenv CLANG_WARN_EMPTY_BODY YES    setenv CLANG_WARN_ENUM_CONVERSION YES    setenv CLANG_WARN_INT_CONVERSION YES    setenv CLANG_WARN__DUPLICATE_METHOD_MATCH YES    setenv CLASS_FILE_DIR /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/JavaClasses    setenv CLEAN_PRECOMPS YES    setenv CLONE_HEADERS NO    setenv CODESIGNING_FOLDER_PATH /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app    setenv CODE_SIGNING_ALLOWED YES    setenv CODE_SIGNING_REQUIRED YES    setenv CODE_SIGN_CONTEXT_CLASS XCiPhoneOSCodeSignContext    setenv CODE_SIGN_IDENTITY "iPhone Developer"    setenv COMMAND_MODE legacy    setenv COMPOSITE_SDK_DIRS /var/folders/pj/j457mcmn6xbcvzyc1vd_23b00000gn/C/com.apple.Xcode.501/CompositeSDKs    setenv COMPRESS_PNG_FILES YES    setenv CONFIGURATION Debug    setenv CONFIGURATION_BUILD_DIR /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos    setenv CONFIGURATION_TEMP_DIR /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos    setenv CONTENTS_FOLDER_PATH HowWeMet.app    setenv COPYING_PRESERVES_HFS_DATA NO    setenv COPY_PHASE_STRIP NO    setenv COPY_RESOURCES_FROM_STATIC_FRAMEWORKS YES    setenv CP /bin/cp    setenv CURRENT_ARCH armv7s    setenv CURRENT_VARIANT normal    setenv DEAD_CODE_STRIPPING YES    setenv DEBUGGING_SYMBOLS YES    setenv DEBUG_INFORMATION_FORMAT dwarf-with-dsym    setenv DEFAULT_COMPILER com.apple.compilers.llvm.clang.1_0    setenv DEPLOYMENT_LOCATION NO    setenv DEPLOYMENT_POSTPROCESSING NO    setenv DERIVED_FILES_DIR /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/DerivedSources    setenv DERIVED_FILE_DIR /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/DerivedSources    setenv DERIVED_SOURCES_DIR /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/DerivedSources    setenv DEVELOPER_APPLICATIONS_DIR /Applications/Xcode.app/Contents/Developer/Applications    setenv DEVELOPER_BIN_DIR /Applications/Xcode.app/Contents/Developer/usr/bin    setenv DEVELOPER_DIR /Applications/Xcode.app/Contents/Developer    setenv DEVELOPER_FRAMEWORKS_DIR /Applications/Xcode.app/Contents/Developer/Library/Frameworks    setenv DEVELOPER_FRAMEWORKS_DIR_QUOTED "\"/Applications/Xcode.app/Contents/Developer/Library/Frameworks\""    setenv DEVELOPER_LIBRARY_DIR /Applications/Xcode.app/Contents/Developer/Library    setenv DEVELOPER_SDK_DIR /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs    setenv DEVELOPER_TOOLS_DIR /Applications/Xcode.app/Contents/Developer/Tools    setenv DEVELOPER_USR_DIR /Applications/Xcode.app/Contents/Developer/usr    setenv DEVELOPMENT_LANGUAGE English    setenv DOCUMENTATION_FOLDER_PATH HowWeMet.app/English.lproj/Documentation    setenv DO_HEADER_SCANNING_IN_JAM NO    setenv DSTROOT /tmp/HowWeMet.dst    setenv DT_TOOLCHAIN_DIR /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain    setenv DWARF_DSYM_FILE_NAME HowWeMet.app.dSYM    setenv DWARF_DSYM_FILE_SHOULD_ACCOMPANY_PRODUCT NO    setenv DWARF_DSYM_FOLDER_PATH /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos    setenv EFFECTIVE_PLATFORM_NAME -iphoneos    setenv EMBEDDED_PROFILE_NAME embedded.mobileprovision    setenv ENABLE_HEADER_DEPENDENCIES YES    setenv ENTITLEMENTS_ALLOWED YES    setenv ENTITLEMENTS_REQUIRED YES    setenv EXCLUDED_INSTALLSRC_SUBDIRECTORY_PATTERNS ".DS_Store .svn .git .hg CVS"    setenv EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES "*.nib *.lproj *.framework *.gch (*) .DS_Store CVS .svn .git .hg *.xcodeproj *.xcode *.pbproj *.pbxproj"    setenv EXECUTABLES_FOLDER_PATH HowWeMet.app/Executables    setenv EXECUTABLE_FOLDER_PATH HowWeMet.app    setenv EXECUTABLE_NAME HowWeMet    setenv EXECUTABLE_PATH HowWeMet.app/HowWeMet    setenv FILE_LIST /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/Objects/LinkFileList    setenv FIXED_FILES_DIR /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/FixedFiles    setenv FRAMEWORKS_FOLDER_PATH HowWeMet.app/Frameworks    setenv FRAMEWORK_FLAG_PREFIX -framework    setenv FRAMEWORK_SEARCH_PATHS "\"/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos\"  \"/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet\""    setenv FRAMEWORK_VERSION A    setenv FULL_PRODUCT_NAME HowWeMet.app    setenv GCC3_VERSION 3.3    setenv GCC_C_LANGUAGE_STANDARD gnu99    setenv GCC_DYNAMIC_NO_PIC NO    setenv GCC_INLINES_ARE_PRIVATE_EXTERN YES    setenv GCC_OPTIMIZATION_LEVEL 0    setenv GCC_PFE_FILE_C_DIALECTS "c objective-c c++ objective-c++"    setenv GCC_PRECOMPILE_PREFIX_HEADER YES    setenv GCC_PREFIX_HEADER HowWeMet/HowWeMet-Prefix.pch    setenv GCC_PREPROCESSOR_DEFINITIONS "DEBUG=1 "    setenv GCC_SYMBOLS_PRIVATE_EXTERN NO    setenv GCC_THUMB_SUPPORT YES    setenv GCC_TREAT_WARNINGS_AS_ERRORS NO    setenv GCC_VERSION com.apple.compilers.llvm.clang.1_0    setenv GCC_WARN_ABOUT_RETURN_TYPE YES    setenv GCC_WARN_UNINITIALIZED_AUTOS YES    setenv GCC_WARN_UNUSED_VARIABLE YES    setenv GENERATE_MASTER_OBJECT_FILE NO    setenv GENERATE_PKGINFO_FILE YES    setenv GENERATE_PROFILING_CODE NO    setenv GID 20    setenv GROUP staff    setenv HEADERMAP_INCLUDES_FLAT_ENTRIES_FOR_TARGET_BEING_BUILT YES    setenv HEADERMAP_INCLUDES_FRAMEWORK_ENTRIES_FOR_ALL_PRODUCT_TYPES YES    setenv HEADERMAP_INCLUDES_NONPUBLIC_NONPRIVATE_HEADERS YES    setenv HEADERMAP_INCLUDES_PROJECT_HEADERS YES    setenv HEADER_SEARCH_PATHS "\"/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/include\" \"/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers\" \"/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/ALToastView\" \"/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/Facebook-iOS-SDK\" \"/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/Facebook-iOS-SDK/FacebookSDK\" \"/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/JASidePanels\" \"/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/uservoice-iphone-sdk\""    setenv ICONV /usr/bin/iconv    setenv INFOPLIST_EXPAND_BUILD_SETTINGS YES    setenv INFOPLIST_FILE HowWeMet/HowWeMet-Info.plist    setenv INFOPLIST_OUTPUT_FORMAT binary    setenv INFOPLIST_PATH HowWeMet.app/Info.plist    setenv INFOPLIST_PREPROCESS NO    setenv INFOSTRINGS_PATH HowWeMet.app/English.lproj/InfoPlist.strings    setenv INSTALL_DIR /tmp/HowWeMet.dst/Applications    setenv INSTALL_GROUP staff    setenv INSTALL_MODE_FLAG u+w,go-w,a+rX    setenv INSTALL_OWNER williamtylerdavis    setenv INSTALL_PATH /Applications    setenv INSTALL_ROOT /tmp/HowWeMet.dst    setenv IPHONEOS_DEPLOYMENT_TARGET 5.0    setenv JAVAC_DEFAULT_FLAGS "-J-Xms64m -J-XX:NewSize=4M -J-Dfile.encoding=UTF8"    setenv JAVA_APP_STUB /System/Library/Frameworks/JavaVM.framework/Resources/MacOS/JavaApplicationStub    setenv JAVA_ARCHIVE_CLASSES YES    setenv JAVA_ARCHIVE_TYPE JAR    setenv JAVA_COMPILER /usr/bin/javac    setenv JAVA_FOLDER_PATH HowWeMet.app/Java    setenv JAVA_FRAMEWORK_RESOURCES_DIRS Resources    setenv JAVA_JAR_FLAGS cv    setenv JAVA_SOURCE_SUBDIR .    setenv JAVA_USE_DEPENDENCIES YES    setenv JAVA_ZIP_FLAGS -urg    setenv JIKES_DEFAULT_FLAGS "+E +OLDCSO"    setenv KEEP_PRIVATE_EXTERNS NO    setenv LD_GENERATE_MAP_FILE NO    setenv LD_MAP_FILE_PATH /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/HowWeMet-LinkMap-normal-armv7s.txt    setenv LD_NO_PIE NO    setenv LEGACY_DEVELOPER_DIR /Applications/Xcode.app/Contents/PlugIns/Xcode3Core.ideplugin/Contents/SharedSupport/Developer    setenv LEX lex    setenv LIBRARY_FLAG_NOSPACE YES    setenv LIBRARY_FLAG_PREFIX -l    setenv LIBRARY_SEARCH_PATHS "\"/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos\" "    setenv LINKER_DISPLAYS_MANGLED_NAMES NO    setenv LINK_FILE_LIST_normal_armv7s /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/Objects-normal/armv7s/HowWeMet.LinkFileList    setenv LINK_WITH_STANDARD_LIBRARIES YES    setenv LOCALIZED_RESOURCES_FOLDER_PATH HowWeMet.app/English.lproj    setenv LOCAL_ADMIN_APPS_DIR /Applications/Utilities    setenv LOCAL_APPS_DIR /Applications    setenv LOCAL_DEVELOPER_DIR /Library/Developer    setenv LOCAL_LIBRARY_DIR /Library    setenv MACH_O_TYPE mh_execute    setenv MAC_OS_X_PRODUCT_BUILD_VERSION 11G63    setenv MAC_OS_X_VERSION_ACTUAL 1075    setenv MAC_OS_X_VERSION_MAJOR 1070    setenv MAC_OS_X_VERSION_MINOR 0705    setenv NATIVE_ARCH armv7    setenv NATIVE_ARCH_32_BIT i386    setenv NATIVE_ARCH_64_BIT x86_64    setenv NATIVE_ARCH_ACTUAL x86_64    setenv NO_COMMON YES    setenv OBJECT_FILE_DIR /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/Objects    setenv OBJECT_FILE_DIR_normal /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/Objects-normal    setenv OBJROOT /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates    setenv ONLY_ACTIVE_ARCH YES    setenv OPTIMIZATION_LEVEL 0    setenv OS MACOS    setenv OSAC /usr/bin/osacompile    setenv OTHER_LDFLAGS "-ObjC -lsqlite3.0 -framework CoreLocation -framework QuartzCore -framework SystemConfiguration -weak_framework Accounts -weak_framework AdSupport -weak_framework Social"    setenv PACKAGE_TYPE com.apple.package-type.wrapper.application    setenv PASCAL_STRINGS YES    setenv PATH "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/libexec:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/usr/local/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Tools:/usr/bin:/bin:/usr/sbin:/sbin"    setenv PATH_PREFIXES_EXCLUDED_FROM_HEADER_DEPENDENCIES "/usr/include /usr/local/include /System/Library/Frameworks /System/Library/PrivateFrameworks /Applications/Xcode.app/Contents/Developer/Headers /Applications/Xcode.app/Contents/Developer/SDKs /Applications/Xcode.app/Contents/Developer/Platforms"    setenv PBDEVELOPMENTPLIST_PATH HowWeMet.app/pbdevelopment.plist    setenv PFE_FILE_C_DIALECTS objective-c    setenv PKGINFO_FILE_PATH /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/PkgInfo    setenv PKGINFO_PATH HowWeMet.app/PkgInfo    setenv PLATFORM_DEVELOPER_APPLICATIONS_DIR /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Applications    setenv PLATFORM_DEVELOPER_BIN_DIR /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin    setenv PLATFORM_DEVELOPER_LIBRARY_DIR /Applications/Xcode.app/Contents/PlugIns/Xcode3Core.ideplugin/Contents/SharedSupport/Developer/Library    setenv PLATFORM_DEVELOPER_SDK_DIR /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs    setenv PLATFORM_DEVELOPER_TOOLS_DIR /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Tools    setenv PLATFORM_DEVELOPER_USR_DIR /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr    setenv PLATFORM_DIR /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform    setenv PLATFORM_NAME iphoneos    setenv PLATFORM_PREFERRED_ARCH armv7    setenv PLATFORM_PRODUCT_BUILD_VERSION 10B141    setenv PLIST_FILE_OUTPUT_FORMAT binary    setenv PLUGINS_FOLDER_PATH HowWeMet.app/PlugIns    setenv PODS_BUILD_HEADERS_SEARCH_PATHS "\"/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/BuildHeaders\" \"/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/BuildHeaders/ALToastView\" \"/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/BuildHeaders/Facebook-iOS-SDK\" \"/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/BuildHeaders/Facebook-iOS-SDK/FacebookSDK\" \"/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/BuildHeaders/JASidePanels\" \"/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/BuildHeaders/uservoice-iphone-sdk\""    setenv PODS_HEADERS_SEARCH_PATHS "\"/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers\" \"/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/ALToastView\" \"/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/Facebook-iOS-SDK\" \"/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/Facebook-iOS-SDK/FacebookSDK\" \"/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/JASidePanels\" \"/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/uservoice-iphone-sdk\""    setenv PODS_PUBLIC_HEADERS_SEARCH_PATHS "\"/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers\" \"/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/ALToastView\" \"/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/Facebook-iOS-SDK\" \"/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/Facebook-iOS-SDK/FacebookSDK\" \"/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/JASidePanels\" \"/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/uservoice-iphone-sdk\""    setenv PODS_ROOT /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods    setenv PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR YES    setenv PRECOMP_DESTINATION_DIR /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/PrefixHeaders    setenv PRESERVE_DEAD_CODE_INITS_AND_TERMS NO    setenv PRIVATE_HEADERS_FOLDER_PATH HowWeMet.app/PrivateHeaders    setenv PRODUCT_NAME HowWeMet    setenv PRODUCT_SETTINGS_PATH /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HowWeMet-Info.plist    setenv PRODUCT_TYPE com.apple.product-type.application    setenv PROFILING_CODE NO    setenv PROJECT HowWeMet    setenv PROJECT_DERIVED_FILE_DIR /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/DerivedSources    setenv PROJECT_DIR /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet    setenv PROJECT_FILE_PATH /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet.xcodeproj    setenv PROJECT_NAME HowWeMet    setenv PROJECT_TEMP_DIR /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build    setenv PROJECT_TEMP_ROOT /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates    setenv PROVISIONING_PROFILE_REQUIRED YES    setenv PUBLIC_HEADERS_FOLDER_PATH HowWeMet.app/Headers    setenv RECURSIVE_SEARCH_PATHS_FOLLOW_SYMLINKS YES    setenv REMOVE_CVS_FROM_RESOURCES YES    setenv REMOVE_GIT_FROM_RESOURCES YES    setenv REMOVE_HG_FROM_RESOURCES YES    setenv REMOVE_SVN_FROM_RESOURCES YES    setenv RESOURCE_RULES_REQUIRED YES    setenv REZ_COLLECTOR_DIR /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/ResourceManagerResources    setenv REZ_OBJECTS_DIR /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/ResourceManagerResources/Objects    setenv REZ_SEARCH_PATHS "\"/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos\" "    setenv RUN_CLANG_STATIC_ANALYZER NO    setenv SCAN_ALL_SOURCE_FILES_FOR_INCLUDES NO    setenv SCRIPTS_FOLDER_PATH HowWeMet.app/Scripts    setenv SCRIPT_INPUT_FILE_COUNT 0    setenv SCRIPT_OUTPUT_FILE_COUNT 0    setenv SDKROOT /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk    setenv SDK_DIR /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk    setenv SDK_NAME iphoneos6.1    setenv SDK_PRODUCT_BUILD_VERSION 10B141    setenv SED /usr/bin/sed    setenv SEPARATE_STRIP NO    setenv SEPARATE_SYMBOL_EDIT NO    setenv SET_DIR_MODE_OWNER_GROUP YES    setenv SET_FILE_MODE_OWNER_GROUP NO    setenv SHALLOW_BUNDLE YES    setenv SHARED_DERIVED_FILE_DIR /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/DerivedSources    setenv SHARED_FRAMEWORKS_FOLDER_PATH HowWeMet.app/SharedFrameworks    setenv SHARED_PRECOMPS_DIR /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/PrecompiledHeaders    setenv SHARED_SUPPORT_FOLDER_PATH HowWeMet.app/SharedSupport    setenv SKIP_INSTALL NO    setenv SOURCE_ROOT /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet    setenv SRCROOT /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet    setenv STRINGS_FILE_OUTPUT_ENCODING binary    setenv STRIP_INSTALLED_PRODUCT YES    setenv STRIP_STYLE all    setenv SUPPORTED_DEVICE_FAMILIES "1 2"    setenv SUPPORTED_PLATFORMS "iphonesimulator iphoneos"    setenv SYMROOT /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products    setenv SYSTEM_ADMIN_APPS_DIR /Applications/Utilities    setenv SYSTEM_APPS_DIR /Applications    setenv SYSTEM_CORE_SERVICES_DIR /System/Library/CoreServices    setenv SYSTEM_DEMOS_DIR /Applications/Extras    setenv SYSTEM_DEVELOPER_APPS_DIR /Applications/Xcode.app/Contents/Developer/Applications    setenv SYSTEM_DEVELOPER_BIN_DIR /Applications/Xcode.app/Contents/Developer/usr/bin    setenv SYSTEM_DEVELOPER_DEMOS_DIR "/Applications/Xcode.app/Contents/Developer/Applications/Utilities/Built Examples"    setenv SYSTEM_DEVELOPER_DIR /Applications/Xcode.app/Contents/Developer    setenv SYSTEM_DEVELOPER_DOC_DIR "/Applications/Xcode.app/Contents/Developer/ADC Reference Library"    setenv SYSTEM_DEVELOPER_GRAPHICS_TOOLS_DIR "/Applications/Xcode.app/Contents/Developer/Applications/Graphics Tools"    setenv SYSTEM_DEVELOPER_JAVA_TOOLS_DIR "/Applications/Xcode.app/Contents/Developer/Applications/Java Tools"    setenv SYSTEM_DEVELOPER_PERFORMANCE_TOOLS_DIR "/Applications/Xcode.app/Contents/Developer/Applications/Performance Tools"    setenv SYSTEM_DEVELOPER_RELEASENOTES_DIR "/Applications/Xcode.app/Contents/Developer/ADC Reference Library/releasenotes"    setenv SYSTEM_DEVELOPER_TOOLS /Applications/Xcode.app/Contents/Developer/Tools    setenv SYSTEM_DEVELOPER_TOOLS_DOC_DIR "/Applications/Xcode.app/Contents/Developer/ADC Reference Library/documentation/DeveloperTools"    setenv SYSTEM_DEVELOPER_TOOLS_RELEASENOTES_DIR "/Applications/Xcode.app/Contents/Developer/ADC Reference Library/releasenotes/DeveloperTools"    setenv SYSTEM_DEVELOPER_USR_DIR /Applications/Xcode.app/Contents/Developer/usr    setenv SYSTEM_DEVELOPER_UTILITIES_DIR /Applications/Xcode.app/Contents/Developer/Applications/Utilities    setenv SYSTEM_DOCUMENTATION_DIR /Library/Documentation    setenv SYSTEM_LIBRARY_DIR /System/Library    setenv TARGETED_DEVICE_FAMILY 1    setenv TARGETNAME HowWeMet    setenv TARGET_BUILD_DIR /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos    setenv TARGET_NAME HowWeMet    setenv TARGET_TEMP_DIR /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build    setenv TEMP_DIR /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build    setenv TEMP_FILES_DIR /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build    setenv TEMP_FILE_DIR /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build    setenv TEMP_ROOT /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates    setenv TEST_AFTER_BUILD NO    setenv TOOLCHAINS com.apple.dt.toolchain.XcodeDefault    setenv UID 501    setenv UNLOCALIZED_RESOURCES_FOLDER_PATH HowWeMet.app    setenv UNSTRIPPED_PRODUCT NO    setenv USER williamtylerdavis    setenv USER_APPS_DIR /Users/williamtylerdavis/Applications    setenv USER_LIBRARY_DIR /Users/williamtylerdavis/Library    setenv USE_DYNAMIC_NO_PIC YES    setenv USE_HEADERMAP YES    setenv USE_HEADER_SYMLINKS NO    setenv VALIDATE_PRODUCT NO    setenv VALID_ARCHS "armv7 armv7s"    setenv VERBOSE_PBXCP NO    setenv VERSIONPLIST_PATH HowWeMet.app/version.plist    setenv VERSION_INFO_BUILDER williamtylerdavis    setenv VERSION_INFO_FILE HowWeMet_vers.c    setenv VERSION_INFO_STRING "\"@(#)PROGRAM:HowWeMet  PROJECT:HowWeMet-\""    setenv WRAPPER_EXTENSION app    setenv WRAPPER_NAME HowWeMet.app    setenv WRAPPER_SUFFIX .app    setenv XCODE_APP_SUPPORT_DIR /Applications/Xcode.app/Contents/Developer/Library/Xcode    setenv XCODE_PRODUCT_BUILD_VERSION 4H512    setenv XCODE_VERSION_ACTUAL 0461    setenv XCODE_VERSION_MAJOR 0400    setenv XCODE_VERSION_MINOR 0460    setenv YACC yacc    /bin/sh -c /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/Script-BCCE6AD7954A448DB3C586A3.sh36"A04B0F08-CB6F-402D-8F0B-4ACDB704898A-
+
+CProcessInfoPlistFile /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/Info.plist HowWeMet/HowWeMet-Info.plist
+s388454704.972061
+e388454704.977288
+r1
+xProcessInfoPlistFile
+x/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/Info.plist
+xHowWeMet/HowWeMet-Info.plist
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection36"Process HowWeMet/HowWeMet-Info.plist1bf1f8305927b741^9d2ffa305927b741^---0#0#0#-19%DVTDocumentLocation2@98"file://localhost/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HowWeMet-Info.plist0000000000000000^878"ProcessInfoPlistFile DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/Info.plist HowWeMet/HowWeMet-Info.plist    cd /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility HowWeMet/HowWeMet-Info.plist -genpkginfo /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/PkgInfo -expandbuildsettings -format binary -platform iphoneos -resourcerulesfile /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/ResourceRules.plist -o /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/Info.plist36"2D714CF1-34DC-4C4B-8CDF-5C7594559063-
+
+CProcessPCH /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/PrecompiledHeaders/HowWeMet-Prefix-cpdzvlxfvzhaiohkiifmmcebbdtd/HowWeMet-Prefix.pch.pth HowWeMet/HowWeMet-Prefix.pch normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s388454704.984841
+e388454705.260409
+r1
+xProcessPCH
+x/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/PrecompiledHeaders/HowWeMet-Prefix-cpdzvlxfvzhaiohkiifmmcebbdtd/HowWeMet-Prefix.pch.pth
+xHowWeMet/HowWeMet-Prefix.pch
+xnormal
+xarmv7s
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection39"Precompile HowWeMet/HowWeMet-Prefix.pchb83afc305927b741^82a942315927b741^---0#0#0#-19%DVTDocumentLocation2@98"file://localhost/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HowWeMet-Prefix.pch0000000000000000^3429"ProcessPCH DerivedData/Build/Intermediates/PrecompiledHeaders/HowWeMet-Prefix-cpdzvlxfvzhaiohkiifmmcebbdtd/HowWeMet-Prefix.pch.pth HowWeMet/HowWeMet-Prefix.pch normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c-header -arch armv7s -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -miphoneos-version-min=5.0 -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/HowWeMet.hmap -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/include -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/ALToastView -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/Facebook-iOS-SDK -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/Facebook-iOS-SDK/FacebookSDK -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/JASidePanels -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Headers/uservoice-iphone-sdk -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/DerivedSources/armv7s -I/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/DerivedSources -F/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos -F/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet --serialize-diagnostics /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/PrecompiledHeaders/HowWeMet-Prefix-cpdzvlxfvzhaiohkiifmmcebbdtd/HowWeMet-Prefix.pch.dia -c /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/HowWeMet/HowWeMet-Prefix.pch -o /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/PrecompiledHeaders/HowWeMet-Prefix-cpdzvlxfvzhaiohkiifmmcebbdtd/HowWeMet-Prefix.pch.pth -MMD -MT dependencies -MF /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/PrecompiledHeaders/HowWeMet-Prefix-cpdzvlxfvzhaiohkiifmmcebbdtd/HowWeMet-Prefix.pch.d36"68B923D0-8996-4E21-A116-AAA0E8CFBC06-
+
+CProcessPCH /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/HowWeMet/Index/PrecompiledHeaders/HowWeMet-Prefix-fdsndybmjbxrfwgnsfhpufsuzjyt_ast/HowWeMet-Prefix.pch.pth HowWeMet/HowWeMet-Prefix.pch normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.astbuilder
+r0
+
+CProcessProductPackaging "/Users/williamtylerdavis/Library/MobileDevice/Provisioning Profiles/8F2940FC-D7AD-4BC3-9424-E02950B17241.mobileprovision" /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/embedded.mobileprovision
+s388454708.760019
+e388454708.765632
+r1
+xProcessProductPackaging
+x/Users/williamtylerdavis/Library/MobileDevice/Provisioning Profiles/8F2940FC-D7AD-4BC3-9424-E02950B17241.mobileprovision
+x/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/embedded.mobileprovision
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection226"ProcessProductPackaging "/Users/williamtylerdavis/Library/MobileDevice/Provisioning Profiles/8F2940FC-D7AD-4BC3-9424-E02950B17241.mobileprovision" DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/embedded.mobileprovision57afc2345927b741^c102c4345927b741^---0#0#0#-19%DVTDocumentLocation2@149"file://localhost/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/embedded.mobileprovision0000000000000000^772"ProcessProductPackaging "/Users/williamtylerdavis/Library/MobileDevice/Provisioning Profiles/8F2940FC-D7AD-4BC3-9424-E02950B17241.mobileprovision" DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/embedded.mobileprovision    cd /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-productPackagingUtility "/Users/williamtylerdavis/Library/MobileDevice/Provisioning Profiles/8F2940FC-D7AD-4BC3-9424-E02950B17241.mobileprovision" -o /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app/embedded.mobileprovision36"A5AC46E1-2E78-4A74-86C2-2455F87B3E42-
+
+CProcessProductPackaging /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/Entitlements.plist /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/HowWeMet.xcent
+s388454708.789536
+e388454708.813209
+r1
+xProcessProductPackaging
+x/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/Entitlements.plist
+x/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/HowWeMet.xcent
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection236"ProcessProductPackaging /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/Entitlements.plist DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/HowWeMet.xcenta834ca345927b741^122ed0345927b741^---0#0#0#-19%DVTDocumentLocation2@161"file://localhost/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/HowWeMet.xcent000000000080d041^818"ProcessProductPackaging /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/Entitlements.plist DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/HowWeMet.xcent    cd /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-productPackagingUtility /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/Entitlements.plist -entitlements -format xml -o /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Intermediates/HowWeMet.build/Debug-iphoneos/HowWeMet.build/HowWeMet.xcent36"62CC2B25-B8A2-4CD1-969D-89C22BDEE824-
+
+CTouch /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app
+s388457749.382763
+e388457749.471183
+r1
+xTouch
+x/Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection114"Touch /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.appc70e62156527b741^419f78156527b741^---0#0#0#--441"Touch DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app    cd /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/DerivedData/Build/Products/Debug-iphoneos/HowWeMet.app36"96D6C357-312B-489E-93CF-9C95DDEA13A0-
+

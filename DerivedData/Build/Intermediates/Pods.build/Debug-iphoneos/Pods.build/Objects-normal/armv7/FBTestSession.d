@@ -1,0 +1,23 @@
+dependencies: \
+  /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Facebook-iOS-SDK/src/FBTestSession.m \
+  /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Facebook-iOS-SDK/src/FBTestSession.h \
+  /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Facebook-iOS-SDK/src/FBSession.h \
+  /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Facebook-iOS-SDK/src/FBTestSession+Internal.h \
+  /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Facebook-iOS-SDK/src/FBSessionManualTokenCachingStrategy.h \
+  /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Facebook-iOS-SDK/src/FBSessionTokenCachingStrategy.h \
+  /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Facebook-iOS-SDK/src/FBAccessTokenData.h \
+  /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Facebook-iOS-SDK/src/FBError.h \
+  /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Facebook-iOS-SDK/src/FBSession+Protected.h \
+  /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Facebook-iOS-SDK/src/FBSession+Internal.h \
+  /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Facebook-iOS-SDK/src/FBSystemAccountStoreAdapter.h \
+  /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Facebook-iOS-SDK/src/FBSessionInsightsState.h \
+  /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Facebook-iOS-SDK/src/FBRequest.h \
+  /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Facebook-iOS-SDK/src/FBRequestConnection.h \
+  /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Facebook-iOS-SDK/src/FBGraphObject.h \
+  /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Facebook-iOS-SDK/src/JSON/FBSBJSON.h \
+  /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Facebook-iOS-SDK/src/JSON/FBSBJsonParser.h \
+  /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Facebook-iOS-SDK/src/JSON/FBSBJsonBase.h \
+  /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Facebook-iOS-SDK/src/JSON/FBSBJsonWriter.h \
+  /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Facebook-iOS-SDK/src/FBGraphUser.h \
+  /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Facebook-iOS-SDK/src/FBGraphPlace.h \
+  /Users/williamtylerdavis/GitHub/HowWeMet-iOS/HowWeMet/Pods/Facebook-iOS-SDK/src/FBGraphLocation.h
