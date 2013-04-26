@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HWMGrayButton.h"
 
 @interface HWMHomeViewController : UIViewController
+@property (strong, nonatomic) IBOutlet UILabel *howWeMetLabel;
+@property (strong, nonatomic) IBOutlet HWMGrayButton *loginButton;
+- (IBAction)loginTapped:(id)sender;
 
 @end

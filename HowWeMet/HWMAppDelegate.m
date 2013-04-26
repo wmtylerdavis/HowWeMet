@@ -190,14 +190,20 @@ NSString *const FBSessionStateChangedNotification = @"HowWeMet.HowWeMet:FBSessio
                                          }];
 }
 
-- (BOOL)application:(UIApplication *)application
-            openURL:(NSURL *)url
-  sourceApplication:(NSString *)sourceApplication
-         annotation:(id)annotation {
-    // FBSample logic
-    // We need to handle URLs by passing them to FBSession in order for SSO authentication
-    // to work.
-    return [FBSession.activeSession handleOpenURL:url];
+//- (BOOL)application:(UIApplication *)application
+//            openURL:(NSURL *)url
+//  sourceApplication:(NSString *)sourceApplication
+//         annotation:(id)annotation {
+//    // FBSample logic
+//    // We need to handle URLs by passing them to FBSession in order for SSO authentication
+//    // to work.
+//    return [FBSession.activeSession handleOpenURL:url];
+//}
+
+//Parse Version
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    return [PFFacebookUtils handleOpenURL:url];
 }
 
 -(void)registerForPush
@@ -240,7 +246,14 @@ NSString *const FBSessionStateChangedNotification = @"HowWeMet.HowWeMet:FBSessio
     
     [Parse setApplicationId:@"VCqVVgdlh4jAVf5lXh7y6fTwUS1IBogmQG5NX5XV"
                   clientKey:@"EAc5fdh970PXGnoj52Ix23CW9T2mkW8QfG7VQTZ4"];
+    [PFFacebookUtils initializeFacebook];
+    
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
+    PFACL *defaultACL = [PFACL ACL];
+    [defaultACL setPublicReadAccess:NO];
+    [PFACL setDefaultACL:defaultACL withAccessForCurrentUser:YES];
+    
     // Register for remote notfications with the UA Library. This call is required.
     [self registerForPush];
     
@@ -262,19 +275,16 @@ NSString *const FBSessionStateChangedNotification = @"HowWeMet.HowWeMet:FBSessio
     //
     
     // determine what our main view controller should be.
-    // FBSample logic
-    // See if we have a valid token for the current state.
-    if (![self openSessionWithAllowLoginUI:NO]) {
-        // No? Display the login page.
-        //[self switchToWelcome];
+    if([PFUser currentUser]==nil)
+    {
+        [self switchToWelcome];
+    }
+    else {
         [self switchToFeeds];
     }
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(switchToFeeds) name:@"appSwitchToFeeds" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(switchToWelcome) name:@"appSwitchToWelcome" object:nil];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(switchToFeeds) name:@"userLoggedIn" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(switchToWelcome) name:@"userLoggedOut" object:nil];
     
     return YES;
 }
@@ -319,6 +329,14 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
     PFInstallation *currentInstallation = [PFInstallation currentInstallation];
     [currentInstallation setDeviceTokenFromData:deviceToken];
     [currentInstallation saveInBackground];
+    
+    [PFPush storeDeviceToken:deviceToken];
+    [PFPush subscribeToChannelInBackground:@"" target:self selector:@selector(subscribeFinished:error:)];
+    
+    if([PFUser currentUser]!=nil)
+    {
+        [PFPush subscribeToChannelInBackground:[NSString stringWithFormat:@"user%@", [[PFUser currentUser] objectId]]];
+    }
 }
 
 - (void)application:(UIApplication *)application

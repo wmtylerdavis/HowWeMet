@@ -9,5 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @interface HWMGrayButton : UIButton
+{
+    const NSString* _style;
+    float _textSize;
+}
+
+@property (nonatomic, copy) const NSString* style;
+@property (nonatomic, retain) NSNumber* objectID;
+@property (nonatomic, assign) float textSize;
 
 @end

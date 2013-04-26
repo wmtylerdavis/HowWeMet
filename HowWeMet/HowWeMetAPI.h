@@ -7,7 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Parse/Parse.h>
 
 @interface HowWeMetAPI : NSObject
+{
 
+}
+
+@property (strong,nonatomic) UIColor* redColor;
+
+-(UIColor*)redColor;
+
++(HowWeMetAPI*)sharedInstance;
 @end
