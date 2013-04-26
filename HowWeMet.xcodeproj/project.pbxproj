@@ -44,6 +44,15 @@
 		63EA4C2A1728C10D00DE0A97 /* HWMGrayButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EA4C291728C10D00DE0A97 /* HWMGrayButton.m */; };
 		63EA4C2D1728C40500DE0A97 /* bigGrayButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 63EA4C2B1728C40500DE0A97 /* bigGrayButton.png */; };
 		63EA4C2E1728C40500DE0A97 /* bigGrayButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 63EA4C2C1728C40500DE0A97 /* bigGrayButton@2x.png */; };
+		63EA4C3C172A01CA00DE0A97 /* DejalActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EA4C30172A01C900DE0A97 /* DejalActivityView.m */; };
+		63EA4C3D172A01CA00DE0A97 /* EGOImageButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EA4C33172A01CA00DE0A97 /* EGOImageButton.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		63EA4C3E172A01CA00DE0A97 /* EGOImageLoadConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EA4C36172A01CA00DE0A97 /* EGOImageLoadConnection.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		63EA4C3F172A01CA00DE0A97 /* EGOImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EA4C38172A01CA00DE0A97 /* EGOImageLoader.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		63EA4C40172A01CA00DE0A97 /* EGOImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EA4C3B172A01CA00DE0A97 /* EGOImageView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		63EA4C47172A03BC00DE0A97 /* HWMGenericDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EA4C46172A03BC00DE0A97 /* HWMGenericDataSource.m */; };
+		63EA4C4A172A048200DE0A97 /* HWMFacebookDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EA4C49172A048200DE0A97 /* HWMFacebookDataSource.m */; };
+		63EA4C4C172A060300DE0A97 /* FriendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63EA4C4B172A060300DE0A97 /* FriendCell.xib */; };
+		63EA4C4F172A0CCD00DE0A97 /* EGOCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EA4C4E172A0CCD00DE0A97 /* EGOCache.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E7CC1AD8828546C2A55E7368 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65D109CE516D48BFA4C12AD0 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -95,6 +104,23 @@
 		63EA4C291728C10D00DE0A97 /* HWMGrayButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWMGrayButton.m; sourceTree = "<group>"; };
 		63EA4C2B1728C40500DE0A97 /* bigGrayButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bigGrayButton.png; path = ../../bigGrayButton.png; sourceTree = "<group>"; };
 		63EA4C2C1728C40500DE0A97 /* bigGrayButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bigGrayButton@2x.png"; path = "../../bigGrayButton@2x.png"; sourceTree = "<group>"; };
+		63EA4C2F172A01C900DE0A97 /* DejalActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DejalActivityView.h; sourceTree = "<group>"; };
+		63EA4C30172A01C900DE0A97 /* DejalActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DejalActivityView.m; sourceTree = "<group>"; };
+		63EA4C32172A01CA00DE0A97 /* EGOImageButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGOImageButton.h; sourceTree = "<group>"; };
+		63EA4C33172A01CA00DE0A97 /* EGOImageButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGOImageButton.m; sourceTree = "<group>"; };
+		63EA4C35172A01CA00DE0A97 /* EGOImageLoadConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGOImageLoadConnection.h; sourceTree = "<group>"; };
+		63EA4C36172A01CA00DE0A97 /* EGOImageLoadConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGOImageLoadConnection.m; sourceTree = "<group>"; };
+		63EA4C37172A01CA00DE0A97 /* EGOImageLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGOImageLoader.h; sourceTree = "<group>"; };
+		63EA4C38172A01CA00DE0A97 /* EGOImageLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGOImageLoader.m; sourceTree = "<group>"; };
+		63EA4C3A172A01CA00DE0A97 /* EGOImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGOImageView.h; sourceTree = "<group>"; };
+		63EA4C3B172A01CA00DE0A97 /* EGOImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGOImageView.m; sourceTree = "<group>"; };
+		63EA4C45172A03BC00DE0A97 /* HWMGenericDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWMGenericDataSource.h; sourceTree = "<group>"; };
+		63EA4C46172A03BC00DE0A97 /* HWMGenericDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWMGenericDataSource.m; sourceTree = "<group>"; };
+		63EA4C48172A048200DE0A97 /* HWMFacebookDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWMFacebookDataSource.h; sourceTree = "<group>"; };
+		63EA4C49172A048200DE0A97 /* HWMFacebookDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWMFacebookDataSource.m; sourceTree = "<group>"; };
+		63EA4C4B172A060300DE0A97 /* FriendCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendCell.xib; sourceTree = "<group>"; };
+		63EA4C4D172A0CCD00DE0A97 /* EGOCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EGOCache.h; path = HowWeMet/EGOCache.h; sourceTree = "<group>"; };
+		63EA4C4E172A0CCD00DE0A97 /* EGOCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EGOCache.m; path = HowWeMet/EGOCache.m; sourceTree = "<group>"; };
 		65D109CE516D48BFA4C12AD0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CACD9BB5004C487297FA18FB /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -131,6 +157,8 @@
 		638C5B181722BB8100A44D71 = {
 			isa = PBXGroup;
 			children = (
+				63EA4C4D172A0CCD00DE0A97 /* EGOCache.h */,
+				63EA4C4E172A0CCD00DE0A97 /* EGOCache.m */,
 				6335A93E1727566E007C1508 /* iconBig.png */,
 				6335A93C17275666007C1508 /* iconSmall.png */,
 				638C5B2A1722BB8100A44D71 /* HowWeMet */,
@@ -176,6 +204,8 @@
 		638C5B2A1722BB8100A44D71 /* HowWeMet */ = {
 			isa = PBXGroup;
 			children = (
+				63EA4C45172A03BC00DE0A97 /* HWMGenericDataSource.h */,
+				63EA4C46172A03BC00DE0A97 /* HWMGenericDataSource.m */,
 				638C5B331722BB8100A44D71 /* HWMAppDelegate.h */,
 				638C5B341722BB8100A44D71 /* HWMAppDelegate.m */,
 				63B2B86A172323D200264B63 /* HWMLeftViewController.h */,
@@ -192,6 +222,8 @@
 				63EA4C2C1728C40500DE0A97 /* bigGrayButton@2x.png */,
 				638C5B3C1722BB8100A44D71 /* HWMViewController.h */,
 				638C5B3D1722BB8100A44D71 /* HWMViewController.m */,
+				63EA4C48172A048200DE0A97 /* HWMFacebookDataSource.h */,
+				63EA4C49172A048200DE0A97 /* HWMFacebookDataSource.m */,
 				63EA4C271728B68200DE0A97 /* Nibs */,
 				638C5B2B1722BB8100A44D71 /* Supporting Files */,
 			);
@@ -201,6 +233,11 @@
 		638C5B2B1722BB8100A44D71 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				63EA4C2F172A01C900DE0A97 /* DejalActivityView.h */,
+				63EA4C30172A01C900DE0A97 /* DejalActivityView.m */,
+				63EA4C31172A01C900DE0A97 /* EGOImageButton */,
+				63EA4C34172A01CA00DE0A97 /* EGOImageLoader */,
+				63EA4C39172A01CA00DE0A97 /* EGOImageView */,
 				638C5B2C1722BB8100A44D71 /* HowWeMet-Info.plist */,
 				638C5B2D1722BB8100A44D71 /* InfoPlist.strings */,
 				638C5B301722BB8100A44D71 /* main.m */,
@@ -219,8 +256,38 @@
 				63B2B8671723236D00264B63 /* HWMHomeViewController.xib */,
 				63B2B871172323DF00264B63 /* HWMRightViewController.xib */,
 				638C5B3F1722BB8100A44D71 /* HWMViewController.xib */,
+				63EA4C4B172A060300DE0A97 /* FriendCell.xib */,
 			);
 			name = Nibs;
+			sourceTree = "<group>";
+		};
+		63EA4C31172A01C900DE0A97 /* EGOImageButton */ = {
+			isa = PBXGroup;
+			children = (
+				63EA4C32172A01CA00DE0A97 /* EGOImageButton.h */,
+				63EA4C33172A01CA00DE0A97 /* EGOImageButton.m */,
+			);
+			path = EGOImageButton;
+			sourceTree = "<group>";
+		};
+		63EA4C34172A01CA00DE0A97 /* EGOImageLoader */ = {
+			isa = PBXGroup;
+			children = (
+				63EA4C35172A01CA00DE0A97 /* EGOImageLoadConnection.h */,
+				63EA4C36172A01CA00DE0A97 /* EGOImageLoadConnection.m */,
+				63EA4C37172A01CA00DE0A97 /* EGOImageLoader.h */,
+				63EA4C38172A01CA00DE0A97 /* EGOImageLoader.m */,
+			);
+			path = EGOImageLoader;
+			sourceTree = "<group>";
+		};
+		63EA4C39172A01CA00DE0A97 /* EGOImageView */ = {
+			isa = PBXGroup;
+			children = (
+				63EA4C3A172A01CA00DE0A97 /* EGOImageView.h */,
+				63EA4C3B172A01CA00DE0A97 /* EGOImageView.m */,
+			);
+			path = EGOImageView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,6 +355,7 @@
 				6335A93F1727566E007C1508 /* iconBig.png in Resources */,
 				63EA4C2D1728C40500DE0A97 /* bigGrayButton.png in Resources */,
 				63EA4C2E1728C40500DE0A97 /* bigGrayButton@2x.png in Resources */,
+				63EA4C4C172A060300DE0A97 /* FriendCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,6 +391,14 @@
 				63B2B872172323DF00264B63 /* HWMRightViewController.m in Sources */,
 				63EA4C261728AFE900DE0A97 /* HowWeMetAPI.m in Sources */,
 				63EA4C2A1728C10D00DE0A97 /* HWMGrayButton.m in Sources */,
+				63EA4C3C172A01CA00DE0A97 /* DejalActivityView.m in Sources */,
+				63EA4C3D172A01CA00DE0A97 /* EGOImageButton.m in Sources */,
+				63EA4C3E172A01CA00DE0A97 /* EGOImageLoadConnection.m in Sources */,
+				63EA4C3F172A01CA00DE0A97 /* EGOImageLoader.m in Sources */,
+				63EA4C40172A01CA00DE0A97 /* EGOImageView.m in Sources */,
+				63EA4C47172A03BC00DE0A97 /* HWMGenericDataSource.m in Sources */,
+				63EA4C4A172A048200DE0A97 /* HWMFacebookDataSource.m in Sources */,
+				63EA4C4F172A0CCD00DE0A97 /* EGOCache.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
