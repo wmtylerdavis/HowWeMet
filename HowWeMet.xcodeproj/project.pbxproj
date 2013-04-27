@@ -53,6 +53,11 @@
 		63EA4C4A172A048200DE0A97 /* HWMFacebookDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EA4C49172A048200DE0A97 /* HWMFacebookDataSource.m */; };
 		63EA4C4C172A060300DE0A97 /* FriendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63EA4C4B172A060300DE0A97 /* FriendCell.xib */; };
 		63EA4C4F172A0CCD00DE0A97 /* EGOCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EA4C4E172A0CCD00DE0A97 /* EGOCache.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		63EA4C51172B1DE200DE0A97 /* HWMRightSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63EA4C50172B1DE200DE0A97 /* HWMRightSectionHeader.xib */; };
+		63EA4C55172B29D800DE0A97 /* HWMAddStoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EA4C53172B29D800DE0A97 /* HWMAddStoryViewController.m */; };
+		63EA4C56172B29D800DE0A97 /* HWMAddStoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63EA4C54172B29D800DE0A97 /* HWMAddStoryViewController.xib */; };
+		63EA4C59172B451800DE0A97 /* HWMStoryDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EA4C58172B451800DE0A97 /* HWMStoryDataSource.m */; };
+		63EA4C5B172B45D500DE0A97 /* HWMStoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63EA4C5A172B45D500DE0A97 /* HWMStoryCell.xib */; };
 		E7CC1AD8828546C2A55E7368 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65D109CE516D48BFA4C12AD0 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -121,6 +126,13 @@
 		63EA4C4B172A060300DE0A97 /* FriendCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendCell.xib; sourceTree = "<group>"; };
 		63EA4C4D172A0CCD00DE0A97 /* EGOCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EGOCache.h; path = HowWeMet/EGOCache.h; sourceTree = "<group>"; };
 		63EA4C4E172A0CCD00DE0A97 /* EGOCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EGOCache.m; path = HowWeMet/EGOCache.m; sourceTree = "<group>"; };
+		63EA4C50172B1DE200DE0A97 /* HWMRightSectionHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HWMRightSectionHeader.xib; sourceTree = "<group>"; };
+		63EA4C52172B29D700DE0A97 /* HWMAddStoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWMAddStoryViewController.h; sourceTree = "<group>"; };
+		63EA4C53172B29D800DE0A97 /* HWMAddStoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWMAddStoryViewController.m; sourceTree = "<group>"; };
+		63EA4C54172B29D800DE0A97 /* HWMAddStoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HWMAddStoryViewController.xib; sourceTree = "<group>"; };
+		63EA4C57172B451800DE0A97 /* HWMStoryDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWMStoryDataSource.h; sourceTree = "<group>"; };
+		63EA4C58172B451800DE0A97 /* HWMStoryDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWMStoryDataSource.m; sourceTree = "<group>"; };
+		63EA4C5A172B45D500DE0A97 /* HWMStoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HWMStoryCell.xib; sourceTree = "<group>"; };
 		65D109CE516D48BFA4C12AD0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CACD9BB5004C487297FA18FB /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -204,8 +216,6 @@
 		638C5B2A1722BB8100A44D71 /* HowWeMet */ = {
 			isa = PBXGroup;
 			children = (
-				63EA4C45172A03BC00DE0A97 /* HWMGenericDataSource.h */,
-				63EA4C46172A03BC00DE0A97 /* HWMGenericDataSource.m */,
 				638C5B331722BB8100A44D71 /* HWMAppDelegate.h */,
 				638C5B341722BB8100A44D71 /* HWMAppDelegate.m */,
 				63B2B86A172323D200264B63 /* HWMLeftViewController.h */,
@@ -222,8 +232,14 @@
 				63EA4C2C1728C40500DE0A97 /* bigGrayButton@2x.png */,
 				638C5B3C1722BB8100A44D71 /* HWMViewController.h */,
 				638C5B3D1722BB8100A44D71 /* HWMViewController.m */,
+				63EA4C52172B29D700DE0A97 /* HWMAddStoryViewController.h */,
+				63EA4C53172B29D800DE0A97 /* HWMAddStoryViewController.m */,
+				63EA4C45172A03BC00DE0A97 /* HWMGenericDataSource.h */,
+				63EA4C46172A03BC00DE0A97 /* HWMGenericDataSource.m */,
 				63EA4C48172A048200DE0A97 /* HWMFacebookDataSource.h */,
 				63EA4C49172A048200DE0A97 /* HWMFacebookDataSource.m */,
+				63EA4C57172B451800DE0A97 /* HWMStoryDataSource.h */,
+				63EA4C58172B451800DE0A97 /* HWMStoryDataSource.m */,
 				63EA4C271728B68200DE0A97 /* Nibs */,
 				638C5B2B1722BB8100A44D71 /* Supporting Files */,
 			);
@@ -252,11 +268,14 @@
 		63EA4C271728B68200DE0A97 /* Nibs */ = {
 			isa = PBXGroup;
 			children = (
+				63EA4C54172B29D800DE0A97 /* HWMAddStoryViewController.xib */,
 				63B2B86C172323D200264B63 /* HWMLeftViewController.xib */,
 				63B2B8671723236D00264B63 /* HWMHomeViewController.xib */,
 				63B2B871172323DF00264B63 /* HWMRightViewController.xib */,
 				638C5B3F1722BB8100A44D71 /* HWMViewController.xib */,
 				63EA4C4B172A060300DE0A97 /* FriendCell.xib */,
+				63EA4C50172B1DE200DE0A97 /* HWMRightSectionHeader.xib */,
+				63EA4C5A172B45D500DE0A97 /* HWMStoryCell.xib */,
 			);
 			name = Nibs;
 			sourceTree = "<group>";
@@ -356,6 +375,9 @@
 				63EA4C2D1728C40500DE0A97 /* bigGrayButton.png in Resources */,
 				63EA4C2E1728C40500DE0A97 /* bigGrayButton@2x.png in Resources */,
 				63EA4C4C172A060300DE0A97 /* FriendCell.xib in Resources */,
+				63EA4C51172B1DE200DE0A97 /* HWMRightSectionHeader.xib in Resources */,
+				63EA4C56172B29D800DE0A97 /* HWMAddStoryViewController.xib in Resources */,
+				63EA4C5B172B45D500DE0A97 /* HWMStoryCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,6 +421,8 @@
 				63EA4C47172A03BC00DE0A97 /* HWMGenericDataSource.m in Sources */,
 				63EA4C4A172A048200DE0A97 /* HWMFacebookDataSource.m in Sources */,
 				63EA4C4F172A0CCD00DE0A97 /* EGOCache.m in Sources */,
+				63EA4C55172B29D800DE0A97 /* HWMAddStoryViewController.m in Sources */,
+				63EA4C59172B451800DE0A97 /* HWMStoryDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

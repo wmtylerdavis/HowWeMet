@@ -25,14 +25,16 @@
     
     self.tableView.delegate=self;
     //self.tableView.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"patternBg"]];
+    self.tableView.backgroundColor = [UIColor darkGrayColor];
+    //self.tableView.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"patternBg"]];
+    self.tableView.separatorStyle= UITableViewCellSeparatorStyleNone;
     self.tableView.separatorColor=[UIColor clearColor];
     
     // self.navigationController.navigationItem.hidesBackButton = YES;
     
+    HWMStoryDataSource* stories = [[HWMStoryDataSource alloc] init];
     
-    HWMFacebookDataSource* facebookFriends=[[HWMFacebookDataSource alloc] init];
-    
-    _dataSources=@[facebookFriends];
+    _dataSources=@[stories];
     [_dataSources makeObjectsPerformSelector:@selector(setDelegate:) withObject:self];
     self.tableView.dataSource=[_dataSources objectAtIndex:0];
     [self.tableView reloadData];
@@ -79,7 +81,7 @@
 -(void)facebookItemTapped:(NSIndexPath*)indexPath
 {
     // check if they are an existing user
-    id<FBGraphUser> friend = [[((HWMGenericDataSource*)self.tableView.dataSource) data] objectAtIndex:indexPath.row];
+    //id<FBGraphUser> friend = [[((HWMGenericDataSource*)self.tableView.dataSource) data] objectAtIndex:indexPath.row];
     
     //    socialNetCustomer.socialNetworkID = friend.id;
     
@@ -171,7 +173,7 @@
     //[DejalActivityView activityViewForView:self.view];
     [(HWMGenericDataSource*)self.tableView.dataSource refresh];
     
-    NSNumber* filterIndex=@([((UISegmentedControl*)sender) selectedSegmentIndex]);
+    //NSNumber* filterIndex=@([((UISegmentedControl*)sender) selectedSegmentIndex]);
     
 }
 

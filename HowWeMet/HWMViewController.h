@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 #import "HWMGenericDataSource.h"
+#import "HWMStoryDataSource.h"
 #import "HWMFacebookDataSource.h"
 
 @interface HWMViewController : UIViewController <UITableViewDelegate, HWMDataSourceDelegate, UISearchBarDelegate>
