@@ -58,6 +58,8 @@
 		63EA4C56172B29D800DE0A97 /* HWMAddStoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63EA4C54172B29D800DE0A97 /* HWMAddStoryViewController.xib */; };
 		63EA4C59172B451800DE0A97 /* HWMStoryDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EA4C58172B451800DE0A97 /* HWMStoryDataSource.m */; };
 		63EA4C5B172B45D500DE0A97 /* HWMStoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63EA4C5A172B45D500DE0A97 /* HWMStoryCell.xib */; };
+		63EA4C5E172C043900DE0A97 /* feedItemBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 63EA4C5C172C043800DE0A97 /* feedItemBg.png */; };
+		63EA4C5F172C043900DE0A97 /* feedItemBg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 63EA4C5D172C043800DE0A97 /* feedItemBg@2x.png */; };
 		E7CC1AD8828546C2A55E7368 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65D109CE516D48BFA4C12AD0 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -133,6 +135,8 @@
 		63EA4C57172B451800DE0A97 /* HWMStoryDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWMStoryDataSource.h; sourceTree = "<group>"; };
 		63EA4C58172B451800DE0A97 /* HWMStoryDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWMStoryDataSource.m; sourceTree = "<group>"; };
 		63EA4C5A172B45D500DE0A97 /* HWMStoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HWMStoryCell.xib; sourceTree = "<group>"; };
+		63EA4C5C172C043800DE0A97 /* feedItemBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = feedItemBg.png; sourceTree = "<group>"; };
+		63EA4C5D172C043800DE0A97 /* feedItemBg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "feedItemBg@2x.png"; sourceTree = "<group>"; };
 		65D109CE516D48BFA4C12AD0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CACD9BB5004C487297FA18FB /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -249,6 +253,8 @@
 		638C5B2B1722BB8100A44D71 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				63EA4C5C172C043800DE0A97 /* feedItemBg.png */,
+				63EA4C5D172C043800DE0A97 /* feedItemBg@2x.png */,
 				63EA4C2F172A01C900DE0A97 /* DejalActivityView.h */,
 				63EA4C30172A01C900DE0A97 /* DejalActivityView.m */,
 				63EA4C31172A01C900DE0A97 /* EGOImageButton */,
@@ -378,6 +384,8 @@
 				63EA4C51172B1DE200DE0A97 /* HWMRightSectionHeader.xib in Resources */,
 				63EA4C56172B29D800DE0A97 /* HWMAddStoryViewController.xib in Resources */,
 				63EA4C5B172B45D500DE0A97 /* HWMStoryCell.xib in Resources */,
+				63EA4C5E172C043900DE0A97 /* feedItemBg.png in Resources */,
+				63EA4C5F172C043900DE0A97 /* feedItemBg@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

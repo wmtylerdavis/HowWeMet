@@ -82,7 +82,7 @@
     {
         cell=[[[NSBundle mainBundle] loadNibNamed:@"HWMStoryCell" owner:tableView options:nil] objectAtIndex:0];
     }
-    [cell contentView].backgroundColor = [UIColor whiteColor];
+    [cell contentView].backgroundColor = [UIColor clearColor];
     
     EGOImageButton* profilePic=(EGOImageButton*)[cell viewWithTag:1];
     UILabel* nameLabel=(UILabel*)[cell viewWithTag:2];

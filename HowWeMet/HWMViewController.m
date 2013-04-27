@@ -7,6 +7,7 @@
 //
 
 #import "HWMViewController.h"
+#import "HWMAddStoryViewController.h"
 
 @interface HWMViewController ()
 
@@ -32,13 +33,19 @@
     
     // self.navigationController.navigationItem.hidesBackButton = YES;
     
-    HWMStoryDataSource* stories = [[HWMStoryDataSource alloc] init];
+    _dataSource =[[HWMStoryDataSource alloc] init];
+    _dataSource.delegate=self;
     
-    _dataSources=@[stories];
-    [_dataSources makeObjectsPerformSelector:@selector(setDelegate:) withObject:self];
-    self.tableView.dataSource=[_dataSources objectAtIndex:0];
+    self.tableView.dataSource=_dataSource;
     [self.tableView reloadData];
-    [(HWMGenericDataSource*)self.tableView.dataSource refresh];
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [_dataSource refresh];
+    
+    if([self.tableView indexPathForSelectedRow])
+        [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:NO];
 }
 
 - (void)didReceiveMemoryWarning
@@ -91,6 +98,16 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //hmmm
+    NSDictionary* friend = [_dataSource.data objectAtIndex:indexPath.row];
+    NSString* fbAvatarURL=[NSString stringWithFormat:@"http://graph.facebook.com/%@/picture", [friend objectForKey:@"id"]];
+    // Create the object.
+    PFObject *meet = [PFObject objectWithClassName:@"Meet"];
+    [meet setObject:fbAvatarURL forKey:@"AvatarURL"];
+    [meet setObject:[friend objectForKey:@"name"] forKey:@"Name"];
+    
+    HWMAddStoryViewController* storyController = [[HWMAddStoryViewController alloc] init];
+    storyController.meet = meet;
+    [self.navigationController pushViewController:storyController animated:YES];
 }
 
 -(void)dataSource:(HWMGenericDataSource *)dataSource dataServiceUnavailable:(BOOL)unavailable reason:(NSString *)reason
@@ -154,27 +171,6 @@
 //    self.tableView.dataSource=_searchSource;
 //    [self.tableView reloadData];
 //    [_searchSource refresh];
-}
-
--(void)dealloc
-{
-    self.tableView=nil;
-    
-    [_dataSources makeObjectsPerformSelector:@selector(setDelegate:) withObject:nil];
-    _dataSources=nil;
-}
-
-- (IBAction)filterBarChanged:(id)sender {
-    [self toggleNoDataMessage:NO message:nil];
-    
-    self.tableView.dataSource=[_dataSources objectAtIndex:[((UISegmentedControl*)sender) selectedSegmentIndex]];
-    [self.tableView reloadData];
-    
-    //[DejalActivityView activityViewForView:self.view];
-    [(HWMGenericDataSource*)self.tableView.dataSource refresh];
-    
-    //NSNumber* filterIndex=@([((UISegmentedControl*)sender) selectedSegmentIndex]);
-    
 }
 
 -(void)inviteFacebookFriend: (NSString*) friend

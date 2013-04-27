@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 #import "EGOImageView.h"
 #import "EGOImageButton.h"
 
@@ -17,8 +18,9 @@
 @property (strong, nonatomic) IBOutlet UILabel *friendRelationship;
 @property (strong, nonatomic) IBOutlet UILabel *timeLabel;
 @property (strong, nonatomic) IBOutlet UITextView *howWeMetStory;
-
 @property (strong, nonatomic) IBOutlet EGOImageButton *howWeMetImage;
+
+@property (nonatomic, retain) PFObject* meet;
 
 - (IBAction)addImageTapped:(id)sender;
 

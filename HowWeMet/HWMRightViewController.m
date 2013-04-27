@@ -29,13 +29,19 @@
     //self.tableView.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"patternBg"]];
     self.tableView.separatorColor=[UIColor clearColor];
     
-    HWMFacebookDataSource* facebookFriends=[[HWMFacebookDataSource alloc] init];
-    
-    _dataSources=@[facebookFriends];
-    [_dataSources makeObjectsPerformSelector:@selector(setDelegate:) withObject:self];
-    self.tableView.dataSource=[_dataSources objectAtIndex:0];
+    _dataSource =[[HWMFacebookDataSource alloc] init];
+    _dataSource.delegate=self;
+
+    self.tableView.dataSource=_dataSource;
     [self.tableView reloadData];
-    [(HWMGenericDataSource*)self.tableView.dataSource refresh];
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [_dataSource refresh];
+    
+    if([self.tableView indexPathForSelectedRow])
+        [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:NO];
 }
 
 - (void)didReceiveMemoryWarning
@@ -174,24 +180,6 @@
     //    self.tableView.dataSource=_searchSource;
     //    [self.tableView reloadData];
     //    [_searchSource refresh];
-}
-
--(void)dealloc
-{
-    self.tableView=nil;
-    
-    [_dataSources makeObjectsPerformSelector:@selector(setDelegate:) withObject:nil];
-    _dataSources=nil;
-}
-
-- (IBAction)filterBarChanged:(id)sender {
-    [self toggleNoDataMessage:NO message:nil];
-    
-    self.tableView.dataSource=[_dataSources objectAtIndex:[((UISegmentedControl*)sender) selectedSegmentIndex]];
-    [self.tableView reloadData];
-    
-    //[DejalActivityView activityViewForView:self.view];
-    [(HWMGenericDataSource*)self.tableView.dataSource refresh];
 }
 
 -(void)inviteFacebookFriend: (NSString*) friend

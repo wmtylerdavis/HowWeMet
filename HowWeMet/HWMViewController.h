@@ -17,9 +17,10 @@
     // data sources for each tab
     // featured, facebook, twitter, search
     
-    NSArray* _dataSources;
+    //NSArray* _dataSources;
 }
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, retain) HWMStoryDataSource* dataSource;
 
 @end

@@ -14,6 +14,8 @@
 
 @implementation HWMAddStoryViewController
 
+@synthesize meet = _meet;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -27,6 +29,11 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [self refresh];
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,6 +51,33 @@
     [self setHowWeMetImage:nil];
     [super viewDidUnload];
 }
+
+-(void)setMeet:(PFObject *)meet
+{
+    _meet = meet;
+    
+}
+
+-(PFObject*)meet
+{
+    return _meet;
+}
+
+-(void)refresh
+{
+    if(self.meet==nil) return;
+    
+    PFFile* imgFileData=[self.meet objectForKey:@"Photo"];
+    [imgFileData getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+//        UIImage* meetImage=[UIImage imageWithData:data];
+//        self.howWeMetImage.imageView = meetImage;
+    }];
+    
+    self.friendName.text=[self.meet objectForKey:@"Name"];
+    [self.friendAvatar setImageURL:[self.meet objectForKey:@"AvatarURL"]];
+    
+}
+
 - (IBAction)addImageTapped:(id)sender {
 }
 @end

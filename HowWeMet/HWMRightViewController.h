@@ -13,12 +13,10 @@
 
 @interface HWMRightViewController : UIViewController<UITableViewDelegate, HWMDataSourceDelegate, UISearchBarDelegate>
 {
-    // data sources for each tab
-    // featured, facebook, twitter, search
-    
-    NSArray* _dataSources;
+
 }
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, retain) HWMFacebookDataSource* dataSource;
 
 @end
