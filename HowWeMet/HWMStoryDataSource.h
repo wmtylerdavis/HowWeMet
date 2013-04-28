@@ -12,6 +12,8 @@
 @interface HWMStoryDataSource : HWMGenericDataSource
 {
     NSDictionary* _stories;
+    //NSArray* _stories;
+    NSMutableArray* _facebookData;
 }
 
 @end

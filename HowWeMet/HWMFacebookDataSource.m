@@ -89,14 +89,14 @@
     [profilePic setImageURL:[NSURL URLWithString:fbAvatarURL]];
     [profilePic removeTarget:nil action:NULL forControlEvents:UIControlEventAllTouchEvents];
     [nameLabel setText:[NSString stringWithFormat:@"%@ %@", [fbFriend objectForKey:@"first_name"], [fbFriend objectForKey:@"last_name"]]];
-    [nameLabel setFont:[UIFont fontWithName:@"OpenSans-Bold" size:14.0f]];
+    [nameLabel setFont:[UIFont fontWithName:@"Chalkduster" size:12.0f]];
     
     if([[fbFriend objectForKey:@"installed"] isEqualToNumber:[NSNumber numberWithBool:YES]])
         [followersLabel setText:@"has HowWeMet"];
     else
-        [followersLabel setText:@"doesn't have HowWeMet, invite them!"];
+        [followersLabel setText:@"Invite and connect!"];
     
-    [followersLabel setFont:[UIFont fontWithName:@"OpenSans" size:10.0f]];
+    [followersLabel setFont:[UIFont fontWithName:@"Chalkduster" size:10.0f]];
     
     return cell;
 }

@@ -35,15 +35,7 @@
         }
         else
         {
-            _data=[result objectForKey:@"data"];
-            
-            // DUBBLE SORT
-            _data=[_data sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
-                return [[obj2 objectForKey:@"name"] localizedCaseInsensitiveCompare:[obj1 objectForKey:@"name"]];
-            }];
-            _data=[_data sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
-                return NSOrderedDescending;
-                }];
+            _facebookData = [result objectForKey:@"data"];
             
             //something with parse
             PFQuery* storyQuery=[PFQuery queryWithClassName:@"Meet"];
@@ -52,11 +44,31 @@
             [storyQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
                 
                 _stories=[self indexKeyedDictionaryFromArray:objects];
-//                _stories = [NSArray arrayWithArray:objects];
+                
+                for (long i = 0; i < _facebookData.count; ++i) {
+                    if ([_stories objectForKey:[[_facebookData objectAtIndex:i] objectForKey:@"id"]])
+                    {
+                        //no way this works
+                        [_facebookData setObject:[_stories objectForKey:[_facebookData[i] objectForKey:@"id"]] atIndexedSubscript:i];
+                        
+                        //[_stories objectForKey:[_facebookData objectAtIndex:i] objectForKey:@"id"];
+                    }
+                }
+                
+                _data=_facebookData;
+                // DUBBLE SORT
+                _data=[_data sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+                    return [[obj2 objectForKey:@"name"] localizedCaseInsensitiveCompare:[obj1 objectForKey:@"name"]];
+                }];
+                _data=[_data sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+                    return NSOrderedDescending;
+                }];
+                NSLog(@"%@", _data);
+                
+                _origData=_data;
+                [self fireDataCompletedDelegate];
             }];
-            
-            _origData=_data;
-            [self fireDataCompletedDelegate];
+
         }
     }];
 }
@@ -72,37 +84,61 @@
 
 -(float)measureCell:(NSIndexPath *)cellPath
 {
-    return 200.0f;
+    if ([[_data objectAtIndex:cellPath.row] objectForKey:@"FacebookID"]) {
+        return 205.0f;
+    }
+    return 101.0f;
 }
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell* cell=[tableView dequeueReusableCellWithIdentifier:@"HWMStoryCell"];
-    if(cell==nil)
-    {
-        cell=[[[NSBundle mainBundle] loadNibNamed:@"HWMStoryCell" owner:tableView options:nil] objectAtIndex:0];
-    }
-    [cell contentView].backgroundColor = [UIColor clearColor];
-    
-    EGOImageButton* profilePic=(EGOImageButton*)[cell viewWithTag:1];
-    UILabel* nameLabel=(UILabel*)[cell viewWithTag:2];
-    UILabel* storyLabel=(UILabel*)[cell viewWithTag:3];
-    
     NSDictionary* fbFriend=[_data objectAtIndex:indexPath.row];
+    UITableViewCell* cell;
     
-    NSString* fbAvatarURL=[NSString stringWithFormat:@"http://graph.facebook.com/%@/picture", [fbFriend objectForKey:@"id"]];
-    
-    [profilePic setImageURL:[NSURL URLWithString:fbAvatarURL]];
-    [profilePic removeTarget:nil action:NULL forControlEvents:UIControlEventAllTouchEvents];
-    [nameLabel setText:[NSString stringWithFormat:@"%@ %@", [fbFriend objectForKey:@"first_name"], [fbFriend objectForKey:@"last_name"]]];
-    [nameLabel setFont:[UIFont fontWithName:@"Chalkduster" size:14.0f]];
-    [storyLabel setFont:[UIFont fontWithName:@"OpenSans" size:10.0f]];
-    
-    if ([_stories objectForKey:[fbFriend objectForKey:@"id"]]) {
-        [storyLabel setText:@"This worked!"];
+    if ([fbFriend objectForKey:@"FacebookID"]) {
+        cell=[tableView dequeueReusableCellWithIdentifier:@"HWMStoryCell"];
+        if(cell==nil)
+        {
+            cell=[[[NSBundle mainBundle] loadNibNamed:@"HWMStoryCell" owner:tableView options:nil] objectAtIndex:0];
+        }
+        [cell contentView].backgroundColor = [UIColor clearColor];
+        
+        EGOImageButton* profilePic=(EGOImageButton*)[cell viewWithTag:1];
+        UILabel* nameLabel=(UILabel*)[cell viewWithTag:2];
+        UILabel* storyLabel=(UILabel*)[cell viewWithTag:3];
+        NSString* avatarURL=[fbFriend objectForKey:@"AvatarURL"];
+        
+        [profilePic setImageURL:[NSURL URLWithString:avatarURL]];
+        [profilePic removeTarget:nil action:NULL forControlEvents:UIControlEventAllTouchEvents];
+        
+        [nameLabel setText:[NSString stringWithFormat:@"%@", [fbFriend objectForKey:@"Name"]]];
+        [nameLabel setFont:[UIFont fontWithName:@"Chalkduster" size:14.0f]];
+        [storyLabel setFont:[UIFont fontWithName:@"OpenSans" size:10.0f]];
+        storyLabel.lineBreakMode = UILineBreakModeWordWrap | UILineBreakModeTailTruncation;
+        storyLabel.numberOfLines = 0;
+        [storyLabel setText:[fbFriend objectForKey:@"Story"]];
     }
+    
     else {
-        [storyLabel setText:@"What what!"];
+        cell=[tableView dequeueReusableCellWithIdentifier:@"FriendCell"];
+        if(cell==nil)
+        {
+            cell=[[[NSBundle mainBundle] loadNibNamed:@"FriendCell" owner:tableView options:nil] objectAtIndex:0];
+        }
+        [cell contentView].backgroundColor = [UIColor clearColor];
+        
+        NSString* fbAvatarURL=[NSString stringWithFormat:@"http://graph.facebook.com/%@/picture", [fbFriend objectForKey:@"id"]];
+        
+        EGOImageButton* profilePic=(EGOImageButton*)[cell viewWithTag:10];
+        UILabel* nameLabel=(UILabel*)[cell viewWithTag:1];
+        UILabel* storyLabel=(UILabel*)[cell viewWithTag:2];
+        
+        [profilePic setImageURL:[NSURL URLWithString:fbAvatarURL]];
+        [profilePic removeTarget:nil action:NULL forControlEvents:UIControlEventAllTouchEvents];
+        [nameLabel setText:[NSString stringWithFormat:@"%@ %@", [fbFriend objectForKey:@"first_name"], [fbFriend objectForKey:@"last_name"]]];
+        [nameLabel setFont:[UIFont fontWithName:@"Chalkduster" size:14.0f]];
+        [storyLabel setFont:[UIFont fontWithName:@"OpenSans" size:10.0f]];
+        [storyLabel setText:@"No story yet. Click to add one."];
     }
     
     return cell;
@@ -115,7 +151,9 @@
     
     NSMutableDictionary *mutableDictionary = [[NSMutableDictionary alloc] init];
     for (objectInstance in array)
-        [mutableDictionary setObject:objectInstance forKey:[objectInstance valueForKey:@"facebookID"]];
+    {
+        [mutableDictionary setObject:objectInstance forKey:[objectInstance valueForKey:@"FacebookID"]];
+    }
     
     return (NSDictionary *) mutableDictionary;
 }

@@ -98,12 +98,19 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //hmmm
+    PFObject *meet;
     NSDictionary* friend = [_dataSource.data objectAtIndex:indexPath.row];
-    NSString* fbAvatarURL=[NSString stringWithFormat:@"http://graph.facebook.com/%@/picture", [friend objectForKey:@"id"]];
     // Create the object.
-    PFObject *meet = [PFObject objectWithClassName:@"Meet"];
-    [meet setObject:fbAvatarURL forKey:@"AvatarURL"];
-    [meet setObject:[friend objectForKey:@"name"] forKey:@"Name"];
+    if ([friend objectForKey:@"FacebookID"]) {
+        meet = (PFObject*)friend;
+    }
+    else {
+        meet = [PFObject objectWithClassName:@"Meet"];
+        NSString* fbAvatarURL=[NSString stringWithFormat:@"http://graph.facebook.com/%@/picture", [friend objectForKey:@"id"]];
+        [meet setObject:[friend objectForKey:@"id"] forKey:@"FacebookID"];
+        [meet setObject:fbAvatarURL forKey:@"AvatarURL"];
+        [meet setObject:[friend objectForKey:@"name"] forKey:@"Name"];
+    }
     
     HWMAddStoryViewController* storyController = [[HWMAddStoryViewController alloc] init];
     storyController.meet = meet;

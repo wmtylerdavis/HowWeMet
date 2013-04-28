@@ -10,8 +10,20 @@
 #import <Parse/Parse.h>
 #import "EGOImageView.h"
 #import "EGOImageButton.h"
+#import "HWMGrayButton.h"
+#import "TDDatePickerController.h"
 
-@interface HWMAddStoryViewController : UIViewController
+@interface HWMAddStoryViewController : UIViewController <UITextFieldDelegate, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate,
+TDDatePickerControllerDelegate,EGOImageLoaderObserver>
+{
+    UIToolbar* accessoryBar;
+    BOOL _isPrivate;
+    BOOL dateTimePicked;
+    NSDate* selectedDate;
+    TDDatePickerController* datePickerView;
+    UITapGestureRecognizer *tap;
+    NSDateFormatter *dateFormatter;
+}
 
 @property (strong, nonatomic) IBOutlet EGOImageView *friendAvatar;
 @property (strong, nonatomic) IBOutlet UILabel *friendName;
@@ -19,11 +31,19 @@
 @property (strong, nonatomic) IBOutlet UILabel *timeLabel;
 @property (strong, nonatomic) IBOutlet UITextView *howWeMetStory;
 @property (strong, nonatomic) IBOutlet EGOImageButton *howWeMetImage;
+@property (strong, nonatomic) IBOutlet HWMGrayButton *createStoryButton;
+@property (strong, nonatomic) IBOutlet HWMGrayButton *privacyButton;
 
 @property (nonatomic, retain) PFObject* meet;
 
+- (IBAction)relationshipButtonTapped:(id)sender;
+- (IBAction)whenYouMetTap:(id)sender;
+
 - (IBAction)addImageTapped:(id)sender;
 
+- (IBAction)privacyTapped:(id)sender;
+
+- (IBAction)createStoryTapped:(id)sender;
 
 
 @end
