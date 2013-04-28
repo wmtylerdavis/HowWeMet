@@ -24,8 +24,12 @@
     //    [testObject setObject:@"bar" forKey:@"foo"];
     //    [testObject save];
     
+    self.headerCell.backgroundColor = [[HowWeMetAPI sharedInstance] redColor];
+    self.headerLabel.font = [UIFont fontWithName:@"Chalkduster" size:16.0];
+    self.headerLabel.text = @"Friends";
     self.tableView.delegate=self;
-    self.tableView.backgroundColor = [UIColor lightGrayColor];
+    self.tableView.backgroundColor = [UIColor darkGrayColor];
+    self.searchBar.tintColor = [[HowWeMetAPI sharedInstance] redColor];
     //self.tableView.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"patternBg"]];
     self.tableView.separatorColor=[UIColor clearColor];
     
@@ -34,7 +38,38 @@
 
     self.tableView.dataSource=_dataSource;
     [self.tableView reloadData];
+    
+    self.searchBar.delegate = self;
+    
+    tap = [[UITapGestureRecognizer alloc]
+           initWithTarget:self
+           action:@selector(keyboardWillHide:)];
+    
+    [self.view addGestureRecognizer:tap];
 }
+
+- (void)registerForKeyboardNotifications
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+    
+}
+
+- (void)keyboardWillShow:(NSNotification *)notification {
+    NSDictionary* info = [notification userInfo];
+    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    [UIView animateWithDuration:0.3f animations:^{
+        self.view.frame=CGRectMake(self.view.frame.origin.x, -kbSize.height, self.view.frame.size.width, self.view.frame.size.height);
+    }];
+}
+
+- (void)keyboardWillHide:(NSNotification *)notification {
+    [UIView animateWithDuration:0.3f animations:^{
+        self.view.frame=CGRectMake(self.view.frame.origin.x, 0, self.view.frame.size.width, self.view.frame.size.height);
+    }];
+    [self.view endEditing:YES];
+}
+
 
 -(void)viewDidAppear:(BOOL)animated
 {
@@ -67,26 +102,26 @@
 
 -(float)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 40.0f;
+    return 0.0f;
 }
 
--(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    UIView* header=[[[NSBundle mainBundle] loadNibNamed:@"HWMRightSectionHeader" owner:self options:nil] objectAtIndex:0];
-    header.autoresizingMask = YES;
-    UIImageView* image=(UIImageView*)[header viewWithTag:2];
-    UILabel* label=(UILabel*)[header viewWithTag:1];
-    
-    [image setContentMode:UIViewContentModeCenter];
-    [label setFont:[UIFont fontWithName:@"Chalkduster" size:17.0f]];
-    label.textColor = [UIColor whiteColor];
-    //[image setImage:[UIImage imageNamed:@"tabBarProfile"]];
-    
-    header.backgroundColor = [[HowWeMetAPI sharedInstance] redColor];
-    label.text=@"Friends";
-    
-    return header;
-}
+//-(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+//{
+//    UIView* header=[[[NSBundle mainBundle] loadNibNamed:@"HWMRightSectionHeader" owner:self options:nil] objectAtIndex:0];
+//    header.autoresizingMask = YES;
+//    UIImageView* image=(UIImageView*)[header viewWithTag:2];
+//    UILabel* label=(UILabel*)[header viewWithTag:1];
+//    
+//    [image setContentMode:UIViewContentModeCenter];
+//    [label setFont:[UIFont fontWithName:@"Chalkduster" size:17.0f]];
+//    label.textColor = [UIColor whiteColor];
+//    //[image setImage:[UIImage imageNamed:@"tabBarProfile"]];
+//    
+//    header.backgroundColor = [[HowWeMetAPI sharedInstance] redColor];
+//    label.text=@"Friends";
+//    
+//    return header;
+//}
 
 -(void)goToFriendProfile:(NSNumber*)customerID
 {
@@ -148,10 +183,12 @@
 -(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
     //
+    [_dataSource setFilter:searchText];
 }
 
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
+    [self.view endEditing:YES];
     //    if(_searchSource==nil)
     //    {
     //        _searchSource=[[HMTProfileListDataSource alloc] init];
@@ -198,5 +235,11 @@
     
 }
 
+- (void)viewDidUnload {
+    [self setHeaderCell:nil];
+    [self setHeaderLabel:nil];
+    [self setSearchBar:nil];
+    [super viewDidUnload];
+}
 @end
 

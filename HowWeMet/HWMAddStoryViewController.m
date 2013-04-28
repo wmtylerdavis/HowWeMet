@@ -8,6 +8,16 @@
 
 #import "HWMAddStoryViewController.h"
 #import "HowWeMetAPI.h"
+#import <AVFoundation/AVFoundation.h>
+#import <MobileCoreServices/UTCoreTypes.h>
+#import <MediaPlayer/MPMoviePlayerController.h>
+#import <MediaPlayer/MPMoviePlayerViewController.h>
+
+const int kAddEvidenceTypePhotoRoll=0;
+const int kAddEvidenceTypeCamera=1;
+NSString* const kEvidenceActionSheetPickFromPhotoRoll=@"Pick from Photo Roll";
+NSString* const kEvidenceActionSheetTakePhotoOrVideo=@"Take Photo or Video";
+NSString* const kEvidenceActionSheetCancel=@"Cancel";
 
 @interface HWMAddStoryViewController ()
 
@@ -177,7 +187,87 @@
     
 }
 
+-(void)imagePickerActionSheet:(UIActionSheet*)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    NSString* buttonText=[actionSheet buttonTitleAtIndex:buttonIndex];
+    if([buttonText isEqualToString:kEvidenceActionSheetPickFromPhotoRoll])
+    {
+        self.imageType=kAddEvidenceTypePhotoRoll;
+    }
+    else if([buttonText isEqualToString:kEvidenceActionSheetTakePhotoOrVideo])
+    {
+        self.imageType=kAddEvidenceTypeCamera;
+    }
+    else if (buttonIndex == [actionSheet cancelButtonIndex])
+    {
+        return;
+    }
+
+    [self showImagePicker];
+   
+}
+
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    NSString* mediaType = [info objectForKey: UIImagePickerControllerMediaType];
+    
+    if(CFStringCompare((__bridge CFStringRef)mediaType, kUTTypeImage, 0) == kCFCompareEqualTo) {
+        
+        resizedImage=[info objectForKey:UIImagePickerControllerOriginalImage];
+        [self.howWeMetImage setImage:resizedImage forState:UIControlStateNormal];
+        
+        [[picker presentingViewController] dismissViewControllerAnimated:YES completion:^(void) {
+            if(self.imageType!=kAddEvidenceTypePhotoRoll) // don't duplicate images in the photo roll
+                UIImageWriteToSavedPhotosAlbum([info objectForKey:UIImagePickerControllerOriginalImage], nil, nil, nil);
+        }];
+    }
+}
+
+-(void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    switch(actionSheet.tag)
+    {
+        default:
+        case 0:
+            [self imagePickerActionSheet:actionSheet didDismissWithButtonIndex:buttonIndex];
+            break;
+    }
+}
+
+-(void) showImagePicker
+{
+    UIImagePickerController* imagePicker=[[UIImagePickerController alloc] init];
+    
+    [imagePicker setDelegate:self];
+    imagePicker.allowsEditing=YES;
+    
+    if(self.imageType==kAddEvidenceTypePhotoRoll)
+    {
+        [imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+        imagePicker.mediaTypes =[[NSArray alloc] initWithObjects:(NSString*)kUTTypeImage,nil];
+    }
+    else if(self.imageType==kAddEvidenceTypeCamera)
+    {
+        [imagePicker setSourceType:UIImagePickerControllerSourceTypeCamera];
+        imagePicker.mediaTypes =[[NSArray alloc] initWithObjects:(NSString*)kUTTypeImage, nil];
+    }
+    
+    [self presentViewController:imagePicker animated:YES completion:^(void){
+    }];
+
+}
+
+
 - (IBAction)addImageTapped:(id)sender {
+    
+    UIActionSheet* actionSheet;
+    
+    if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
+        actionSheet=[[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:kEvidenceActionSheetTakePhotoOrVideo, kEvidenceActionSheetPickFromPhotoRoll, nil];
+    else
+        actionSheet=[[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:kEvidenceActionSheetPickFromPhotoRoll, nil];
+    
+    [actionSheet showInView:[self.navigationController view]];
 }
 
 - (IBAction)privacyTapped:(id)sender {
@@ -202,6 +292,23 @@
         [[[UIAlertView alloc] initWithTitle:nil message:@"Without a date it's like it never happened..." delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Okay", nil] show];
         return;
     }
+    
+    if(resizedImage!=nil)
+    {
+        NSData* imageData=UIImageJPEGRepresentation(resizedImage, 0.8);
+        PFFile* imageFile=[PFFile fileWithName:[NSString stringWithFormat:@"%@.jpg", [[NSProcessInfo processInfo] globallyUniqueString]] data:imageData];
+        
+        [imageFile saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            [newMeet setObject:imageFile forKey:@"Photo"];
+            [self triggerSave:newMeet];
+        } progressBlock:^(int percentDone) {
+        }];
+    }
+    
+}
+
+-(void)triggerSave:(PFObject*)newMeet
+{
     [newMeet setObject:[self.meet objectForKey:@"FacebookID"]  forKey:@"FacebookID"];
     [newMeet setObject:[PFUser currentUser] forKey:@"Owner"];
     [newMeet setObject:self.howWeMetStory.text forKey:@"Story"];
@@ -209,7 +316,6 @@
     {
         newMeet.ACL=[PFACL ACLWithUser:[PFUser currentUser]];
     }
-    
     [newMeet saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if(succeeded)
         {

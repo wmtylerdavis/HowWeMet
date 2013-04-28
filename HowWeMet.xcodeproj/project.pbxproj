@@ -234,18 +234,14 @@
 			children = (
 				638C5B331722BB8100A44D71 /* HWMAppDelegate.h */,
 				638C5B341722BB8100A44D71 /* HWMAppDelegate.m */,
+				63EA4C241728AFE900DE0A97 /* HowWeMetAPI.h */,
+				63EA4C251728AFE900DE0A97 /* HowWeMetAPI.m */,
+				63B2B8651723236D00264B63 /* HWMHomeViewController.h */,
+				63B2B8661723236D00264B63 /* HWMHomeViewController.m */,
 				63B2B86A172323D200264B63 /* HWMLeftViewController.h */,
 				63B2B86B172323D200264B63 /* HWMLeftViewController.m */,
 				63B2B86F172323DF00264B63 /* HWMRightViewController.h */,
 				63B2B870172323DF00264B63 /* HWMRightViewController.m */,
-				63B2B8651723236D00264B63 /* HWMHomeViewController.h */,
-				63B2B8661723236D00264B63 /* HWMHomeViewController.m */,
-				63EA4C241728AFE900DE0A97 /* HowWeMetAPI.h */,
-				63EA4C251728AFE900DE0A97 /* HowWeMetAPI.m */,
-				63EA4C281728C10D00DE0A97 /* HWMGrayButton.h */,
-				63EA4C291728C10D00DE0A97 /* HWMGrayButton.m */,
-				63EA4C2B1728C40500DE0A97 /* bigGrayButton.png */,
-				63EA4C2C1728C40500DE0A97 /* bigGrayButton@2x.png */,
 				638C5B3C1722BB8100A44D71 /* HWMViewController.h */,
 				638C5B3D1722BB8100A44D71 /* HWMViewController.m */,
 				63EA4C52172B29D700DE0A97 /* HWMAddStoryViewController.h */,
@@ -256,6 +252,8 @@
 				63EA4C49172A048200DE0A97 /* HWMFacebookDataSource.m */,
 				63EA4C57172B451800DE0A97 /* HWMStoryDataSource.h */,
 				63EA4C58172B451800DE0A97 /* HWMStoryDataSource.m */,
+				63EA4C281728C10D00DE0A97 /* HWMGrayButton.h */,
+				63EA4C291728C10D00DE0A97 /* HWMGrayButton.m */,
 				63EA4C271728B68200DE0A97 /* Nibs */,
 				638C5B2B1722BB8100A44D71 /* Supporting Files */,
 			);
@@ -265,6 +263,8 @@
 		638C5B2B1722BB8100A44D71 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				63EA4C2B1728C40500DE0A97 /* bigGrayButton.png */,
+				63EA4C2C1728C40500DE0A97 /* bigGrayButton@2x.png */,
 				63EA4C69172CB3D600DE0A97 /* UIViewController+TDSemiModalExtension.h */,
 				63EA4C6A172CB3D700DE0A97 /* UIViewController+TDSemiModalExtension.m */,
 				63EA4C65172CB31C00DE0A97 /* TDSemiModal.h */,

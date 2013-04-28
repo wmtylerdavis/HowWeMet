@@ -13,6 +13,12 @@
 #import "HWMGrayButton.h"
 #import "TDDatePickerController.h"
 
+extern const int kAddEvidenceTypePhotoRoll;
+extern const int kAddEvidenceTypeCamera;
+extern NSString* const kEvidenceActionSheetPickFromPhotoRoll;
+extern NSString* const kEvidenceActionSheetTakePhotoOrVideo;
+extern NSString* const kEvidenceActionSheetCancel;
+
 @interface HWMAddStoryViewController : UIViewController <UITextFieldDelegate, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate,
 TDDatePickerControllerDelegate,EGOImageLoaderObserver>
 {
@@ -23,6 +29,7 @@ TDDatePickerControllerDelegate,EGOImageLoaderObserver>
     TDDatePickerController* datePickerView;
     UITapGestureRecognizer *tap;
     NSDateFormatter *dateFormatter;
+    UIImage* resizedImage;
 }
 
 @property (strong, nonatomic) IBOutlet EGOImageView *friendAvatar;
@@ -33,6 +40,7 @@ TDDatePickerControllerDelegate,EGOImageLoaderObserver>
 @property (strong, nonatomic) IBOutlet EGOImageButton *howWeMetImage;
 @property (strong, nonatomic) IBOutlet HWMGrayButton *createStoryButton;
 @property (strong, nonatomic) IBOutlet HWMGrayButton *privacyButton;
+@property (nonatomic, assign) int imageType;
 
 @property (nonatomic, retain) PFObject* meet;
 

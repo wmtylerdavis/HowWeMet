@@ -117,6 +117,14 @@
         storyLabel.lineBreakMode = UILineBreakModeWordWrap | UILineBreakModeTailTruncation;
         storyLabel.numberOfLines = 0;
         [storyLabel setText:[fbFriend objectForKey:@"Story"]];
+        
+        UIImageView* image=(UIImageView*)[cell viewWithTag:9];
+        
+        PFFile* imgFileData=[fbFriend objectForKey:@"Photo"];
+        [imgFileData getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+            UIImage* feedImage=[UIImage imageWithData:data];
+            image.image=feedImage;
+        }];
     }
     
     else {

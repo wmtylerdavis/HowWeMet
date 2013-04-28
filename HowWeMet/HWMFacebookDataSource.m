@@ -66,7 +66,7 @@
 
 -(float)measureCell:(NSIndexPath *)cellPath
 {
-    return 81.0f;
+    return 101.0f;
 }
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -76,7 +76,7 @@
     {
         cell=[[[NSBundle mainBundle] loadNibNamed:@"FriendCell" owner:tableView options:nil] objectAtIndex:0];
     }
-    [cell contentView].backgroundColor = [UIColor whiteColor];
+    [cell contentView].backgroundColor = [UIColor clearColor];
     
     EGOImageButton* profilePic=(EGOImageButton*)[cell viewWithTag:10];
     UILabel* nameLabel=(UILabel*)[cell viewWithTag:1];

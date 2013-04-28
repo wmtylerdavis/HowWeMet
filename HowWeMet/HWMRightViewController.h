@@ -11,11 +11,14 @@
 #import "HWMGenericDataSource.h"
 #import "HWMFacebookDataSource.h"
 
-@interface HWMRightViewController : UIViewController<UITableViewDelegate, HWMDataSourceDelegate, UISearchBarDelegate>
+@interface HWMRightViewController : UIViewController<UITableViewDelegate, HWMDataSourceDelegate, UISearchBarDelegate,UISearchBarDelegate>
 {
-
+    UITapGestureRecognizer* tap;
 }
 
+@property (strong, nonatomic) IBOutlet UITableViewCell *headerCell;
+@property (strong, nonatomic) IBOutlet UILabel *headerLabel;
+@property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, retain) HWMFacebookDataSource* dataSource;
 
