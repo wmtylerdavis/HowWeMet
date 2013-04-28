@@ -37,7 +37,7 @@ TDDatePickerControllerDelegate,EGOImageLoaderObserver>
 @property (strong, nonatomic) IBOutlet UILabel *friendRelationship;
 @property (strong, nonatomic) IBOutlet UILabel *timeLabel;
 @property (strong, nonatomic) IBOutlet UITextView *howWeMetStory;
-@property (strong, nonatomic) IBOutlet EGOImageButton *howWeMetImage;
+@property (strong, nonatomic) IBOutlet UIImageView *howWeMetImage;
 @property (strong, nonatomic) IBOutlet HWMGrayButton *createStoryButton;
 @property (strong, nonatomic) IBOutlet HWMGrayButton *privacyButton;
 @property (nonatomic, assign) int imageType;

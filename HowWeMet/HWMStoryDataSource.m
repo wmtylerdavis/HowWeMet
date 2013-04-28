@@ -113,10 +113,20 @@
         
         [nameLabel setText:[NSString stringWithFormat:@"%@", [fbFriend objectForKey:@"Name"]]];
         [nameLabel setFont:[UIFont fontWithName:@"Chalkduster" size:14.0f]];
-        [storyLabel setFont:[UIFont fontWithName:@"OpenSans" size:10.0f]];
-        storyLabel.lineBreakMode = UILineBreakModeWordWrap | UILineBreakModeTailTruncation;
-        storyLabel.numberOfLines = 0;
-        [storyLabel setText:[fbFriend objectForKey:@"Story"]];
+        
+        //storyLabel.frame = CGRectMake(storyLabel.frame.origin.x, storyLabel.frame.origin.y, storyLabel.frame.size.width, storyLabel.frame.size.height);
+        [storyLabel setFont:[UIFont fontWithName:@"OpenSans" size:9.0f]];
+        storyLabel.lineBreakMode = UILineBreakModeTailTruncation | UILineBreakModeWordWrap;
+        storyLabel.text = [fbFriend objectForKey:@"Story"];
+        [storyLabel setNumberOfLines:0];
+        if (storyLabel.text.length < 100) {
+            [storyLabel sizeToFit];
+        }
+            
+//        [storyLabel setFont:[UIFont fontWithName:@"OpenSans" size:10.0f]];
+//        storyLabel.lineBreakMode = UILineBreakModeWordWrap | UILineBreakModeTailTruncation;
+//        storyLabel.numberOfLines = 0;
+        //[storyLabel setText:[fbFriend objectForKey:@"Story"]];
         
         UIImageView* image=(UIImageView*)[cell viewWithTag:9];
         
@@ -145,8 +155,8 @@
         [profilePic removeTarget:nil action:NULL forControlEvents:UIControlEventAllTouchEvents];
         [nameLabel setText:[NSString stringWithFormat:@"%@ %@", [fbFriend objectForKey:@"first_name"], [fbFriend objectForKey:@"last_name"]]];
         [nameLabel setFont:[UIFont fontWithName:@"Chalkduster" size:14.0f]];
-        [storyLabel setFont:[UIFont fontWithName:@"OpenSans" size:10.0f]];
-        [storyLabel setText:@"No story yet. Click to add one."];
+        [storyLabel setFont:[UIFont fontWithName:@"OpenSans" size:7.0f]];
+        [storyLabel setText:@"No story yet. Add one!"];
     }
     
     return cell;

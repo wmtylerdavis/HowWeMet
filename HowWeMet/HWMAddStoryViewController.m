@@ -26,6 +26,7 @@ NSString* const kEvidenceActionSheetCancel=@"Cancel";
 @implementation HWMAddStoryViewController
 
 @synthesize meet = _meet;
+@synthesize howWeMetImage;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -114,6 +115,7 @@ NSString* const kEvidenceActionSheetCancel=@"Cancel";
     [self setHowWeMetImage:nil];
     [self setCreateStoryButton:nil];
     [self setPrivacyButton:nil];
+    [self setHowWeMetImage:nil];
     [super viewDidUnload];
 }
 
@@ -175,11 +177,16 @@ NSString* const kEvidenceActionSheetCancel=@"Cancel";
 {
     if(self.meet==nil) return;
     
-    PFFile* imgFileData=[self.meet objectForKey:@"Photo"];
-    [imgFileData getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
-//        UIImage* meetImage=[UIImage imageWithData:data];
-//        self.howWeMetImage.imageView = meetImage;
-    }];
+    if ([self.meet objectForKey:@"Photo"]) {
+        PFFile* imgFileData=[self.meet objectForKey:@"Photo"];
+        [imgFileData getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+            UIImage* meetImage=[UIImage imageWithData:data];
+            [self.howWeMetImage setImage:meetImage];
+        }];
+    }
+    if ([self.meet objectForKey:@"Date"]) {
+        self.timeLabel.text = [self.meet objectForKey:@"Date"];
+    }
     
     self.friendName.text=[self.meet objectForKey:@"Name"];
 //    self.friendRelationship = [self.meet objectForKey:@"Relationship"];
@@ -207,20 +214,25 @@ NSString* const kEvidenceActionSheetCancel=@"Cancel";
    
 }
 
+- (void)resizeSelectedImage:(UIImage*)image
+{
+    resizedImage=image;
+    
+    dispatch_async(dispatch_get_main_queue(), ^(void) {
+        [howWeMetImage setImage:resizedImage];
+    });
+}
+
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    NSString* mediaType = [info objectForKey: UIImagePickerControllerMediaType];
+    [[picker presentingViewController] dismissViewControllerAnimated:YES completion:^(void) {
+        UIImageWriteToSavedPhotosAlbum([info objectForKey:UIImagePickerControllerOriginalImage], nil, nil, nil);
+    }];
     
-    if(CFStringCompare((__bridge CFStringRef)mediaType, kUTTypeImage, 0) == kCFCompareEqualTo) {
-        
-        resizedImage=[info objectForKey:UIImagePickerControllerOriginalImage];
-        [self.howWeMetImage setImage:resizedImage forState:UIControlStateNormal];
-        
-        [[picker presentingViewController] dismissViewControllerAnimated:YES completion:^(void) {
-            if(self.imageType!=kAddEvidenceTypePhotoRoll) // don't duplicate images in the photo roll
-                UIImageWriteToSavedPhotosAlbum([info objectForKey:UIImagePickerControllerOriginalImage], nil, nil, nil);
-        }];
-    }
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^(void) {
+            [self resizeSelectedImage:[info objectForKey:UIImagePickerControllerOriginalImage]];
+        });
+
 }
 
 -(void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
@@ -271,7 +283,14 @@ NSString* const kEvidenceActionSheetCancel=@"Cancel";
 }
 
 - (IBAction)privacyTapped:(id)sender {
-    _isPrivate = YES;
+    if (_isPrivate) {
+        _isPrivate = NO;
+        self.privacyButton.titleLabel.text = @"Public";
+    }
+    else {
+        _isPrivate = YES;
+        self.privacyButton.titleLabel.text=@"Private";
+    }
 }
 
 - (IBAction)createStoryTapped:(id)sender {
@@ -304,6 +323,7 @@ NSString* const kEvidenceActionSheetCancel=@"Cancel";
         } progressBlock:^(int percentDone) {
         }];
     }
+    else [self triggerSave:newMeet];
     
 }
 
@@ -320,6 +340,7 @@ NSString* const kEvidenceActionSheetCancel=@"Cancel";
         if(succeeded)
         {
             NSLog(@"Holy crap");
+            [self.navigationController popViewControllerAnimated:YES];
         }
     }];
 }
