@@ -154,6 +154,27 @@
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							</object>
+							<object class="IBUILabel" id="952488118">
+								<reference key="NSNextResponder" ref="6592403"/>
+								<int key="NSvFlags">292</int>
+								<string key="NSFrame">{{187, 177}, {99, 21}}</string>
+								<reference key="NSSuperview" ref="6592403"/>
+								<string key="NSReuseIdentifierKey">_NS:9</string>
+								<bool key="IBUIOpaque">NO</bool>
+								<bool key="IBUIClipsSubviews">YES</bool>
+								<int key="IBUIContentMode">7</int>
+								<int key="IBUITag">11</int>
+								<bool key="IBUIUserInteractionEnabled">NO</bool>
+								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+								<string key="IBUIText">Label</string>
+								<reference key="IBUITextColor" ref="312158441"/>
+								<reference key="IBUIHighlightedColor" ref="148547772"/>
+								<int key="IBUIBaselineAdjustment">0</int>
+								<int key="IBUITextAlignment">2</int>
+								<reference key="IBUIFontDescription" ref="261878182"/>
+								<reference key="IBUIFont" ref="400370678"/>
+								<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
+							</object>
 						</array>
 						<string key="NSFrameSize">{320, 215}</string>
 						<reference key="NSSuperview" ref="3870252"/>
@@ -210,6 +231,7 @@
 							<reference ref="65538965"/>
 							<reference ref="541688209"/>
 							<reference ref="320186691"/>
+							<reference ref="952488118"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -243,6 +265,11 @@
 						<array class="NSMutableArray" key="children"/>
 						<reference key="parent" ref="3870252"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">196</int>
+						<reference key="object" ref="952488118"/>
+						<reference key="parent" ref="3870252"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -252,6 +279,7 @@
 				<string key="143.CustomClassName">EGOImageView</string>
 				<string key="143.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="16.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="196.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="25.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="3.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="31.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -262,7 +290,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">195</int>
+			<int key="maxID">196</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes"/>
 		<int key="IBDocument.localizationMode">0</int>

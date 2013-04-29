@@ -18,9 +18,11 @@
     // featured, facebook, twitter, search
     
     //NSArray* _dataSources;
+    UITapGestureRecognizer* tap;
 }
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, retain) HWMStoryDataSource* dataSource;
+@property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
 
 @end

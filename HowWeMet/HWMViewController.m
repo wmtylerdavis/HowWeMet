@@ -20,17 +20,21 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     self.title = @"How We Met";
-//    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
-//    [testObject setObject:@"bar" forKey:@"foo"];
-//    [testObject save];
+    [self registerForKeyboardNotifications];
     
     self.tableView.delegate=self;
-    //self.tableView.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"patternBg"]];
     self.tableView.backgroundColor = [UIColor darkGrayColor];
-    //self.tableView.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"patternBg"]];
     self.tableView.separatorStyle= UITableViewCellSeparatorStyleNone;
     self.tableView.separatorColor=[UIColor clearColor];
+    self.searchBar.tintColor = [[HowWeMetAPI sharedInstance] redColor];
+    self.searchBar.delegate = self;
     
+    tap = [[UITapGestureRecognizer alloc]
+           initWithTarget:self
+           action:@selector(keyboardWillHide:)];
+    tap.enabled=NO;
+    
+    [self.view addGestureRecognizer:tap];
     // self.navigationController.navigationItem.hidesBackButton = YES;
     
     _dataSource =[[HWMStoryDataSource alloc] init];
@@ -46,6 +50,30 @@
     
     if([self.tableView indexPathForSelectedRow])
         [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:NO];
+}
+
+- (void)registerForKeyboardNotifications
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+    
+}
+
+- (void)keyboardWillShow:(NSNotification *)notification {
+    tap.enabled = YES;
+    // NSDictionary* info = [notification userInfo];
+//    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+//    [UIView animateWithDuration:0.3f animations:^{
+//        self.view.frame=CGRectMake(self.view.frame.origin.x, -kbSize.height, self.view.frame.size.width, self.view.frame.size.height);
+//    }];
+}
+
+- (void)keyboardWillHide:(NSNotification *)notification {
+    tap.enabled=NO;
+    [UIView animateWithDuration:0.3f animations:^{
+        self.view.frame=CGRectMake(self.view.frame.origin.x, 0, self.view.frame.size.width, self.view.frame.size.height);
+    }];
+    [self.view endEditing:YES];
 }
 
 - (void)didReceiveMemoryWarning
@@ -146,38 +174,40 @@
 -(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
     //
+    [_dataSource setFilter:searchText];
 }
 
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
-//    if(_searchSource==nil)
-//    {
-//        _searchSource=[[HMTProfileListDataSource alloc] init];
-//        //quick and dirty
-//        [_searchSource hideFollowButton:YES];
-//        _searchSource.delegate=self;
-//    }
-//    
-//    if(searchBar.text==nil || searchBar.text.length==0)
-//    {
-//        [self.filterPicker setSelectedSegmentIndex:0];
-//        [self filterBarChanged:self.filterPicker];
-//        return;
-//    }
-//    
-//    // unpop all the filter buttons so they can switch back
-//    // by tapping on one.
-//    [self.filterPicker setSelectedSegmentIndex:-1];
-//    
-//    // search search search
-//    [_searchSource setResourceLocation:[NSString stringWithFormat:@"customers_search?query=%@", searchBar.text]];
-//    
-//    // hide the keyboard.
-//    [self.view endEditing:YES];
-//    
-//    self.tableView.dataSource=_searchSource;
-//    [self.tableView reloadData];
-//    [_searchSource refresh];
+    [self.view endEditing:YES];
+    //    if(_searchSource==nil)
+    //    {
+    //        _searchSource=[[HMTProfileListDataSource alloc] init];
+    //        //quick and dirty
+    //        [_searchSource hideFollowButton:YES];
+    //        _searchSource.delegate=self;
+    //    }
+    //
+    //    if(searchBar.text==nil || searchBar.text.length==0)
+    //    {
+    //        [self.filterPicker setSelectedSegmentIndex:0];
+    //        [self filterBarChanged:self.filterPicker];
+    //        return;
+    //    }
+    //
+    //    // unpop all the filter buttons so they can switch back
+    //    // by tapping on one.
+    //    [self.filterPicker setSelectedSegmentIndex:-1];
+    //
+    //    // search search search
+    //    [_searchSource setResourceLocation:[NSString stringWithFormat:@"customers_search?query=%@", searchBar.text]];
+    //
+    //    // hide the keyboard.
+    //    [self.view endEditing:YES];
+    //
+    //    self.tableView.dataSource=_searchSource;
+    //    [self.tableView reloadData];
+    //    [_searchSource refresh];
 }
 
 -(void)inviteFacebookFriend: (NSString*) friend
@@ -196,4 +226,8 @@
     
 }
 
+- (void)viewDidUnload {
+    [self setSearchBar:nil];
+    [super viewDidUnload];
+}
 @end

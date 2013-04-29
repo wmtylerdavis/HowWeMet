@@ -81,7 +81,7 @@
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					</object>
-					<object class="IBUIImageView" id="704645184">
+					<object class="IBUIImageView" id="1005811592">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{90, 84}, {141, 128}}</string>
@@ -389,7 +389,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">howWeMetImage</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="704645184"/>
+						<reference key="destination" ref="1005811592"/>
 					</object>
 					<int key="connectionID">251</int>
 				</object>
@@ -461,7 +461,7 @@
 							<reference ref="511271349"/>
 							<reference ref="306580497"/>
 							<reference ref="523076182"/>
-							<reference ref="704645184"/>
+							<reference ref="1005811592"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -537,7 +537,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">238</int>
-						<reference key="object" ref="704645184"/>
+						<reference key="object" ref="1005811592"/>
 						<array class="NSMutableArray" key="children"/>
 						<reference key="parent" ref="191373211"/>
 					</object>

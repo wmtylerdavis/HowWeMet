@@ -46,6 +46,7 @@ NSString* const kEvidenceActionSheetCancel=@"Cancel";
 }
 
 - (void)keyboardWillShow:(NSNotification *)notification {
+    tap.enabled = YES;
     NSDictionary* info = [notification userInfo];
     CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
     [UIView animateWithDuration:0.3f animations:^{
@@ -54,6 +55,7 @@ NSString* const kEvidenceActionSheetCancel=@"Cancel";
 }
 
 - (void)keyboardWillHide:(NSNotification *)notification {
+    tap.enabled = NO;
     [UIView animateWithDuration:0.3f animations:^{
         self.view.frame=CGRectMake(self.view.frame.origin.x, 0, self.view.frame.size.width, self.view.frame.size.height);
     }];
@@ -62,6 +64,7 @@ NSString* const kEvidenceActionSheetCancel=@"Cancel";
 
 -(void)dismissKeyboard
 {
+    tap.enabled = NO;
     [self.view endEditing:YES];
 }
 
@@ -69,13 +72,27 @@ NSString* const kEvidenceActionSheetCancel=@"Cancel";
     [textView setText:@"We met "];
 }
 
+-(void)setAccessoryForTextField:(id)field
+{
+    if(accessoryBar==nil)
+    {
+        accessoryBar=[[UIToolbar alloc] init];
+        UIBarButtonItem* doneButton=[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(dismissKeyboard)];
+        UIBarButtonItem* space=[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
+        [accessoryBar setItems:@[space, doneButton]];
+        [accessoryBar sizeToFit];
+    }
+    [field setInputAccessoryView:accessoryBar];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.title = @"Here's the Story";
+    [self registerForKeyboardNotifications];
     self.howWeMetStory.delegate = self;
-    //[self setAccessoryForTextField:self.howWeMetStory];
+    [self setAccessoryForTextField:self.howWeMetStory];
     dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"MMM d y"];
     
@@ -90,7 +107,6 @@ NSString* const kEvidenceActionSheetCancel=@"Cancel";
     [super viewWillAppear:animated];
     
     [self refresh];
-    [self registerForKeyboardNotifications];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -285,11 +301,13 @@ NSString* const kEvidenceActionSheetCancel=@"Cancel";
 - (IBAction)privacyTapped:(id)sender {
     if (_isPrivate) {
         _isPrivate = NO;
-        self.privacyButton.titleLabel.text = @"Public";
+        [self.privacyButton setTitle:@"Public" forState:UIControlStateNormal];
+        //self.privacyButton.titleLabel.text = @"Public";
     }
     else {
         _isPrivate = YES;
-        self.privacyButton.titleLabel.text=@"Private";
+        [self.privacyButton setTitle:@"Private" forState:UIControlStateNormal];
+        //self.privacyButton.titleLabel.text=@"Private";
     }
 }
 

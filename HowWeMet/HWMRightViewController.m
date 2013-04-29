@@ -19,6 +19,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     self.title = @"Friends";
+    [self registerForKeyboardNotifications];
     [[[self navigationController] navigationBar] setTintColor:[[HowWeMetAPI sharedInstance] redColor]];
     //    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
     //    [testObject setObject:@"bar" forKey:@"foo"];
@@ -44,6 +45,7 @@
     tap = [[UITapGestureRecognizer alloc]
            initWithTarget:self
            action:@selector(keyboardWillHide:)];
+    tap.enabled = NO;
     
     [self.view addGestureRecognizer:tap];
 }
@@ -56,14 +58,16 @@
 }
 
 - (void)keyboardWillShow:(NSNotification *)notification {
-    NSDictionary* info = [notification userInfo];
-    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
-    [UIView animateWithDuration:0.3f animations:^{
-        self.view.frame=CGRectMake(self.view.frame.origin.x, -kbSize.height, self.view.frame.size.width, self.view.frame.size.height);
-    }];
+    tap.enabled = YES;
+//    NSDictionary* info = [notification userInfo];
+//    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+//    [UIView animateWithDuration:0.3f animations:^{
+//        self.view.frame=CGRectMake(self.view.frame.origin.x, -kbSize.height, self.view.frame.size.width, self.view.frame.size.height);
+//    }];
 }
 
 - (void)keyboardWillHide:(NSNotification *)notification {
+    tap.enabled = NO;
     [UIView animateWithDuration:0.3f animations:^{
         self.view.frame=CGRectMake(self.view.frame.origin.x, 0, self.view.frame.size.width, self.view.frame.size.height);
     }];
@@ -152,6 +156,17 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //hmmm
+    if ([[_dataSource.data objectAtIndex:indexPath.row] objectForKey:@"installed"]) {
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle: @"Soon... We Promise"
+                              message: @"We plan to allow you to see your friend's public Meets soon."
+                              delegate: nil
+                              cancelButtonTitle:@"OK"
+                              otherButtonTitles:nil];
+        [alert show];
+    }
+    else 
+        [self inviteFacebookFriend:[[_dataSource.data objectAtIndex:indexPath.row] objectForKey:@"id"]];
 }
 
 -(void)dataSource:(HWMGenericDataSource *)dataSource dataServiceUnavailable:(BOOL)unavailable reason:(NSString *)reason
@@ -189,34 +204,6 @@
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
     [self.view endEditing:YES];
-    //    if(_searchSource==nil)
-    //    {
-    //        _searchSource=[[HMTProfileListDataSource alloc] init];
-    //        //quick and dirty
-    //        [_searchSource hideFollowButton:YES];
-    //        _searchSource.delegate=self;
-    //    }
-    //
-    //    if(searchBar.text==nil || searchBar.text.length==0)
-    //    {
-    //        [self.filterPicker setSelectedSegmentIndex:0];
-    //        [self filterBarChanged:self.filterPicker];
-    //        return;
-    //    }
-    //
-    //    // unpop all the filter buttons so they can switch back
-    //    // by tapping on one.
-    //    [self.filterPicker setSelectedSegmentIndex:-1];
-    //
-    //    // search search search
-    //    [_searchSource setResourceLocation:[NSString stringWithFormat:@"customers_search?query=%@", searchBar.text]];
-    //
-    //    // hide the keyboard.
-    //    [self.view endEditing:YES];
-    //
-    //    self.tableView.dataSource=_searchSource;
-    //    [self.tableView reloadData];
-    //    [_searchSource refresh];
 }
 
 -(void)inviteFacebookFriend: (NSString*) friend
@@ -228,7 +215,7 @@
     
     [FBWebDialogs
      presentRequestsDialogModallyWithSession:nil
-     message:@"Check out this app! Make challenges. Make Money!"
+     message:@"Remember Facebook back in the day? Back when it was .edu exlusive? Now you can keep track of your relationships just like you did back then. How did you meet your friends? Hurray, before you forget!"
      title:nil
      parameters:params
      handler:nil];
