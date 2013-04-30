@@ -13,11 +13,13 @@
 #import "HWMGrayButton.h"
 #import "TDDatePickerController.h"
 
-extern const int kAddEvidenceTypePhotoRoll;
-extern const int kAddEvidenceTypeCamera;
-extern NSString* const kEvidenceActionSheetPickFromPhotoRoll;
-extern NSString* const kEvidenceActionSheetTakePhotoOrVideo;
-extern NSString* const kEvidenceActionSheetCancel;
+extern const int kAddMeetTypePhotoRoll;
+extern const int kAddMeetTypeCamera;
+extern const int kAddMeet;
+extern NSString* const kMeetActionSheetPickFromPhotoRoll;
+extern NSString* const kMeetActionSheetTakePhotoOrVideo;
+extern NSString* const kMeetActionSheetPicFromFacebook;
+extern NSString* const kMeetActionSheetCancel;
 
 @interface HWMAddStoryViewController : UIViewController <UITextFieldDelegate, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate,
 TDDatePickerControllerDelegate,EGOImageLoaderObserver>

@@ -64,6 +64,10 @@
 		63EA4C64172CAEE900DE0A97 /* TDDatePickerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63EA4C62172CAEE900DE0A97 /* TDDatePickerController.xib */; };
 		63EA4C68172CB31D00DE0A97 /* TDSemiModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EA4C67172CB31D00DE0A97 /* TDSemiModalViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		63EA4C6B172CB3D700DE0A97 /* UIViewController+TDSemiModalExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EA4C6A172CB3D700DE0A97 /* UIViewController+TDSemiModalExtension.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		63EA4C6D172F037F00DE0A97 /* HWMFacebookImage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63EA4C6C172F037F00DE0A97 /* HWMFacebookImage.xib */; };
+		63EA4C70172F0B7300DE0A97 /* HWMFacebookImageDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EA4C6F172F0B7200DE0A97 /* HWMFacebookImageDataSource.m */; };
+		63EA4C74172F52B800DE0A97 /* HWMFacebookImagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EA4C72172F52B500DE0A97 /* HWMFacebookImagesViewController.m */; };
+		63EA4C75172F52B800DE0A97 /* HWMFacebookImagesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63EA4C73172F52B700DE0A97 /* HWMFacebookImagesViewController.xib */; };
 		E7CC1AD8828546C2A55E7368 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65D109CE516D48BFA4C12AD0 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -149,6 +153,12 @@
 		63EA4C67172CB31D00DE0A97 /* TDSemiModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDSemiModalViewController.m; sourceTree = "<group>"; };
 		63EA4C69172CB3D600DE0A97 /* UIViewController+TDSemiModalExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+TDSemiModalExtension.h"; sourceTree = "<group>"; };
 		63EA4C6A172CB3D700DE0A97 /* UIViewController+TDSemiModalExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+TDSemiModalExtension.m"; sourceTree = "<group>"; };
+		63EA4C6C172F037F00DE0A97 /* HWMFacebookImage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HWMFacebookImage.xib; sourceTree = "<group>"; };
+		63EA4C6E172F0B7200DE0A97 /* HWMFacebookImageDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWMFacebookImageDataSource.h; sourceTree = "<group>"; };
+		63EA4C6F172F0B7200DE0A97 /* HWMFacebookImageDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWMFacebookImageDataSource.m; sourceTree = "<group>"; };
+		63EA4C71172F52B400DE0A97 /* HWMFacebookImagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWMFacebookImagesViewController.h; sourceTree = "<group>"; };
+		63EA4C72172F52B500DE0A97 /* HWMFacebookImagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWMFacebookImagesViewController.m; sourceTree = "<group>"; };
+		63EA4C73172F52B700DE0A97 /* HWMFacebookImagesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HWMFacebookImagesViewController.xib; sourceTree = "<group>"; };
 		65D109CE516D48BFA4C12AD0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CACD9BB5004C487297FA18FB /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -246,12 +256,17 @@
 				638C5B3D1722BB8100A44D71 /* HWMViewController.m */,
 				63EA4C52172B29D700DE0A97 /* HWMAddStoryViewController.h */,
 				63EA4C53172B29D800DE0A97 /* HWMAddStoryViewController.m */,
+				63EA4C71172F52B400DE0A97 /* HWMFacebookImagesViewController.h */,
+				63EA4C72172F52B500DE0A97 /* HWMFacebookImagesViewController.m */,
+				63EA4C73172F52B700DE0A97 /* HWMFacebookImagesViewController.xib */,
 				63EA4C45172A03BC00DE0A97 /* HWMGenericDataSource.h */,
 				63EA4C46172A03BC00DE0A97 /* HWMGenericDataSource.m */,
 				63EA4C48172A048200DE0A97 /* HWMFacebookDataSource.h */,
 				63EA4C49172A048200DE0A97 /* HWMFacebookDataSource.m */,
 				63EA4C57172B451800DE0A97 /* HWMStoryDataSource.h */,
 				63EA4C58172B451800DE0A97 /* HWMStoryDataSource.m */,
+				63EA4C6E172F0B7200DE0A97 /* HWMFacebookImageDataSource.h */,
+				63EA4C6F172F0B7200DE0A97 /* HWMFacebookImageDataSource.m */,
 				63EA4C281728C10D00DE0A97 /* HWMGrayButton.h */,
 				63EA4C291728C10D00DE0A97 /* HWMGrayButton.m */,
 				63EA4C271728B68200DE0A97 /* Nibs */,
@@ -302,6 +317,7 @@
 				63EA4C4B172A060300DE0A97 /* FriendCell.xib */,
 				63EA4C50172B1DE200DE0A97 /* HWMRightSectionHeader.xib */,
 				63EA4C5A172B45D500DE0A97 /* HWMStoryCell.xib */,
+				63EA4C6C172F037F00DE0A97 /* HWMFacebookImage.xib */,
 			);
 			name = Nibs;
 			sourceTree = "<group>";
@@ -407,6 +423,8 @@
 				63EA4C5E172C043900DE0A97 /* feedItemBg.png in Resources */,
 				63EA4C5F172C043900DE0A97 /* feedItemBg@2x.png in Resources */,
 				63EA4C64172CAEE900DE0A97 /* TDDatePickerController.xib in Resources */,
+				63EA4C6D172F037F00DE0A97 /* HWMFacebookImage.xib in Resources */,
+				63EA4C75172F52B800DE0A97 /* HWMFacebookImagesViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,6 +473,8 @@
 				63EA4C63172CAEE900DE0A97 /* TDDatePickerController.m in Sources */,
 				63EA4C68172CB31D00DE0A97 /* TDSemiModalViewController.m in Sources */,
 				63EA4C6B172CB3D700DE0A97 /* UIViewController+TDSemiModalExtension.m in Sources */,
+				63EA4C70172F0B7300DE0A97 /* HWMFacebookImageDataSource.m in Sources */,
+				63EA4C74172F52B800DE0A97 /* HWMFacebookImagesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

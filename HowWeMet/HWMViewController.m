@@ -93,8 +93,7 @@
 
 -(float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    HWMGenericDataSource* dataSource=self.tableView.dataSource;
-    return [dataSource measureCell:indexPath];
+    return 100.0f;
 }
 
 -(void)goToFriendProfile:(NSNumber*)customerID

@@ -53,7 +53,7 @@
 - (IBAction)loginTapped:(id)sender {
     
     // The permissions requested from the user
-    NSArray *permissionsArray = @[ @"user_about_me", @"user_relationships"];
+    NSArray *permissionsArray = @[ @"user_about_me", @"user_relationships", @"user_photos", @"friends_photos", @"friends_photo_video_tags"];
     
     // Login PFUser using Facebook
     [PFFacebookUtils logInWithPermissions:permissionsArray block:^(PFUser *user, NSError *error) {
@@ -66,7 +66,7 @@
             } else {
                 NSLog(@"Uh oh. An error occurred: %@", error);
             }
-        } else if (user.isNew) {
+        } else if (user) {
             FBRequest *request = [FBRequest requestForMe];
             [request startWithCompletionHandler:^(FBRequestConnection *connection,
                                                   id result,
@@ -84,15 +84,13 @@
                     {
                         [[PFUser currentUser] setObject:[NSString stringWithFormat:@"http://graph.facebook.com/%@/picture", [result objectForKey:@"id"]] forKey:@"AvatarURL"];
                     }
+                    [self signupWithParse];
                 }
             }];
-            [self signupWithParse];
             NSLog(@"User with facebook signed up and logged in!");
             [[NSNotificationCenter defaultCenter] postNotificationName:@"appSwitchToFeeds" object:nil];
         } else {
             NSLog(@"User logged in!");
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"appSwitchToFeeds" object:nil];
-            NSLog(@"User with facebook logged in!");
             [[NSNotificationCenter defaultCenter] postNotificationName:@"appSwitchToFeeds" object:nil];
         }
     }];

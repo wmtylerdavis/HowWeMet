@@ -8,16 +8,19 @@
 
 #import "HWMAddStoryViewController.h"
 #import "HowWeMetAPI.h"
+#import "HWMFacebookImagesViewController.h"
 #import <AVFoundation/AVFoundation.h>
 #import <MobileCoreServices/UTCoreTypes.h>
 #import <MediaPlayer/MPMoviePlayerController.h>
 #import <MediaPlayer/MPMoviePlayerViewController.h>
 
-const int kAddEvidenceTypePhotoRoll=0;
-const int kAddEvidenceTypeCamera=1;
-NSString* const kEvidenceActionSheetPickFromPhotoRoll=@"Pick from Photo Roll";
-NSString* const kEvidenceActionSheetTakePhotoOrVideo=@"Take Photo or Video";
-NSString* const kEvidenceActionSheetCancel=@"Cancel";
+const int kAddMeetTypePhotoRoll=0;
+const int kAddMeetTypeCamera=1;
+const int kAddMeetTypeFacebook=2;
+NSString* const kMeetActionSheetPickFromPhotoRoll=@"Pick from Photo Roll";
+NSString* const kMeetActionSheetTakePhotoOrVideo=@"Take Photo or Video";
+NSString* const kMeetActionSheetPicFromFacebook=@"Pick from Facebook Photos";
+NSString* const kMeetActionSheetCancel=@"Cancel";
 
 @interface HWMAddStoryViewController ()
 
@@ -213,13 +216,17 @@ NSString* const kEvidenceActionSheetCancel=@"Cancel";
 -(void)imagePickerActionSheet:(UIActionSheet*)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
     NSString* buttonText=[actionSheet buttonTitleAtIndex:buttonIndex];
-    if([buttonText isEqualToString:kEvidenceActionSheetPickFromPhotoRoll])
+    if([buttonText isEqualToString:kMeetActionSheetPickFromPhotoRoll])
     {
-        self.imageType=kAddEvidenceTypePhotoRoll;
+        self.imageType=kAddMeetTypePhotoRoll;
     }
-    else if([buttonText isEqualToString:kEvidenceActionSheetTakePhotoOrVideo])
+    else if([buttonText isEqualToString:kMeetActionSheetTakePhotoOrVideo])
     {
-        self.imageType=kAddEvidenceTypeCamera;
+        self.imageType=kAddMeetTypeCamera;
+    }
+    else if([buttonText isEqualToString:kMeetActionSheetPicFromFacebook])
+    {
+        self.imageType=kAddMeetTypeFacebook;
     }
     else if (buttonIndex == [actionSheet cancelButtonIndex])
     {
@@ -268,32 +275,64 @@ NSString* const kEvidenceActionSheetCancel=@"Cancel";
     
     [imagePicker setDelegate:self];
     imagePicker.allowsEditing=YES;
+    BOOL imagePick = YES;
     
-    if(self.imageType==kAddEvidenceTypePhotoRoll)
+    if(self.imageType==kAddMeetTypePhotoRoll)
     {
         [imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
         imagePicker.mediaTypes =[[NSArray alloc] initWithObjects:(NSString*)kUTTypeImage,nil];
     }
-    else if(self.imageType==kAddEvidenceTypeCamera)
+    else if(self.imageType==kAddMeetTypeCamera)
     {
         [imagePicker setSourceType:UIImagePickerControllerSourceTypeCamera];
         imagePicker.mediaTypes =[[NSArray alloc] initWithObjects:(NSString*)kUTTypeImage, nil];
     }
+    else if(self.imageType==kAddMeetTypeFacebook)
+    {
+        imagePick = NO;
+        [self pickFacebookImage];
+    }
     
-    [self presentViewController:imagePicker animated:YES completion:^(void){
-    }];
+    if (imagePick) {
+        [self presentViewController:imagePicker animated:YES completion:^(void){
+        }];
+    }
 
 }
 
+-(void) pickFacebookImage
+{
+    HWMFacebookImagesViewController* imageView = [[HWMFacebookImagesViewController alloc] init];
+    imageView.facebookID = [self.meet objectForKey:@"FacebookID"];
+    [self.navigationController pushViewController:imageView animated:YES];
+//    FBRequest *request = [FBRequest requestForGraphPath:[NSString stringWithFormat:@"me/photos?fields=source,tags"]];
+//    [request startWithCompletionHandler:^(FBRequestConnection *connection,
+//                                          id result,
+//                                          NSError *error) {
+//        if (!error) {
+//            NSArray* facebookData = [result objectForKey:@"data"];
+//            for (int i = 0; i < facebookData.count; ++i) {
+//                NSArray* facebookSucks = [[[facebookData objectAtIndex:i] objectForKey:@"tags"] objectForKey:@"data"];
+//                NSArray* origData = facebookSucks;
+//                NSPredicate *pred = [NSPredicate predicateWithFormat:@"(id == %@)", [self.meet objectForKey:@"FacebookID"]];
+//                NSLog(@"%lu", (unsigned long)facebookSucks.count);
+//                facebookSucks = [origData filteredArrayUsingPredicate:pred];
+//                NSLog(@"%lu", (unsigned long)facebookSucks.count);
+//                
+//                NSLog(@"%@", facebookSucks);
+//            }
+//        }
+//    }];
+}
 
 - (IBAction)addImageTapped:(id)sender {
     
     UIActionSheet* actionSheet;
     
     if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
-        actionSheet=[[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:kEvidenceActionSheetTakePhotoOrVideo, kEvidenceActionSheetPickFromPhotoRoll, nil];
+        actionSheet=[[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:kMeetActionSheetTakePhotoOrVideo, kMeetActionSheetPickFromPhotoRoll, kMeetActionSheetPicFromFacebook,nil];
     else
-        actionSheet=[[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:kEvidenceActionSheetPickFromPhotoRoll, nil];
+        actionSheet=[[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:kMeetActionSheetPickFromPhotoRoll, kMeetActionSheetPicFromFacebook, nil];
     
     [actionSheet showInView:[self.navigationController view]];
 }
