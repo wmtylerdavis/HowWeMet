@@ -92,7 +92,7 @@ NSString* const kMeetActionSheetCancel=@"Cancel";
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.title = @"Here's the Story";
+    self.title = @"Edit Story";
     [self registerForKeyboardNotifications];
     self.howWeMetStory.delegate = self;
     [self setAccessoryForTextField:self.howWeMetStory];
@@ -134,7 +134,6 @@ NSString* const kMeetActionSheetCancel=@"Cancel";
     [self setHowWeMetImage:nil];
     [self setCreateStoryButton:nil];
     [self setPrivacyButton:nil];
-    [self setHowWeMetImage:nil];
     [super viewDidUnload];
 }
 
@@ -300,29 +299,20 @@ NSString* const kMeetActionSheetCancel=@"Cancel";
 
 }
 
+-(void)targetPicker:(HWMFacebookImagesViewController*)targetPicker targetSelected:(HWMFacebookPhotoPickerTarget *)target
+{
+    [self.navigationController popToViewController:self animated:YES];
+    //photo stuff
+    UIImage* meetImage=[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString: target.imageURL]]];
+    [self resizeSelectedImage:meetImage];
+}
+
 -(void) pickFacebookImage
 {
     HWMFacebookImagesViewController* imageView = [[HWMFacebookImagesViewController alloc] init];
+    imageView.delegate=self;
     imageView.facebookID = [self.meet objectForKey:@"FacebookID"];
     [self.navigationController pushViewController:imageView animated:YES];
-//    FBRequest *request = [FBRequest requestForGraphPath:[NSString stringWithFormat:@"me/photos?fields=source,tags"]];
-//    [request startWithCompletionHandler:^(FBRequestConnection *connection,
-//                                          id result,
-//                                          NSError *error) {
-//        if (!error) {
-//            NSArray* facebookData = [result objectForKey:@"data"];
-//            for (int i = 0; i < facebookData.count; ++i) {
-//                NSArray* facebookSucks = [[[facebookData objectAtIndex:i] objectForKey:@"tags"] objectForKey:@"data"];
-//                NSArray* origData = facebookSucks;
-//                NSPredicate *pred = [NSPredicate predicateWithFormat:@"(id == %@)", [self.meet objectForKey:@"FacebookID"]];
-//                NSLog(@"%lu", (unsigned long)facebookSucks.count);
-//                facebookSucks = [origData filteredArrayUsingPredicate:pred];
-//                NSLog(@"%lu", (unsigned long)facebookSucks.count);
-//                
-//                NSLog(@"%@", facebookSucks);
-//            }
-//        }
-//    }];
 }
 
 - (IBAction)addImageTapped:(id)sender {
@@ -362,10 +352,11 @@ NSString* const kMeetActionSheetCancel=@"Cancel";
         newMeet=[PFObject objectWithClassName:@"Meet"];
     
     if (selectedDate) {
-        [newMeet setObject:[dateFormatter stringFromDate:selectedDate] forKey:@"Date"];
+        [newMeet setObject:selectedDate forKey:@"Date"];
+        [newMeet setObject:[dateFormatter stringFromDate:selectedDate] forKey:@"DateString"];
     }
     else if (![newMeet objectForKey:@"Date"]) {
-        [[[UIAlertView alloc] initWithTitle:nil message:@"Without a date it's like it never happened..." delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Okay", nil] show];
+        [[[UIAlertView alloc] initWithTitle:nil message:@"Without a date it's like it never happened...You can fudge it a little, if necessary." delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Okay", nil] show];
         return;
     }
     

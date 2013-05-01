@@ -12,10 +12,16 @@
 
 @end
 
+@implementation HWMFacebookPhotoPickerTarget
+@synthesize target;
+@synthesize imageURL;
+@end
+
 @implementation HWMFacebookImagesViewController
 
 @synthesize dataSource = _dataSource;
 @synthesize facebookID = _facebookID;
+@synthesize delegate;
 
 - (void)viewDidLoad
 {
@@ -56,6 +62,19 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     // TODO: Select Item
+    if(self.delegate!=nil)
+    {
+        if([self.delegate respondsToSelector:@selector(targetPicker:targetSelected:)])
+        {
+            HWMFacebookPhotoPickerTarget* target=[[HWMFacebookPhotoPickerTarget alloc] init];
+            
+            NSDictionary* fbImage=[_dataSource.data objectAtIndex:indexPath.row];
+            
+            target.imageURL = [fbImage objectForKey:@"source"];
+            
+            [self.delegate targetPicker:self targetSelected:target];
+        }
+    }
 }
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
     // TODO: Deselect item

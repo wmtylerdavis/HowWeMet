@@ -12,6 +12,7 @@
 #import "EGOImageButton.h"
 #import "HWMGrayButton.h"
 #import "TDDatePickerController.h"
+#import "HWMFacebookImagesViewController.h"
 
 extern const int kAddMeetTypePhotoRoll;
 extern const int kAddMeetTypeCamera;
@@ -21,8 +22,10 @@ extern NSString* const kMeetActionSheetTakePhotoOrVideo;
 extern NSString* const kMeetActionSheetPicFromFacebook;
 extern NSString* const kMeetActionSheetCancel;
 
+typedef void(^SelectItemCallback)(id sender, id selectedItem);
+
 @interface HWMAddStoryViewController : UIViewController <UITextFieldDelegate, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate,
-TDDatePickerControllerDelegate,EGOImageLoaderObserver>
+TDDatePickerControllerDelegate,EGOImageLoaderObserver, HWMFacebookPhotoPickerDelegate>
 {
     UIToolbar* accessoryBar;
     BOOL _isPrivate;

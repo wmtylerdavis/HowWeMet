@@ -8,6 +8,7 @@
 
 #import "HWMFacebookImageDataSource.h"
 #import "HWMAppDelegate.h"
+#import "EGOImageView.h"
 
 @implementation HWMFacebookImageDataSource
 
@@ -121,12 +122,11 @@
     }
     [cell contentView].backgroundColor = [UIColor clearColor];
     
-    EGOImageButton* pic=(EGOImageButton*)[cell viewWithTag:1];
+    EGOImageView* pic=(EGOImageView*)[cell viewWithTag:1];
     
     NSDictionary* fbImage=[_data objectAtIndex:indexPath.row];
     NSLog(@"%@", fbImage);
     [pic setImageURL:[NSURL URLWithString:[fbImage objectForKey:@"source"]]];
-    [pic removeTarget:nil action:NULL forControlEvents:UIControlEventAllTouchEvents];
 
     return cell;
 }

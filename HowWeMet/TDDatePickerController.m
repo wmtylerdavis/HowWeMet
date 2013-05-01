@@ -15,6 +15,8 @@
     [super viewDidLoad];
 
 	datePicker.date = [NSDate date];
+    self.datePicker.datePickerMode=UIDatePickerModeDate;
+    allDay=YES;
 
 	// we need to set the subview dimensions or it will not always render correctly
 	// http://stackoverflow.com/questions/1088163

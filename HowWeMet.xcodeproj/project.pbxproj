@@ -83,6 +83,7 @@
 		6335A93617261C9D007C1508 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		6335A93C17275666007C1508 /* iconSmall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconSmall.png; sourceTree = "<group>"; };
 		6335A93E1727566E007C1508 /* iconBig.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconBig.png; sourceTree = "<group>"; };
+		634B14E21730689100BCBDEE /* HWMMappableObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWMMappableObject.h; sourceTree = "<group>"; };
 		638C5B211722BB8100A44D71 /* HowWeMet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HowWeMet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		638C5B241722BB8100A44D71 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		638C5B261722BB8100A44D71 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -269,6 +270,7 @@
 				63EA4C6F172F0B7200DE0A97 /* HWMFacebookImageDataSource.m */,
 				63EA4C281728C10D00DE0A97 /* HWMGrayButton.h */,
 				63EA4C291728C10D00DE0A97 /* HWMGrayButton.m */,
+				634B14E21730689100BCBDEE /* HWMMappableObject.h */,
 				63EA4C271728B68200DE0A97 /* Nibs */,
 				638C5B2B1722BB8100A44D71 /* Supporting Files */,
 			);
