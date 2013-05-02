@@ -34,5 +34,6 @@
 @property (nonatomic, retain) HWMFacebookImageDataSource* dataSource;
 @property (nonatomic, retain) NSString* facebookID;
 @property (nonatomic, assign) id<HWMFacebookPhotoPickerDelegate> delegate;
+@property (strong, nonatomic) IBOutlet UILabel *noDataLabel;
 
 @end

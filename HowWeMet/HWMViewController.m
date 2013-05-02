@@ -42,15 +42,21 @@
     
     self.tableView.dataSource=_dataSource;
     [self.tableView reloadData];
+    [_dataSource refresh];
 }
 
--(void)viewDidAppear:(BOOL)animated
-{
-    [_dataSource refresh];
-    
-    if([self.tableView indexPathForSelectedRow])
-        [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:NO];
-}
+//-(void)viewDidAppear:(BOOL)animated
+//{
+//    if (self.searchBar.text != nil) {
+//        
+//    }
+//    else {
+//    [_dataSource refresh];
+//    }
+//    
+//    if([self.tableView indexPathForSelectedRow])
+//        [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:NO];
+//}
 
 - (void)registerForKeyboardNotifications
 {
@@ -179,34 +185,11 @@
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
     [self.view endEditing:YES];
-    //    if(_searchSource==nil)
-    //    {
-    //        _searchSource=[[HMTProfileListDataSource alloc] init];
-    //        //quick and dirty
-    //        [_searchSource hideFollowButton:YES];
-    //        _searchSource.delegate=self;
-    //    }
-    //
-    //    if(searchBar.text==nil || searchBar.text.length==0)
-    //    {
-    //        [self.filterPicker setSelectedSegmentIndex:0];
-    //        [self filterBarChanged:self.filterPicker];
-    //        return;
-    //    }
-    //
-    //    // unpop all the filter buttons so they can switch back
-    //    // by tapping on one.
-    //    [self.filterPicker setSelectedSegmentIndex:-1];
-    //
-    //    // search search search
-    //    [_searchSource setResourceLocation:[NSString stringWithFormat:@"customers_search?query=%@", searchBar.text]];
-    //
-    //    // hide the keyboard.
-    //    [self.view endEditing:YES];
-    //
-    //    self.tableView.dataSource=_searchSource;
-    //    [self.tableView reloadData];
-    //    [_searchSource refresh];
+
+    if(searchBar.text==nil || searchBar.text.length==0)
+    {
+        [self.tableView reloadData];
+    }
 }
 
 -(void)inviteFacebookFriend: (NSString*) friend
@@ -226,7 +209,14 @@
 }
 
 - (void)viewDidUnload {
-    [self setSearchBar:nil];
+    //[self setSearchBar:nil];
     [super viewDidUnload];
 }
+
+-(void)dealloc
+{
+    self.tableView=nil;
+    self.searchBar=nil;
+}
+
 @end

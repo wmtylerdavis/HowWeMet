@@ -33,8 +33,7 @@
     self.collectionView.backgroundColor = [UIColor darkGrayColor];
     UINib *cellNib = [UINib nibWithNibName:@"HWMFacebookImage" bundle:nil];
     [self.collectionView registerNib:cellNib forCellWithReuseIdentifier:@"HWMFacebookImage"];
-//    [self.collectionView registerClass:[UICollectionViewCell class]
-//            forCellWithReuseIdentifier:@"HWMFacebookImage"];
+    [self.noDataLabel setFont:[UIFont fontWithName:@"Helvetica" size:14.0]];
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     [flowLayout setItemSize:CGSizeMake(100, 100)];
     [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
@@ -120,6 +119,15 @@
     
     if(dataSource.data.count>0)
         [self toggleNoDataMessage:NO message:nil];
+    else
+    {
+        [self emptyFeedMessageForCurrentSegment];
+    }
+}
+
+-(void)emptyFeedMessageForCurrentSegment
+{
+    [self toggleNoDataMessage:YES message:@"We couldn't find any images on Facebook for the two of you together, but we're still working on this feature so we could be wrong..."];
 }
 
 -(void)dataSource:(HWMGenericDataSource *)dataSource error:(NSError *)error
@@ -131,9 +139,9 @@
 
 -(void)toggleNoDataMessage:(BOOL)show message:(NSString*)message
 {
-    
+    self.noDataLabel.text=message;
+    self.noDataLabel.hidden=!show;
 }
-
 -(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
     //
@@ -147,6 +155,7 @@
 
 - (void)viewDidUnload {
     [self setCollectionView:nil];
+    [self setNoDataLabel:nil];
     [super viewDidUnload];
 }
 
@@ -166,5 +175,6 @@
 (UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
     return UIEdgeInsetsMake(50, 20, 50, 20);
 }
+
 
 @end

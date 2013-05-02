@@ -38,7 +38,7 @@
         else
         {
             _facebookData = [result objectForKey:@"data"];
-            
+            NSLog(@"%lu", (unsigned long)_facebookData.count);
             NSMutableArray *discardedItems = [NSMutableArray array];
             
             for (id item in _facebookData) {
@@ -54,17 +54,6 @@
                 }
             }
             [_facebookData removeObjectsInArray:discardedItems];
-//            for (int i = 0; i < _facebookData.count; ++i) {
-//                NSArray* facebookSucks = [[[_facebookData objectAtIndex:i] objectForKey:@"tags"] objectForKey:@"data"];
-//                NSArray* origData = facebookSucks;
-//                NSLog(@"%@", self.fbUserID);
-//                NSPredicate *pred = [NSPredicate predicateWithFormat:@"(id == %@)",self.fbUserID];
-//                facebookSucks = [origData filteredArrayUsingPredicate:pred];
-//                if (facebookSucks.count == 0) {
-//                    NSLog(@"%@", [_facebookData objectAtIndex:i]);
-//                    [_facebookData removeObjectAtIndex:i];
-//                }
-//            }
             _data=_facebookData;
             NSLog(@"%lu", (unsigned long)_data.count);
             

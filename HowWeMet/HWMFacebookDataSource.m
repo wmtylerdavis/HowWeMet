@@ -12,6 +12,8 @@
 
 @implementation HWMFacebookDataSource
 
+@synthesize friendUsers;
+
 -(void)refresh
 {
     /* go get the FB friends! */
@@ -36,6 +38,18 @@
         else
         {
             _data=[result objectForKey:@"data"];
+            NSMutableArray *friendIds = [NSMutableArray arrayWithCapacity:_data.count];
+            // Create a list of friends' Facebook IDs
+            for (NSDictionary *friendObject in _data) {
+                [friendIds addObject:[friendObject objectForKey:@"id"]];
+            }
+            
+            PFQuery *friendQuery = [PFUser query];
+            [friendQuery whereKey:@"fbId" containedIn:friendIds];
+            
+            // findObjects will return a list of PFUsers that are friends
+            // with the current user
+            friendUsers = [friendQuery findObjects];
             
             // DUBBLE SORT
             _data=[_data sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
@@ -77,6 +91,7 @@
         cell=[[[NSBundle mainBundle] loadNibNamed:@"FriendCell" owner:tableView options:nil] objectAtIndex:0];
     }
     [cell contentView].backgroundColor = [UIColor clearColor];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     EGOImageButton* profilePic=(EGOImageButton*)[cell viewWithTag:10];
     UILabel* nameLabel=(UILabel*)[cell viewWithTag:1];

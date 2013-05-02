@@ -93,7 +93,7 @@ NSString* const kMeetActionSheetCancel=@"Cancel";
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.title = @"Edit Story";
-    [self registerForKeyboardNotifications];
+    // [self registerForKeyboardNotifications];
     self.howWeMetStory.delegate = self;
     [self setAccessoryForTextField:self.howWeMetStory];
     dateFormatter = [[NSDateFormatter alloc] init];
@@ -108,6 +108,7 @@ NSString* const kMeetActionSheetCancel=@"Cancel";
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [self registerForKeyboardNotifications];
     
     [self refresh];
 }
@@ -392,4 +393,5 @@ NSString* const kMeetActionSheetCancel=@"Cancel";
         }
     }];
 }
+
 @end

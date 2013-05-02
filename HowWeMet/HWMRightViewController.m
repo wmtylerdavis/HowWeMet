@@ -164,6 +164,7 @@
                               cancelButtonTitle:@"OK"
                               otherButtonTitles:nil];
         [alert show];
+        NSLog(@"%@",[_dataSource.friendUsers objectAtIndex:indexPath.row]);
     }
     else 
         [self inviteFacebookFriend:[[_dataSource.data objectAtIndex:indexPath.row] objectForKey:@"id"]];
