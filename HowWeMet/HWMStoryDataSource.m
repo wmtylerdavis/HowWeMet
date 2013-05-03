@@ -102,17 +102,18 @@
             cell=[[[NSBundle mainBundle] loadNibNamed:@"HWMStoryCell" owner:tableView options:nil] objectAtIndex:0];
         }
         [cell contentView].backgroundColor = [UIColor clearColor];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
         EGOImageButton* profilePic=(EGOImageButton*)[cell viewWithTag:1];
         UILabel* nameLabel=(UILabel*)[cell viewWithTag:2];
         UILabel* storyLabel=(UILabel*)[cell viewWithTag:3];
         UILabel* dateLabel=(UILabel*)[cell viewWithTag:11];
-        NSString* avatarURL=[fbFriend objectForKey:@"AvatarURL"];
+        NSString* avatarURL=[fbFriend objectForKey:@"FriendAvatarURL"];
         
         [profilePic setImageURL:[NSURL URLWithString:avatarURL]];
         [profilePic removeTarget:nil action:NULL forControlEvents:UIControlEventAllTouchEvents];
         
-        [nameLabel setText:[NSString stringWithFormat:@"%@", [fbFriend objectForKey:@"Name"]]];
+        [nameLabel setText:[NSString stringWithFormat:@"%@", [fbFriend objectForKey:@"FriendName"]]];
         [nameLabel setFont:[UIFont fontWithName:@"Chalkduster" size:14.0f]];
         
         //storyLabel.frame = CGRectMake(storyLabel.frame.origin.x, storyLabel.frame.origin.y, storyLabel.frame.size.width, storyLabel.frame.size.height);
@@ -133,11 +134,14 @@
         
         UIImageView* image=(UIImageView*)[cell viewWithTag:9];
         
-        PFFile* imgFileData=[fbFriend objectForKey:@"Photo"];
-        [imgFileData getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
-            UIImage* feedImage=[UIImage imageWithData:data];
-            image.image=feedImage;
-        }];
+        if ([fbFriend objectForKey:@"Photo"] != [NSNull null]) {
+            PFFile* imgFileData=[fbFriend objectForKey:@"Photo"];
+            [imgFileData getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+                UIImage* feedImage=[UIImage imageWithData:data];
+                image.image=feedImage;
+            }];
+        }
+    
     }
     
     else {

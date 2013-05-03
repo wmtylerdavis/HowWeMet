@@ -45,18 +45,18 @@
     [_dataSource refresh];
 }
 
-//-(void)viewDidAppear:(BOOL)animated
-//{
-//    if (self.searchBar.text != nil) {
-//        
-//    }
-//    else {
-//    [_dataSource refresh];
-//    }
-//    
-//    if([self.tableView indexPathForSelectedRow])
-//        [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:NO];
-//}
+-(void)viewDidAppear:(BOOL)animated
+{
+    if (self.searchBar.text != nil) {
+        
+    }
+    else {
+    [_dataSource refresh];
+    }
+    
+    if([self.tableView indexPathForSelectedRow])
+        [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:NO];
+}
 
 - (void)registerForKeyboardNotifications
 {
@@ -99,6 +99,9 @@
 
 -(float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if ([[_dataSource.data objectAtIndex:indexPath.row] objectForKey:@"FacebookID"]) {
+        return 200.0f;
+    }
     return 100.0f;
 }
 

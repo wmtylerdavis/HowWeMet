@@ -229,7 +229,7 @@ NSString* const kMeetActionSheetCancel=@"Cancel";
 {
     if(self.meet==nil) return;
     
-    if ([self.meet objectForKey:@"Photo"]) {
+    if ([self.meet objectForKey:@"Photo"] != [NSNull null]) {
         PFFile* imgFileData=[self.meet objectForKey:@"Photo"];
         [imgFileData getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
             UIImage* meetImage=[UIImage imageWithData:data];
@@ -387,8 +387,8 @@ NSString* const kMeetActionSheetCancel=@"Cancel";
     }
     
     if (selectedDate) {
-        [newMeet setObject:selectedDate forKey:@"Date"];
-        [newMeet setObject:[dateFormatter stringFromDate:selectedDate] forKey:@"DateString"];
+        [newMeet setObject:selectedDate forKey:@"DateDate"];
+        [newMeet setObject:[dateFormatter stringFromDate:selectedDate] forKey:@"Date"];
     }
     else if (![newMeet objectForKey:@"Date"]) {
         [[[UIAlertView alloc] initWithTitle:nil message:@"Without a date it's like it never happened...You can fudge it a little, if necessary." delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Okay", nil] show];
@@ -411,7 +411,7 @@ NSString* const kMeetActionSheetCancel=@"Cancel";
         }];
     }
     else {
-        [newMeet setObject:nil forKey:@"Photo"];
+        [newMeet setObject:[NSNull null] forKey:@"Photo"];
         [self triggerSave:newMeet];
     }
     
