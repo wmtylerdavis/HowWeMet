@@ -48,6 +48,12 @@ TDDatePickerControllerDelegate,EGOImageLoaderObserver, HWMFacebookPhotoPickerDel
 @property (nonatomic, assign) int imageType;
 
 @property (nonatomic, retain) PFObject* meet;
+@property (strong, nonatomic) IBOutlet HWMGrayButton *followingRelationship;
+@property (strong, nonatomic) IBOutlet HWMGrayButton *buddiesRelationship;
+@property (strong, nonatomic) IBOutlet HWMGrayButton *coworkersRelationship;
+@property (strong, nonatomic) IBOutlet HWMGrayButton *acqRelationship;
+@property (strong, nonatomic) IBOutlet HWMGrayButton *questionRelationship;
+
 
 
 - (IBAction)relationshipButtonTapped:(id)sender;

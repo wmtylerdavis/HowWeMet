@@ -9,6 +9,7 @@
 #import "HWMAddStoryViewController.h"
 #import "HowWeMetAPI.h"
 #import "HWMFacebookImagesViewController.h"
+#import "KGModal.h"
 #import <AVFoundation/AVFoundation.h>
 #import <MobileCoreServices/UTCoreTypes.h>
 #import <MediaPlayer/MPMoviePlayerController.h>
@@ -135,6 +136,11 @@ NSString* const kMeetActionSheetCancel=@"Cancel";
     [self setHowWeMetImage:nil];
     [self setCreateStoryButton:nil];
     [self setPrivacyButton:nil];
+    [self setFollowingRelationship:nil];
+    [self setBuddiesRelationship:nil];
+    [self setCoworkersRelationship:nil];
+    [self setAcqRelationship:nil];
+    [self setQuestionRelationship:nil];
     [super viewDidUnload];
 }
 
@@ -150,6 +156,33 @@ NSString* const kMeetActionSheetCancel=@"Cancel";
 }
 
 - (IBAction)relationshipButtonTapped:(id)sender {
+    
+    UIView* relationshipDialog=[[[NSBundle mainBundle] loadNibNamed:@"HWMrelationships" owner:self options:nil] objectAtIndex:0];
+    relationshipDialog.backgroundColor = [[HowWeMetAPI sharedInstance] redColor];
+    relationshipDialog.clipsToBounds = YES;
+    relationshipDialog.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    
+//    [(HWMGrayButton*)[relationshipDialog viewWithTag:1] respondsToSelector:@selector(relationshipSelected:)];
+    
+
+    [[KGModal sharedInstance] setShowCloseButton:YES];
+    [[KGModal sharedInstance] setTapOutsideToDismiss:YES];
+    [[KGModal sharedInstance] showWithContentView:relationshipDialog andAnimated:YES];
+}
+
+- (IBAction)relationshipSelected:(id)sender {
+    HWMGrayButton *resultButton = (HWMGrayButton *)sender;
+    NSString* relationshipTitle = resultButton.title;
+    if([relationshipTitle isEqualToString:@"?????"])
+    {
+        [self.meet setObject:@"question" forKey:@"Relationship"];
+    }
+    else {
+        [self.meet setObject:relationshipTitle forKey:@"Relationship"];
+    }
+    [_friendRelationship setText:relationshipTitle];
+    [[KGModal sharedInstance] hide];
+
 }
 
 -(void)refreshDate
@@ -207,9 +240,12 @@ NSString* const kMeetActionSheetCancel=@"Cancel";
         self.timeLabel.text = [self.meet objectForKey:@"Date"];
     }
     
-    self.friendName.text=[self.meet objectForKey:@"Name"];
-//    self.friendRelationship = [self.meet objectForKey:@"Relationship"];
-    [self.friendAvatar setImageURL:[self.meet objectForKey:@"AvatarURL"]];
+    if ([self.meet objectForKey:@"Relationship"]) {
+        _friendRelationship.text = [self.meet objectForKey:@"Relationship"];
+    }
+    
+    self.friendName.text=[self.meet objectForKey:@"FriendName"];
+    [self.friendAvatar setImageURL:[self.meet objectForKey:@"FriendAvatarURL"]];
     
 }
 
@@ -349,8 +385,6 @@ NSString* const kMeetActionSheetCancel=@"Cancel";
     {
         newMeet=self.meet;
     }
-    else
-        newMeet=[PFObject objectWithClassName:@"Meet"];
     
     if (selectedDate) {
         [newMeet setObject:selectedDate forKey:@"Date"];
@@ -359,6 +393,10 @@ NSString* const kMeetActionSheetCancel=@"Cancel";
     else if (![newMeet objectForKey:@"Date"]) {
         [[[UIAlertView alloc] initWithTitle:nil message:@"Without a date it's like it never happened...You can fudge it a little, if necessary." delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Okay", nil] show];
         return;
+    }
+    
+    if (![newMeet objectForKey:@"Relationship"]) {
+        [newMeet setObject:@"Following" forKey:@"Relationship"];
     }
     
     if(resizedImage!=nil)
@@ -372,7 +410,10 @@ NSString* const kMeetActionSheetCancel=@"Cancel";
         } progressBlock:^(int percentDone) {
         }];
     }
-    else [self triggerSave:newMeet];
+    else {
+        [newMeet setObject:nil forKey:@"Photo"];
+        [self triggerSave:newMeet];
+    }
     
 }
 
@@ -380,6 +421,8 @@ NSString* const kMeetActionSheetCancel=@"Cancel";
 {
     [newMeet setObject:[self.meet objectForKey:@"FacebookID"]  forKey:@"FacebookID"];
     [newMeet setObject:[PFUser currentUser] forKey:@"Owner"];
+    [newMeet setObject:[[PFUser currentUser] objectForKey:@"Name"] forKey:@"OwnerName"];
+    [newMeet setObject:[[PFUser currentUser] objectForKey:@"AvatarURL"] forKey:@"OwnerAvatar"];
     [newMeet setObject:self.howWeMetStory.text forKey:@"Story"];
     if(_isPrivate)
     {

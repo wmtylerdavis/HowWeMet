@@ -279,11 +279,11 @@ Example 1: Code
 Example 2: Storyboards
 ---
 
-1. Create a subclass of `JASidePanelController`. In this example we call it `mySidePanelController`.
-2. In the Storyboard designate the root view's owner as `mySidePanelController`.
-3. Make sure to `#import "JASidePanelController.h"` in `mySidePanelController.h`.
-4. Add more views to your Storyboard, and give them identifiers "leftViewController", "centerViewController" and "rightViewController". Note that in the new XCode the identifier is called "Storyboard ID" and can be found in the Identity inspector (in older versions the identifier is found in the Attributes inspector).
-5. Add a method `awakeFromNib` to `mySidePanelController.m` with the following code:
+1. Create a subclass of `JASidePanelController`. In this example we call it `MySidePanelController`.
+2. In the Storyboard designate the root view's owner as `MySidePanelController`.
+3. Make sure to `#import "JASidePanelController.h"` in `MySidePanelController.h`.
+4. Add more view controllers to your Storyboard, and give them identifiers "leftViewController", "centerViewController" and "rightViewController". Note that in the new XCode the identifier is called "Storyboard ID" and can be found in the Identity inspector (in older versions the identifier is found in the Attributes inspector).
+5. Add a method `awakeFromNib` to `MySidePanelController.m` with the following code:
 
 ```  objc
 
@@ -392,12 +392,12 @@ Overview
 
 UserVoice for iOS allows you to embed UserVoice directly in your iPhone or iPad app.
 
-![Tour](http://www.uservoice.com/_assets/images/content/UserVoice-iOS-animation-joshua.gif)
+![Tour](https://www.uservoice.com/assets/img/ios/ios-animation.gif)
 
 You will need to have a UserVoice account (free) for it to connect to. Go to [uservoice.com/ios](http://uservoice.com/ios) to sign up.
 
 Binary builds of the SDK are available for download.
-* Current release: [2.0.7](https://github.com/uservoice/uservoice-iphone-sdk/raw/master/dist/UserVoiceSDK-2.0.7.tar.gz)
+* Current release: [2.0.10](http://sdk-downloads.uservoice.com/ios/UserVoiceSDK-2.0.10.tar.gz)
 
 We also have an [example app](https://github.com/uservoice/uservoice-iphone-example) on GitHub that demonstrates how to build and integrate the SDK.
 
@@ -410,8 +410,11 @@ Installation
 * Note that the `.h` files in  `UVHeaders` do not need to be added to your target.
 * Add QuartzCore and SystemConfiguration frameworks to your project.
 * Add `-ObjC` to `Other Linker Flags` in the Build Settings for your target. (There is also an `Other Linker Flags` setting for your entire project, but that's not the one you want.)
+  * Note: make sure that this flag is set for both Release and Debug builds (you can expand the setting by clicking the arrow on the right).
 
 See [DEV.md](https://github.com/uservoice/uservoice-iphone-sdk/blob/master/DEV.md) if you want to build the SDK yourself.
+
+Note: If you opt to compile pull the UserVoice source into your application rather than using `libUserVoice.a`, and your project uses ARC, you will need to set `-fno-objc-arc` for all of the UserVoice source files. We are not currently using ARC, although we are planning to migrate to it eventually.
 
 Obtain Key And Secret
 ---------------------
@@ -533,13 +536,13 @@ There are 4 options for how to launch UserVoice from within your app:
 You can also customize the appearance of the UserVoice user interface by
 creating a custom stylesheet.
 
-    #import "UVStylesheet.h"
+    #import "UVStyleSheet.h"
 
-    @interface MyStylesheet : UVStylesheet
+    @interface MyStyleSheet : UVStyleSheet
 
     @end
 
-    @implementation MyStylesheet
+    @implementation MyStyleSheet
     
     - (UIColor *)backgroundColor {
         return [UIColor colorWithRed:0.15f green:0.15f blue:0.15f alpha:1.0f];
@@ -547,7 +550,7 @@ creating a custom stylesheet.
 
     @end
 
-    [UVStylesheet setStylesheet:[[MyStylesheet alloc] init]];
+    [UVStyleSheet setStyleSheet:[[MyStyleSheet alloc] init]];
 
 ### User Language
 
@@ -591,7 +594,7 @@ If you have any other questions please contact support@uservoice.com.
 Translations
 ------------
 
-Currently the UI is available in English, French, Italian, Traditional Chinese, and Dutch.
+Currently the UI is available in English, French, German, Dutch, Italian, and Traditional Chinese.
 We are using [Twine](https://github.com/mobiata/twine) to manage the translations.
 
 To contribute to the translations, follow these steps:
@@ -616,6 +619,26 @@ translation is missing for a string that does not appear in the SDK codebase,
 you will need to contribute to the main [UserVoice translation
 site](http://translate.uservoice.com/).
 
+iOS Versions
+------------
+
+* Full support for iOS 5.0+
+* For iOS 4.3 we accept patches, but don't guarantee support
+* Earlier versions of iOS are not supported
+* Builds are provided for armv7--there is no armv6 device that runs a supported version of iOS
+* In general, the plan is to keep in step with public releases of Xcode
+
+Contributors
+------------
+
+Special thanks to:
+
+* [netbe](https://github.com/netbe) for the French translation
+* [Piero87](https://github.com/Piero87) for the Italian translation
+* [zetachang](https://github.com/zetachang) for the Traditional Chinese translation
+* [nvh](https://github.com/nvh) for the Dutch translation
+* [vinzenzweber](https://github.com/vinzenzweber) and [Blockhaus Media](http://www.blockhaus-media.com/) for the German translation
+* Everyone else who [reported bugs or made pull requests](https://github.com/uservoice/uservoice-iphone-sdk/issues?state=closed)!
 
 License
 -------

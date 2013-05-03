@@ -18,16 +18,10 @@
 
 #import "UVTicket.h"
 #import "UVCustomField.h"
-#import "UVResponseDelegate.h"
 #import "UVSession.h"
 #import "UVConfig.h"
 
 @implementation UVTicket
-
-+ (void)initialize {
-    [self setDelegate:[[UVResponseDelegate alloc] initWithModelClass:[self class]]];
-    [self setBaseURL:[self siteURL]];
-}
 
 + (id)createWithMessage:(NSString *)message
   andEmailIfNotLoggedIn:(NSString *)email
@@ -55,10 +49,16 @@
         [params setObject:[fields objectForKey:name] forKey:[NSString stringWithFormat:@"ticket[custom_field_values][%@]", name]];
     }
 
+    if ([UVSession currentSession].config.extraTicketInfo != nil) {
+        NSString *messageText = [NSString stringWithFormat:@"%@\n\n%@", message, [UVSession currentSession].config.extraTicketInfo];
+        [params setObject:messageText forKey:@"ticket[message]"];
+    }
+
     return [[self class] postPath:path
                        withParams:params
                            target:delegate
-                         selector:@selector(didCreateTicket:)];
+                         selector:@selector(didCreateTicket:)
+                          rootKey:@"ticket"];
 }
 
 @end

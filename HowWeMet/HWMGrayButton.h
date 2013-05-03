@@ -16,6 +16,7 @@
 
 @property (nonatomic, copy) const NSString* style;
 @property (nonatomic, retain) NSNumber* objectID;
+@property (nonatomic, retain) NSString* title;
 @property (nonatomic, assign) float textSize;
 
 @end

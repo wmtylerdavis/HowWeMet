@@ -10,24 +10,14 @@
 #import "UVRequestToken.h"
 #import "YOAuthToken.h"
 #import "UVSession.h"
-#import "UVResponseDelegate.h"
 #import "UVConfig.h"
 
 @implementation UVAccessToken
 
 @synthesize oauthToken;
 
-+ (void)initialize {
-    [self setDelegate:[[UVResponseDelegate alloc] initWithModelClass:[self class]]];
-
-    NSRange range = [[UVSession currentSession].config.site rangeOfString:@".us.com"];
-    BOOL useHttps = range.location == NSNotFound; // not pointing to a us.com (aka dev) url => use https
-    [self setBaseURL:[self siteURLWithHTTPS:useHttps]];
-}
-
-+ (BOOL) exists {
++ (BOOL)exists {
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-
     return [prefs stringForKey:@"uv-iphone-k"] != nil;
 }
 
@@ -44,7 +34,8 @@
     id returnValue = [[self class] getPath:path
                                 withParams:nil
                                     target:delegate
-                                  selector:@selector(didRevokeToken:)];
+                                  selector:@selector(didRevokeToken:)
+                                   rootKey:@"token"];
     [self remove];
     [UVSession currentSession].user = nil;
     return returnValue;
@@ -69,7 +60,8 @@
     return [self getPath:path
               withParams:params
                   target:delegate
-                selector:@selector(didRetrieveAccessToken:)];
+                selector:@selector(didRetrieveAccessToken:)
+                 rootKey:@"token"];
 }
 
 - (void)persist {

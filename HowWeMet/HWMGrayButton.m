@@ -11,6 +11,7 @@
 @implementation HWMGrayButton
 
 @synthesize style;
+@synthesize title;
 
 -(float)textSize
 {
@@ -47,6 +48,7 @@
     self.titleLabel.font=[UIFont fontWithName:@"PTSans-Bold" size:self.textSize];
     self.titleLabel.shadowColor=[UIColor blackColor];
     self.titleLabel.shadowOffset=CGSizeMake(0.0, 1.0);
+    self.title = self.titleLabel.text;
     [self setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 }
 

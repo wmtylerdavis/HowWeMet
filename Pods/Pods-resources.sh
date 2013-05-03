@@ -26,6 +26,7 @@ install_resource()
   esac
 }
 install_resource 'Facebook-iOS-SDK/src/FacebookSDKResources.bundle'
+install_resource 'uservoice-iphone-sdk/Resources/de.lproj'
 install_resource 'uservoice-iphone-sdk/Resources/en.lproj'
 install_resource 'uservoice-iphone-sdk/Resources/fr.lproj'
 install_resource 'uservoice-iphone-sdk/Resources/it.lproj'

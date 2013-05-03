@@ -7,7 +7,6 @@
 //
 
 #import "UVHelpTopic.h"
-#import "UVResponseDelegate.h"
 
 @implementation UVHelpTopic
 
@@ -15,17 +14,13 @@
 @synthesize topicId;
 @synthesize articleCount;
 
-+ (void)initialize {
-    [self setDelegate:[[UVResponseDelegate alloc] initWithModelClass:[self class]]];
-    [self setBaseURL:[self siteURL]];
-}
-
 + (id)getAllWithDelegate:(id)delegate {
     NSString *path = [self apiPath:@"/topics.json"];
     return [self getPath:path
               withParams:nil
                   target:delegate
-                selector:@selector(didRetrieveHelpTopics:)];
+                selector:@selector(didRetrieveHelpTopics:)
+                 rootKey:@"topics"];
 }
 
 + (id)getTopicWithId:(NSInteger)topicId delegate:(id)delegate {
@@ -33,7 +28,8 @@
     return [self getPath:path
               withParams:nil
                   target:delegate
-                selector:@selector(didRetrieveHelpTopic:)];
+                selector:@selector(didRetrieveHelpTopic:)
+                 rootKey:@"topic"];
 }
 
 

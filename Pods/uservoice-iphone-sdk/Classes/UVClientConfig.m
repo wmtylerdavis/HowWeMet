@@ -9,9 +9,7 @@
 #import "HTTPRiot.h"
 #import "UVClientConfig.h"
 #import "UVSession.h"
-#import "UVResponseDelegate.h"
 #import "UVForum.h"
-#import "UVSubject.h"
 #import "UVUser.h"
 #import "UVSubdomain.h"
 #import "UVCustomField.h"
@@ -30,16 +28,12 @@
 @synthesize clientId;
 @synthesize whiteLabel;
 
-+ (void)initialize {
-    [self setDelegate:[[UVResponseDelegate alloc] initWithModelClass:[self class]]];
-    [self setBaseURL:[self siteURL]];
-}
-
 + (id)getWithDelegate:(id)delegate {
     return [self getPath:[self apiPath:@"/client.json"]
               withParams:nil
                   target:delegate
-                selector:@selector(didRetrieveClientConfig:)];
+                selector:@selector(didRetrieveClientConfig:)
+                 rootKey:@"client"];
 }
 
 + (void)processModel:(id)model {

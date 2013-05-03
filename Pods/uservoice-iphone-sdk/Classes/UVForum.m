@@ -7,7 +7,6 @@
 //
 
 #import "UVForum.h"
-#import "UVResponseDelegate.h"
 #import "UVCategory.h"
 
 @implementation UVForum
@@ -22,11 +21,6 @@
 @synthesize suggestions;
 @synthesize suggestionsNeedReload;
 @synthesize suggestionsCount;
-
-+ (void)initialize {
-    [self setDelegate:[[UVResponseDelegate alloc] initWithModelClass:[self class]]];
-    [self setBaseURL:[self siteURL]];
-}
 
 - (id)initWithDictionary:(NSDictionary *)dict {
     if (self = [super init]) {
@@ -48,10 +42,6 @@
         }
     }
     return self;
-}
-
-- (NSString *)description {
-    return [NSString stringWithFormat:@"forumId: %d\nname: %@", self.forumId, self.name];
 }
 
 - (void)dealloc {

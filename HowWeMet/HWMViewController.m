@@ -141,8 +141,8 @@
         meet = [PFObject objectWithClassName:@"Meet"];
         NSString* fbAvatarURL=[NSString stringWithFormat:@"http://graph.facebook.com/%@/picture", [friend objectForKey:@"id"]];
         [meet setObject:[friend objectForKey:@"id"] forKey:@"FacebookID"];
-        [meet setObject:fbAvatarURL forKey:@"AvatarURL"];
-        [meet setObject:[friend objectForKey:@"name"] forKey:@"Name"];
+        [meet setObject:fbAvatarURL forKey:@"FriendAvatarURL"];
+        [meet setObject:[friend objectForKey:@"name"] forKey:@"FriendName"];
     }
     
     HWMAddStoryViewController* storyController = [[HWMAddStoryViewController alloc] init];

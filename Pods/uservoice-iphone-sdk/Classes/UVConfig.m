@@ -25,6 +25,7 @@
 @synthesize showPostIdea;
 @synthesize showContactUs;
 @synthesize showKnowledgeBase;
+@synthesize extraTicketInfo;
 
 + (UVConfig *)configWithSite:(NSString *)site andKey:(NSString *)key andSecret:(NSString *)secret {
     return [[[UVConfig alloc] initWithSite:site andKey:key andSecret:secret] autorelease];
@@ -105,10 +106,6 @@
 
 - (BOOL)wasSignedInBySDK {
     return (self.ssoToken != nil || self.guid != nil);
-}
-
-- (NSString *)description {
-    return [NSString stringWithFormat:@"Site: %@\nKey: %@\nSecret: %@", self.site, self.key, self.secret];
 }
 
 - (void)dealloc {

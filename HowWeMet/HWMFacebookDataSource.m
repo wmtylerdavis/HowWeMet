@@ -45,11 +45,20 @@
             }
             
             PFQuery *friendQuery = [PFUser query];
-            [friendQuery whereKey:@"fbId" containedIn:friendIds];
+            [friendQuery whereKey:@"facebookID" containedIn:friendIds];
             
             // findObjects will return a list of PFUsers that are friends
             // with the current user
-            friendUsers = [friendQuery findObjects];
+            [friendQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+                if (!error) {
+                    // The find succeeded.
+                    NSLog(@"Successfully retrieved %d scores.", objects.count);
+                    friendUsers = objects;
+                } else {
+                    // Log details of the failure
+                    NSLog(@"Error: %@ %@", error, [error userInfo]);
+                }
+            }];
             
             // DUBBLE SORT
             _data=[_data sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {

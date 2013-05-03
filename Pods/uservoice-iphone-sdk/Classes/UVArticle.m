@@ -8,7 +8,6 @@
 
 #import "UVArticle.h"
 #import "UVSuggestion.h"
-#import "UVResponseDelegate.h"
 #import "UVSession.h"
 #import "UVClientConfig.h"
 #import "UVForum.h"
@@ -21,17 +20,13 @@
 @synthesize answerHTML;
 @synthesize articleId;
 
-+ (void)initialize {
-    [self setDelegate:[[UVResponseDelegate alloc] initWithModelClass:[self class]]];
-    [self setBaseURL:[self siteURL]];
-}
-
 + (id)getArticlesWithTopicId:(int)topicId delegate:(id)delegate {
     NSString *path = [self apiPath:[NSString stringWithFormat:@"/topics/%d/articles.json", topicId]];
     return [self getPath:path
               withParams:nil
                   target:delegate
-                selector:@selector(didRetrieveArticles:)];
+                selector:@selector(didRetrieveArticles:)
+                 rootKey:@"articles"];
 }
 
 + (id)getArticlesWithDelegate:(id)delegate {
@@ -39,7 +34,8 @@
     return [self getPath:path
               withParams:nil
                   target:delegate
-                selector:@selector(didRetrieveArticles:)];
+                selector:@selector(didRetrieveArticles:)
+                 rootKey:@"articles"];
 }
 
 + (NSArray *)getInstantAnswers:(NSString *)query delegate:(id)delegate {
@@ -55,7 +51,8 @@
     return [self getPath:[self apiPath:@"/instant_answers/search.json"]
               withParams:params
                   target:delegate
-                selector:@selector(didRetrieveInstantAnswers:)];
+                selector:@selector(didRetrieveInstantAnswers:)
+                 rootKey:@"instant_answers"];
 }
 
 + (UVBaseModel *)modelForDictionary:(NSDictionary *)dict {
