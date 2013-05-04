@@ -20,6 +20,10 @@
 		6335A93F1727566E007C1508 /* iconBig.png in Resources */ = {isa = PBXBuildFile; fileRef = 6335A93E1727566E007C1508 /* iconBig.png */; };
 		634B14E41733232400BCBDEE /* HWMrelationships.xib in Resources */ = {isa = PBXBuildFile; fileRef = 634B14E31733232400BCBDEE /* HWMrelationships.xib */; };
 		634B14E71733259C00BCBDEE /* KGModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 634B14E61733259C00BCBDEE /* KGModal.m */; };
+		634B14EA17354D6100BCBDEE /* HWMFacebookPlaceDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 634B14E917354D6000BCBDEE /* HWMFacebookPlaceDataSource.m */; };
+		634B14EC17354FB500BCBDEE /* HWMPlaceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 634B14EB17354FB500BCBDEE /* HWMPlaceCell.xib */; };
+		634B14F01735509E00BCBDEE /* HWMFacebookPlaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 634B14EE1735509D00BCBDEE /* HWMFacebookPlaceViewController.m */; };
+		634B14F11735509E00BCBDEE /* HWMFacebookPlaceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 634B14EF1735509D00BCBDEE /* HWMFacebookPlaceViewController.xib */; };
 		638C5B251722BB8100A44D71 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 638C5B241722BB8100A44D71 /* UIKit.framework */; };
 		638C5B271722BB8100A44D71 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 638C5B261722BB8100A44D71 /* Foundation.framework */; };
 		638C5B291722BB8100A44D71 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 638C5B281722BB8100A44D71 /* CoreGraphics.framework */; };
@@ -89,6 +93,12 @@
 		634B14E31733232400BCBDEE /* HWMrelationships.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HWMrelationships.xib; sourceTree = "<group>"; };
 		634B14E51733259B00BCBDEE /* KGModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KGModal.h; sourceTree = "<group>"; };
 		634B14E61733259C00BCBDEE /* KGModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KGModal.m; sourceTree = "<group>"; };
+		634B14E817354D5F00BCBDEE /* HWMFacebookPlaceDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWMFacebookPlaceDataSource.h; sourceTree = "<group>"; };
+		634B14E917354D6000BCBDEE /* HWMFacebookPlaceDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWMFacebookPlaceDataSource.m; sourceTree = "<group>"; };
+		634B14EB17354FB500BCBDEE /* HWMPlaceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HWMPlaceCell.xib; sourceTree = "<group>"; };
+		634B14ED1735509C00BCBDEE /* HWMFacebookPlaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWMFacebookPlaceViewController.h; sourceTree = "<group>"; };
+		634B14EE1735509D00BCBDEE /* HWMFacebookPlaceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWMFacebookPlaceViewController.m; sourceTree = "<group>"; };
+		634B14EF1735509D00BCBDEE /* HWMFacebookPlaceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HWMFacebookPlaceViewController.xib; sourceTree = "<group>"; };
 		638C5B211722BB8100A44D71 /* HowWeMet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HowWeMet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		638C5B241722BB8100A44D71 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		638C5B261722BB8100A44D71 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -264,10 +274,14 @@
 				63EA4C53172B29D800DE0A97 /* HWMAddStoryViewController.m */,
 				63EA4C71172F52B400DE0A97 /* HWMFacebookImagesViewController.h */,
 				63EA4C72172F52B500DE0A97 /* HWMFacebookImagesViewController.m */,
+				634B14ED1735509C00BCBDEE /* HWMFacebookPlaceViewController.h */,
+				634B14EE1735509D00BCBDEE /* HWMFacebookPlaceViewController.m */,
 				63EA4C45172A03BC00DE0A97 /* HWMGenericDataSource.h */,
 				63EA4C46172A03BC00DE0A97 /* HWMGenericDataSource.m */,
 				63EA4C48172A048200DE0A97 /* HWMFacebookDataSource.h */,
 				63EA4C49172A048200DE0A97 /* HWMFacebookDataSource.m */,
+				634B14E817354D5F00BCBDEE /* HWMFacebookPlaceDataSource.h */,
+				634B14E917354D6000BCBDEE /* HWMFacebookPlaceDataSource.m */,
 				63EA4C57172B451800DE0A97 /* HWMStoryDataSource.h */,
 				63EA4C58172B451800DE0A97 /* HWMStoryDataSource.m */,
 				63EA4C6E172F0B7200DE0A97 /* HWMFacebookImageDataSource.h */,
@@ -317,6 +331,7 @@
 		63EA4C271728B68200DE0A97 /* Nibs */ = {
 			isa = PBXGroup;
 			children = (
+				634B14EF1735509D00BCBDEE /* HWMFacebookPlaceViewController.xib */,
 				634B14E31733232400BCBDEE /* HWMrelationships.xib */,
 				63EA4C73172F52B700DE0A97 /* HWMFacebookImagesViewController.xib */,
 				63EA4C54172B29D800DE0A97 /* HWMAddStoryViewController.xib */,
@@ -328,6 +343,7 @@
 				63EA4C50172B1DE200DE0A97 /* HWMRightSectionHeader.xib */,
 				63EA4C5A172B45D500DE0A97 /* HWMStoryCell.xib */,
 				63EA4C6C172F037F00DE0A97 /* HWMFacebookImage.xib */,
+				634B14EB17354FB500BCBDEE /* HWMPlaceCell.xib */,
 			);
 			name = Nibs;
 			sourceTree = "<group>";
@@ -436,6 +452,8 @@
 				63EA4C6D172F037F00DE0A97 /* HWMFacebookImage.xib in Resources */,
 				63EA4C75172F52B800DE0A97 /* HWMFacebookImagesViewController.xib in Resources */,
 				634B14E41733232400BCBDEE /* HWMrelationships.xib in Resources */,
+				634B14EC17354FB500BCBDEE /* HWMPlaceCell.xib in Resources */,
+				634B14F11735509E00BCBDEE /* HWMFacebookPlaceViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,6 +505,8 @@
 				63EA4C70172F0B7300DE0A97 /* HWMFacebookImageDataSource.m in Sources */,
 				63EA4C74172F52B800DE0A97 /* HWMFacebookImagesViewController.m in Sources */,
 				634B14E71733259C00BCBDEE /* KGModal.m in Sources */,
+				634B14EA17354D6100BCBDEE /* HWMFacebookPlaceDataSource.m in Sources */,
+				634B14F01735509E00BCBDEE /* HWMFacebookPlaceViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

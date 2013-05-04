@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
+#import <FacebookSDK/FacebookSDK.h>
+#import "HWMFacebookPlaceViewController.h"
 #import "EGOImageView.h"
 #import "EGOImageButton.h"
 #import "HWMGrayButton.h"
@@ -25,7 +27,7 @@ extern NSString* const kMeetActionSheetCancel;
 typedef void(^SelectItemCallback)(id sender, id selectedItem);
 
 @interface HWMAddStoryViewController : UIViewController <UITextFieldDelegate, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate,
-TDDatePickerControllerDelegate,EGOImageLoaderObserver, HWMFacebookPhotoPickerDelegate>
+TDDatePickerControllerDelegate,EGOImageLoaderObserver, HWMFacebookPhotoPickerDelegate, HWMFacebookPlacePickerDelegate>
 {
     UIToolbar* accessoryBar;
     BOOL _isPrivate;
@@ -43,6 +45,8 @@ TDDatePickerControllerDelegate,EGOImageLoaderObserver, HWMFacebookPhotoPickerDel
 @property (strong, nonatomic) IBOutlet UILabel *timeLabel;
 @property (strong, nonatomic) IBOutlet UITextView *howWeMetStory;
 @property (strong, nonatomic) IBOutlet UIImageView *howWeMetImage;
+@property (strong, nonatomic) IBOutlet UILabel *locationLabel;
+
 @property (strong, nonatomic) IBOutlet HWMGrayButton *createStoryButton;
 @property (strong, nonatomic) IBOutlet HWMGrayButton *privacyButton;
 @property (nonatomic, assign) int imageType;
@@ -50,11 +54,13 @@ TDDatePickerControllerDelegate,EGOImageLoaderObserver, HWMFacebookPhotoPickerDel
 @property (nonatomic, retain) PFObject* meet;
 @property (strong, nonatomic) IBOutlet HWMGrayButton *followingRelationship;
 @property (strong, nonatomic) IBOutlet HWMGrayButton *buddiesRelationship;
+@property (strong, nonatomic) IBOutlet HWMGrayButton *familiesRelationship;
 @property (strong, nonatomic) IBOutlet HWMGrayButton *coworkersRelationship;
+@property (strong, nonatomic) IBOutlet HWMGrayButton *classmatesRelationship;
 @property (strong, nonatomic) IBOutlet HWMGrayButton *acqRelationship;
 @property (strong, nonatomic) IBOutlet HWMGrayButton *questionRelationship;
 
-
+@property (strong, nonatomic) NSObject<FBGraphPlace> *selectedPlace;
 
 - (IBAction)relationshipButtonTapped:(id)sender;
 - (IBAction)whenYouMetTap:(id)sender;
@@ -65,5 +71,6 @@ TDDatePickerControllerDelegate,EGOImageLoaderObserver, HWMFacebookPhotoPickerDel
 
 - (IBAction)createStoryTapped:(id)sender;
 
+- (IBAction)addLocationTapped:(id)sender;
 
 @end

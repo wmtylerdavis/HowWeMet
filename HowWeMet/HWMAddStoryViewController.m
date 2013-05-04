@@ -9,6 +9,7 @@
 #import "HWMAddStoryViewController.h"
 #import "HowWeMetAPI.h"
 #import "HWMFacebookImagesViewController.h"
+#import "HWMFacebookPlaceViewController.h"
 #import "KGModal.h"
 #import <AVFoundation/AVFoundation.h>
 #import <MobileCoreServices/UTCoreTypes.h>
@@ -31,6 +32,7 @@ NSString* const kMeetActionSheetCancel=@"Cancel";
 
 @synthesize meet = _meet;
 @synthesize howWeMetImage;
+@synthesize selectedPlace = _selectedPlace;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -94,6 +96,7 @@ NSString* const kMeetActionSheetCancel=@"Cancel";
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.title = @"Edit Story";
+    
     // [self registerForKeyboardNotifications];
     self.howWeMetStory.delegate = self;
     [self setAccessoryForTextField:self.howWeMetStory];
@@ -141,6 +144,9 @@ NSString* const kMeetActionSheetCancel=@"Cancel";
     [self setCoworkersRelationship:nil];
     [self setAcqRelationship:nil];
     [self setQuestionRelationship:nil];
+    [self setLocationLabel:nil];
+    [self setFamiliesRelationship:nil];
+    [self setClassmatesRelationship:nil];
     [super viewDidUnload];
 }
 
@@ -162,9 +168,6 @@ NSString* const kMeetActionSheetCancel=@"Cancel";
     relationshipDialog.clipsToBounds = YES;
     relationshipDialog.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     
-//    [(HWMGrayButton*)[relationshipDialog viewWithTag:1] respondsToSelector:@selector(relationshipSelected:)];
-    
-
     [[KGModal sharedInstance] setShowCloseButton:YES];
     [[KGModal sharedInstance] setTapOutsideToDismiss:YES];
     [[KGModal sharedInstance] showWithContentView:relationshipDialog andAnimated:YES];
@@ -242,6 +245,11 @@ NSString* const kMeetActionSheetCancel=@"Cancel";
     
     if ([self.meet objectForKey:@"Relationship"]) {
         _friendRelationship.text = [self.meet objectForKey:@"Relationship"];
+    }
+    
+    if ((![self.meet objectForKey:@"Place"]) ||([self.meet objectForKey:@"Place"] != [NSNull null]))
+    {
+        [_locationLabel setText:[[self.meet objectForKey:@"Place"] objectForKey:@"name"]];
     }
     
     self.friendName.text=[self.meet objectForKey:@"FriendName"];
@@ -344,6 +352,14 @@ NSString* const kMeetActionSheetCancel=@"Cancel";
     [self resizeSelectedImage:meetImage];
 }
 
+-(void)targetPicker:(HWMFacebookPlaceViewController*)targetPicker placeSelected:(HWMFacebookPlacePickerTarget*)target
+{
+    [self.navigationController popToViewController:self animated:YES];
+    _selectedPlace = (id<FBGraphPlace>)target;
+    [self.meet setObject:target forKey:@"Place"];
+    [self refresh];
+}
+
 -(void) pickFacebookImage
 {
     HWMFacebookImagesViewController* imageView = [[HWMFacebookImagesViewController alloc] init];
@@ -398,6 +414,9 @@ NSString* const kMeetActionSheetCancel=@"Cancel";
     if (![newMeet objectForKey:@"Relationship"]) {
         [newMeet setObject:@"Following" forKey:@"Relationship"];
     }
+    if (![newMeet objectForKey:@"Place"]) {
+        [newMeet setObject:[NSNull null] forKey:@"Place"];
+    }
     
     if(resizedImage!=nil)
     {
@@ -410,11 +429,17 @@ NSString* const kMeetActionSheetCancel=@"Cancel";
         } progressBlock:^(int percentDone) {
         }];
     }
-    else {
+    else if([self.meet objectForKey:@"Photo"] == [NSNull null]) {
         [newMeet setObject:[NSNull null] forKey:@"Photo"];
         [self triggerSave:newMeet];
     }
     
+}
+
+- (IBAction)addLocationTapped:(id)sender {
+    HWMFacebookPlaceViewController* placePicker = [[HWMFacebookPlaceViewController alloc] init];
+    placePicker.delegate = self;
+    [self.navigationController pushViewController:placePicker animated:YES];
 }
 
 -(void)triggerSave:(PFObject*)newMeet
