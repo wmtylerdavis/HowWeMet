@@ -24,6 +24,12 @@
 		634B14EC17354FB500BCBDEE /* HWMPlaceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 634B14EB17354FB500BCBDEE /* HWMPlaceCell.xib */; };
 		634B14F01735509E00BCBDEE /* HWMFacebookPlaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 634B14EE1735509D00BCBDEE /* HWMFacebookPlaceViewController.m */; };
 		634B14F11735509E00BCBDEE /* HWMFacebookPlaceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 634B14EF1735509D00BCBDEE /* HWMFacebookPlaceViewController.xib */; };
+		634B14F51735F54700BCBDEE /* HWMMeetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 634B14F31735F54700BCBDEE /* HWMMeetViewController.m */; };
+		634B14F61735F54700BCBDEE /* HWMMeetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 634B14F41735F54700BCBDEE /* HWMMeetViewController.xib */; };
+		634B14F91735F7B100BCBDEE /* followUserActivityCellBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 634B14F71735F7B100BCBDEE /* followUserActivityCellBg.png */; };
+		634B14FA1735F7B100BCBDEE /* followUserActivityCellBg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 634B14F81735F7B100BCBDEE /* followUserActivityCellBg@2x.png */; };
+		634B14FC1735FF3D00BCBDEE /* HWMMeetViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 634B14FB1735FF3D00BCBDEE /* HWMMeetViewHeader.xib */; };
+		634B14FE1736B45700BCBDEE /* AddieHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 634B14FD1736B45700BCBDEE /* AddieHeaderCell.xib */; };
 		638C5B251722BB8100A44D71 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 638C5B241722BB8100A44D71 /* UIKit.framework */; };
 		638C5B271722BB8100A44D71 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 638C5B261722BB8100A44D71 /* Foundation.framework */; };
 		638C5B291722BB8100A44D71 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 638C5B281722BB8100A44D71 /* CoreGraphics.framework */; };
@@ -99,6 +105,13 @@
 		634B14ED1735509C00BCBDEE /* HWMFacebookPlaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWMFacebookPlaceViewController.h; sourceTree = "<group>"; };
 		634B14EE1735509D00BCBDEE /* HWMFacebookPlaceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWMFacebookPlaceViewController.m; sourceTree = "<group>"; };
 		634B14EF1735509D00BCBDEE /* HWMFacebookPlaceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HWMFacebookPlaceViewController.xib; sourceTree = "<group>"; };
+		634B14F21735F54700BCBDEE /* HWMMeetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWMMeetViewController.h; sourceTree = "<group>"; };
+		634B14F31735F54700BCBDEE /* HWMMeetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWMMeetViewController.m; sourceTree = "<group>"; };
+		634B14F41735F54700BCBDEE /* HWMMeetViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HWMMeetViewController.xib; sourceTree = "<group>"; };
+		634B14F71735F7B100BCBDEE /* followUserActivityCellBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = followUserActivityCellBg.png; sourceTree = "<group>"; };
+		634B14F81735F7B100BCBDEE /* followUserActivityCellBg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "followUserActivityCellBg@2x.png"; sourceTree = "<group>"; };
+		634B14FB1735FF3D00BCBDEE /* HWMMeetViewHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HWMMeetViewHeader.xib; sourceTree = "<group>"; };
+		634B14FD1736B45700BCBDEE /* AddieHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddieHeaderCell.xib; sourceTree = "<group>"; };
 		638C5B211722BB8100A44D71 /* HowWeMet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HowWeMet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		638C5B241722BB8100A44D71 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		638C5B261722BB8100A44D71 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -270,6 +283,8 @@
 				63B2B870172323DF00264B63 /* HWMRightViewController.m */,
 				638C5B3C1722BB8100A44D71 /* HWMViewController.h */,
 				638C5B3D1722BB8100A44D71 /* HWMViewController.m */,
+				634B14F21735F54700BCBDEE /* HWMMeetViewController.h */,
+				634B14F31735F54700BCBDEE /* HWMMeetViewController.m */,
 				63EA4C52172B29D700DE0A97 /* HWMAddStoryViewController.h */,
 				63EA4C53172B29D800DE0A97 /* HWMAddStoryViewController.m */,
 				63EA4C71172F52B400DE0A97 /* HWMFacebookImagesViewController.h */,
@@ -298,6 +313,8 @@
 		638C5B2B1722BB8100A44D71 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				634B14F71735F7B100BCBDEE /* followUserActivityCellBg.png */,
+				634B14F81735F7B100BCBDEE /* followUserActivityCellBg@2x.png */,
 				634B14E51733259B00BCBDEE /* KGModal.h */,
 				634B14E61733259C00BCBDEE /* KGModal.m */,
 				63EA4C2B1728C40500DE0A97 /* bigGrayButton.png */,
@@ -331,6 +348,7 @@
 		63EA4C271728B68200DE0A97 /* Nibs */ = {
 			isa = PBXGroup;
 			children = (
+				634B14F41735F54700BCBDEE /* HWMMeetViewController.xib */,
 				634B14EF1735509D00BCBDEE /* HWMFacebookPlaceViewController.xib */,
 				634B14E31733232400BCBDEE /* HWMrelationships.xib */,
 				63EA4C73172F52B700DE0A97 /* HWMFacebookImagesViewController.xib */,
@@ -344,6 +362,8 @@
 				63EA4C5A172B45D500DE0A97 /* HWMStoryCell.xib */,
 				63EA4C6C172F037F00DE0A97 /* HWMFacebookImage.xib */,
 				634B14EB17354FB500BCBDEE /* HWMPlaceCell.xib */,
+				634B14FB1735FF3D00BCBDEE /* HWMMeetViewHeader.xib */,
+				634B14FD1736B45700BCBDEE /* AddieHeaderCell.xib */,
 			);
 			name = Nibs;
 			sourceTree = "<group>";
@@ -454,6 +474,11 @@
 				634B14E41733232400BCBDEE /* HWMrelationships.xib in Resources */,
 				634B14EC17354FB500BCBDEE /* HWMPlaceCell.xib in Resources */,
 				634B14F11735509E00BCBDEE /* HWMFacebookPlaceViewController.xib in Resources */,
+				634B14F61735F54700BCBDEE /* HWMMeetViewController.xib in Resources */,
+				634B14F91735F7B100BCBDEE /* followUserActivityCellBg.png in Resources */,
+				634B14FA1735F7B100BCBDEE /* followUserActivityCellBg@2x.png in Resources */,
+				634B14FC1735FF3D00BCBDEE /* HWMMeetViewHeader.xib in Resources */,
+				634B14FE1736B45700BCBDEE /* AddieHeaderCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,6 +532,7 @@
 				634B14E71733259C00BCBDEE /* KGModal.m in Sources */,
 				634B14EA17354D6100BCBDEE /* HWMFacebookPlaceDataSource.m in Sources */,
 				634B14F01735509E00BCBDEE /* HWMFacebookPlaceViewController.m in Sources */,
+				634B14F51735F54700BCBDEE /* HWMMeetViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

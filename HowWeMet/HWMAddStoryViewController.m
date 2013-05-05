@@ -247,7 +247,7 @@ NSString* const kMeetActionSheetCancel=@"Cancel";
         _friendRelationship.text = [self.meet objectForKey:@"Relationship"];
     }
     
-    if ((![self.meet objectForKey:@"Place"]) ||([self.meet objectForKey:@"Place"] != [NSNull null]))
+    if ([self.meet objectForKey:@"Place"])
     {
         [_locationLabel setText:[[self.meet objectForKey:@"Place"] objectForKey:@"name"]];
     }
@@ -415,7 +415,8 @@ NSString* const kMeetActionSheetCancel=@"Cancel";
         [newMeet setObject:@"Following" forKey:@"Relationship"];
     }
     if (![newMeet objectForKey:@"Place"]) {
-        [newMeet setObject:[NSNull null] forKey:@"Place"];
+        [[[UIAlertView alloc] initWithTitle:nil message:@"Where did this happen then? Space?" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Okay", nil] show];
+        return;
     }
     
     if(resizedImage!=nil)
@@ -433,6 +434,9 @@ NSString* const kMeetActionSheetCancel=@"Cancel";
         [newMeet setObject:[NSNull null] forKey:@"Photo"];
         [self triggerSave:newMeet];
     }
+    else {
+        [self triggerSave:newMeet];
+    }
     
 }
 
@@ -448,6 +452,7 @@ NSString* const kMeetActionSheetCancel=@"Cancel";
     [newMeet setObject:[PFUser currentUser] forKey:@"Owner"];
     [newMeet setObject:[[PFUser currentUser] objectForKey:@"Name"] forKey:@"OwnerName"];
     [newMeet setObject:[[PFUser currentUser] objectForKey:@"AvatarURL"] forKey:@"OwnerAvatar"];
+    [newMeet setObject:[[PFUser currentUser] objectForKey:@"facebookID"] forKey:@"OwnerFacebookID"];
     [newMeet setObject:self.howWeMetStory.text forKey:@"Story"];
     if(_isPrivate)
     {

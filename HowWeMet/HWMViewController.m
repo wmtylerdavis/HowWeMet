@@ -8,6 +8,7 @@
 
 #import "HWMViewController.h"
 #import "HWMAddStoryViewController.h"
+#import "HWMMeetViewController.h"
 
 @interface HWMViewController ()
 
@@ -139,6 +140,9 @@
     // Create the object.
     if ([friend objectForKey:@"FacebookID"]) {
         meet = (PFObject*)friend;
+        HWMMeetViewController* storyController = [[HWMMeetViewController alloc] init];
+        storyController.meet = meet;
+        [self.navigationController pushViewController:storyController animated:YES];
     }
     else {
         meet = [PFObject objectWithClassName:@"Meet"];
@@ -146,11 +150,10 @@
         [meet setObject:[friend objectForKey:@"id"] forKey:@"FacebookID"];
         [meet setObject:fbAvatarURL forKey:@"FriendAvatarURL"];
         [meet setObject:[friend objectForKey:@"name"] forKey:@"FriendName"];
+        HWMAddStoryViewController* storyController = [[HWMAddStoryViewController alloc] init];
+        storyController.meet = meet;
+        [self.navigationController pushViewController:storyController animated:YES];
     }
-    
-    HWMAddStoryViewController* storyController = [[HWMAddStoryViewController alloc] init];
-    storyController.meet = meet;
-    [self.navigationController pushViewController:storyController animated:YES];
 }
 
 -(void)dataSource:(HWMGenericDataSource *)dataSource dataServiceUnavailable:(BOOL)unavailable reason:(NSString *)reason

@@ -226,8 +226,7 @@ NSString *const FBSessionStateChangedNotification = @"HowWeMet.HowWeMet:FBSessio
     
     // nav bar buttons fo all
     [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil] setTintColor:[UIColor colorWithRed:0.36f green:0.04f blue:0.13f alpha:1.0f]];
-    [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil] setTintColor:[UIColor colorWithRed:0.36f green:0.04f blue:0.13f alpha:1.0f]];
-    
+//    [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil] setTintColor:[UIColor colorWithRed:0.36f green:0.04f blue:0.13f alpha:1.0f]];
     [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil] setTitleTextAttributes:
      @{UITextAttributeTextColor : [UIColor whiteColor],
                                                                      UITextAttributeTextShadowColor : [UIColor grayColor],

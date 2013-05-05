@@ -270,17 +270,17 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">familiesRelationship</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="92660617"/>
+						<reference key="destination" ref="578584563"/>
 					</object>
-					<int key="connectionID">542</int>
+					<int key="connectionID">546</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">classmatesRelationship</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="730881220"/>
+						<reference key="destination" ref="902121350"/>
 					</object>
-					<int key="connectionID">543</int>
+					<int key="connectionID">547</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
@@ -663,12 +663,12 @@
 								<float key="scoringTypeFloat">29</float>
 								<int key="contentType">3</int>
 							</object>
-							<reference ref="92660617"/>
 							<reference ref="278495017"/>
 							<reference ref="133326035"/>
 							<reference ref="902121350"/>
 							<reference ref="578584563"/>
 							<reference ref="730881220"/>
+							<reference ref="92660617"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -1070,6 +1070,7 @@
 					<reference ref="188730032"/>
 				</array>
 				<boolean value="NO" key="3.IBViewMetadataTranslatesAutoresizingMaskIntoConstraints"/>
+				<string key="318.CustomClassName">HWMGrayButton</string>
 				<string key="318.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<array key="318.IBViewMetadataConstraints">
 					<reference ref="158163278"/>
@@ -1121,7 +1122,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">545</int>
+			<int key="maxID">547</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes"/>
 		<int key="IBDocument.localizationMode">0</int>
