@@ -12,8 +12,10 @@
 
 @interface HWMMeetViewController : UIViewController <UITableViewDelegate>
 {
+    UIView* photoView;
     UIView* whenView;
     UIView* whereView;
+    UIView* storyCell;
 }
 
 @property (strong, nonatomic) UILabel *nameLabel1;

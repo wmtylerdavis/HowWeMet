@@ -35,7 +35,7 @@
 {
     [super viewDidLoad];
     
-    self.title = @"Here's the Story";
+    self.title = @"The Story";
     
     [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"Edit" style:UIBarButtonItemStylePlain target:self action:@selector(editMeet:)]];
     
@@ -55,11 +55,11 @@
     self.nameLabel2.font=[UIFont fontWithName:@"Chalkduster" size:12.0f];
     self.nameLabel1.text = [self.meet objectForKey:@"OwnerName"];
     self.nameLabel2.text = [self.meet objectForKey:@"FriendName"];
-    // Do any additional setup after loading the view from its nib.
-//    _activityDataSource = [[HMTActivityFeedDataSource alloc] init];
-//    _activityDataSource.delegate=self;
-//    _activityDataSource.resourceLocation=[NSString stringWithFormat:@"customers/%@/activity", _customerID];
     
+    if([_meet objectForKey:@"Photo"] != [NSNull null])
+    {
+        [self loadPhoto];
+    }
     [self loadInteractables];
     
     self.activityTable.delegate=self;
@@ -79,15 +79,35 @@
     whereView=[[[NSBundle mainBundle] loadNibNamed:@"AddieHeaderCell" owner:self options:nil] objectAtIndex:0];
     whereView.frame=CGRectMake(0, 230, whereView.frame.size.width, whereView.frame.size.height);
     
-    //
-    // MC put the buttons in the table header instead and
-    // make the header frame taller to fit them.
+    // whip up the story cell for all who might desire it
+    storyCell=[[[NSBundle mainBundle] loadNibNamed:@"HWMMeetStoryCell" owner:self options:nil] objectAtIndex:0];
+    
+    UILabel* storyLabel = (UILabel*)[storyCell viewWithTag:1];
+    storyLabel.font= [UIFont fontWithName:@"Helvetica" size:11.0];
+    storyLabel.text = [NSString stringWithFormat:@"%@\n%@",[_meet objectForKey:@"Relationship"],[_meet objectForKey:@"Story"]];
+    [storyCell sizeToFit];
+    
+    float height=storyCell.frame.size.height;
+    
+    NSString* cellText=storyLabel.text;
+    CGSize stringSize=[cellText sizeWithFont:[UIFont fontWithName:@"Helvetica" size:11.0f] constrainedToSize:CGSizeMake(254, MAXFLOAT) lineBreakMode:NSLineBreakByWordWrapping];
+    height=height + (abs(stringSize.height) - 70);
+    
+    NSMutableAttributedString* string=[[NSMutableAttributedString alloc] initWithString:cellText];
+    [string addAttribute:NSForegroundColorAttributeName value:[[HowWeMetAPI sharedInstance] redColor] range:[[string string] rangeOfString:[_meet objectForKey:@"Relationship"]]];
+    storyLabel.attributedText=string;
+    
+    storyCell.frame=CGRectMake(storyCell.frame.origin.x, storyCell.frame.origin.y, storyCell.frame.size.width, height);
+    storyCell.frame=CGRectMake(0, 230, storyCell.frame.size.width, storyCell.frame.size.height);
+//    
     CGRect headerFrame=self.activityTable.tableHeaderView.frame;
-    self.activityTable.tableHeaderView.frame=CGRectMake(headerFrame.origin.x, headerFrame.origin.y, headerFrame.size.width, headerFrame.size.height+whenView.frame.size.height+whereView.frame.size.height);
+    self.activityTable.tableHeaderView.frame=CGRectMake(headerFrame.origin.x, headerFrame.origin.y, headerFrame.size.width, headerFrame.size.height+whenView.frame.size.height+whereView.frame.size.height+storyCell.frame.size.height);
     whenView.frame=CGRectMake(0, headerFrame.size.height, whenView.frame.size.width, whenView.frame.size.height);
     whereView.frame=CGRectMake(0, headerFrame.size.height+whenView.frame.size.height, whereView.frame.size.width, whereView.frame.size.height);
+    storyCell.frame=CGRectMake(10, headerFrame.size.height+whenView.frame.size.height+whereView.frame.size.height, storyCell.frame.size.width, storyCell.frame.size.height);
     [self.activityTable.tableHeaderView addSubview:whenView];
     [self.activityTable.tableHeaderView addSubview:whereView];
+    [self.activityTable.tableHeaderView addSubview:storyCell];
     
 
     UILabel* whenLabel = (UILabel*)[whenView viewWithTag:1];
@@ -108,9 +128,28 @@
     // When you resize a table header after it's been assigned,
     // you need to re-assign it for the tableView to pick up the new
     // dimensions.
-    //self.tableView.tableHeaderView=self.headerController.view;
-    //[self.headerController.view layoutSubviews];
     [self.activityTable.tableHeaderView layoutSubviews];
+}
+
+-(void)loadPhoto
+{
+    photoView=[[[NSBundle mainBundle] loadNibNamed:@"HWMPhotoView" owner:self options:nil] objectAtIndex:0];
+    photoView.frame=CGRectMake(0, 230, photoView.frame.size.width, photoView.frame.size.height);
+    
+    UIImageView* image=(UIImageView*)[photoView viewWithTag:1];
+    
+    PFFile* imgFileData=[_meet objectForKey:@"Photo"];
+    [imgFileData getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+            UIImage* feedImage=[UIImage imageWithData:data];
+            image.image=feedImage;
+        }];
+    
+    CGRect headerFrame=self.activityTable.tableHeaderView.frame;
+    
+    //photo
+    self.activityTable.tableHeaderView.frame=CGRectMake(headerFrame.origin.x, headerFrame.origin.y,headerFrame.size.width, headerFrame.size.height+photoView.frame.size.height);
+    photoView.frame=CGRectMake(0, headerFrame.size.height, photoView.frame.size.width, photoView.frame.size.height);
+    [self.activityTable.tableHeaderView addSubview:photoView];
 }
 
 - (void)didReceiveMemoryWarning

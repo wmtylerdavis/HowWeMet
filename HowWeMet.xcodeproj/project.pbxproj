@@ -30,6 +30,9 @@
 		634B14FA1735F7B100BCBDEE /* followUserActivityCellBg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 634B14F81735F7B100BCBDEE /* followUserActivityCellBg@2x.png */; };
 		634B14FC1735FF3D00BCBDEE /* HWMMeetViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 634B14FB1735FF3D00BCBDEE /* HWMMeetViewHeader.xib */; };
 		634B14FE1736B45700BCBDEE /* AddieHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 634B14FD1736B45700BCBDEE /* AddieHeaderCell.xib */; };
+		634B15001738807700BCBDEE /* HWMStoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 634B14FF1738807700BCBDEE /* HWMStoryCell.xib */; };
+		634B15021738855300BCBDEE /* HWMMeetStoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 634B15011738855300BCBDEE /* HWMMeetStoryCell.xib */; };
+		634B15041739BFBF00BCBDEE /* HWMPhotoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 634B15031739BFBF00BCBDEE /* HWMPhotoView.xib */; };
 		638C5B251722BB8100A44D71 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 638C5B241722BB8100A44D71 /* UIKit.framework */; };
 		638C5B271722BB8100A44D71 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 638C5B261722BB8100A44D71 /* Foundation.framework */; };
 		638C5B291722BB8100A44D71 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 638C5B281722BB8100A44D71 /* CoreGraphics.framework */; };
@@ -69,7 +72,6 @@
 		63EA4C55172B29D800DE0A97 /* HWMAddStoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EA4C53172B29D800DE0A97 /* HWMAddStoryViewController.m */; };
 		63EA4C56172B29D800DE0A97 /* HWMAddStoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63EA4C54172B29D800DE0A97 /* HWMAddStoryViewController.xib */; };
 		63EA4C59172B451800DE0A97 /* HWMStoryDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EA4C58172B451800DE0A97 /* HWMStoryDataSource.m */; };
-		63EA4C5B172B45D500DE0A97 /* HWMStoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63EA4C5A172B45D500DE0A97 /* HWMStoryCell.xib */; };
 		63EA4C5E172C043900DE0A97 /* feedItemBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 63EA4C5C172C043800DE0A97 /* feedItemBg.png */; };
 		63EA4C5F172C043900DE0A97 /* feedItemBg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 63EA4C5D172C043800DE0A97 /* feedItemBg@2x.png */; };
 		63EA4C63172CAEE900DE0A97 /* TDDatePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EA4C61172CAEE900DE0A97 /* TDDatePickerController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -112,6 +114,9 @@
 		634B14F81735F7B100BCBDEE /* followUserActivityCellBg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "followUserActivityCellBg@2x.png"; sourceTree = "<group>"; };
 		634B14FB1735FF3D00BCBDEE /* HWMMeetViewHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HWMMeetViewHeader.xib; sourceTree = "<group>"; };
 		634B14FD1736B45700BCBDEE /* AddieHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddieHeaderCell.xib; sourceTree = "<group>"; };
+		634B14FF1738807700BCBDEE /* HWMStoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HWMStoryCell.xib; sourceTree = "<group>"; };
+		634B15011738855300BCBDEE /* HWMMeetStoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HWMMeetStoryCell.xib; sourceTree = "<group>"; };
+		634B15031739BFBF00BCBDEE /* HWMPhotoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HWMPhotoView.xib; sourceTree = "<group>"; };
 		638C5B211722BB8100A44D71 /* HowWeMet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HowWeMet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		638C5B241722BB8100A44D71 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		638C5B261722BB8100A44D71 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -171,7 +176,6 @@
 		63EA4C54172B29D800DE0A97 /* HWMAddStoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HWMAddStoryViewController.xib; sourceTree = "<group>"; };
 		63EA4C57172B451800DE0A97 /* HWMStoryDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWMStoryDataSource.h; sourceTree = "<group>"; };
 		63EA4C58172B451800DE0A97 /* HWMStoryDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWMStoryDataSource.m; sourceTree = "<group>"; };
-		63EA4C5A172B45D500DE0A97 /* HWMStoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HWMStoryCell.xib; sourceTree = "<group>"; };
 		63EA4C5C172C043800DE0A97 /* feedItemBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = feedItemBg.png; sourceTree = "<group>"; };
 		63EA4C5D172C043800DE0A97 /* feedItemBg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "feedItemBg@2x.png"; sourceTree = "<group>"; };
 		63EA4C60172CAEE900DE0A97 /* TDDatePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDDatePickerController.h; sourceTree = "<group>"; };
@@ -359,11 +363,13 @@
 				638C5B3F1722BB8100A44D71 /* HWMViewController.xib */,
 				63EA4C4B172A060300DE0A97 /* FriendCell.xib */,
 				63EA4C50172B1DE200DE0A97 /* HWMRightSectionHeader.xib */,
-				63EA4C5A172B45D500DE0A97 /* HWMStoryCell.xib */,
 				63EA4C6C172F037F00DE0A97 /* HWMFacebookImage.xib */,
 				634B14EB17354FB500BCBDEE /* HWMPlaceCell.xib */,
 				634B14FB1735FF3D00BCBDEE /* HWMMeetViewHeader.xib */,
 				634B14FD1736B45700BCBDEE /* AddieHeaderCell.xib */,
+				634B14FF1738807700BCBDEE /* HWMStoryCell.xib */,
+				634B15011738855300BCBDEE /* HWMMeetStoryCell.xib */,
+				634B15031739BFBF00BCBDEE /* HWMPhotoView.xib */,
 			);
 			name = Nibs;
 			sourceTree = "<group>";
@@ -465,7 +471,6 @@
 				63EA4C4C172A060300DE0A97 /* FriendCell.xib in Resources */,
 				63EA4C51172B1DE200DE0A97 /* HWMRightSectionHeader.xib in Resources */,
 				63EA4C56172B29D800DE0A97 /* HWMAddStoryViewController.xib in Resources */,
-				63EA4C5B172B45D500DE0A97 /* HWMStoryCell.xib in Resources */,
 				63EA4C5E172C043900DE0A97 /* feedItemBg.png in Resources */,
 				63EA4C5F172C043900DE0A97 /* feedItemBg@2x.png in Resources */,
 				63EA4C64172CAEE900DE0A97 /* TDDatePickerController.xib in Resources */,
@@ -479,6 +484,9 @@
 				634B14FA1735F7B100BCBDEE /* followUserActivityCellBg@2x.png in Resources */,
 				634B14FC1735FF3D00BCBDEE /* HWMMeetViewHeader.xib in Resources */,
 				634B14FE1736B45700BCBDEE /* AddieHeaderCell.xib in Resources */,
+				634B15001738807700BCBDEE /* HWMStoryCell.xib in Resources */,
+				634B15021738855300BCBDEE /* HWMMeetStoryCell.xib in Resources */,
+				634B15041739BFBF00BCBDEE /* HWMPhotoView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
