@@ -27,7 +27,8 @@
     self.tableView.backgroundColor = [UIColor darkGrayColor];
     self.tableView.separatorStyle= UITableViewCellSeparatorStyleNone;
     self.tableView.separatorColor=[UIColor clearColor];
-    self.searchBar.tintColor = [[HowWeMetAPI sharedInstance] redColor];
+    self.searchBar.tintColor = [UIColor darkGrayColor];
+    //self.searchBar.tintColor = [[HowWeMetAPI sharedInstance] redColor];
     self.searchBar.delegate = self;
     
     tap = [[UITapGestureRecognizer alloc]

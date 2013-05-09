@@ -30,7 +30,8 @@
     self.headerLabel.text = @"Friends";
     self.tableView.delegate=self;
     self.tableView.backgroundColor = [UIColor darkGrayColor];
-    self.searchBar.tintColor = [[HowWeMetAPI sharedInstance] redColor];
+    self.searchBar.tintColor = [UIColor darkGrayColor];
+    //self.searchBar.tintColor = [[HowWeMetAPI sharedInstance] redColor];
     //self.tableView.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"patternBg"]];
     self.tableView.separatorColor=[UIColor clearColor];
     

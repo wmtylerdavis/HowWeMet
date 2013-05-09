@@ -32,7 +32,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.view.backgroundColor=[[HowWeMetAPI sharedInstance] redColor];
+    //self.view.backgroundColor=[[HowWeMetAPI sharedInstance] redColor];
     //self.view.backgroundColor=[UIColor colorWithRed:0.14f green:0.55f blue:0.2f alpha:1];
     _howWeMetLabel.font = [UIFont fontWithName:@"Chalkduster" size:21.0];
     _loginButton.tintColor = [UIColor darkGrayColor];

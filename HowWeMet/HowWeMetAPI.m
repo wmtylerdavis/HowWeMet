@@ -27,7 +27,8 @@
 -(UIColor*)redColor
 {
     if (!_redColor) {
-        _redColor= [UIColor colorWithRed:0.36f green:0.04f blue:0.2f alpha:1.0f];
+        //_redColor= [UIColor colorWithRed:0.36f green:0.04f blue:0.2f alpha:1.0f];
+        _redColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"navHeader"]];
     }
     return _redColor;
 }

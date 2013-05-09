@@ -56,7 +56,7 @@
     self.nameLabel1.text = [self.meet objectForKey:@"OwnerName"];
     self.nameLabel2.text = [self.meet objectForKey:@"FriendName"];
     
-    if([_meet objectForKey:@"Photo"] != [NSNull null])
+    if([_meet objectForKey:@"Photo"])
     {
         [self loadPhoto];
     }
@@ -71,8 +71,6 @@
 
 -(void)loadInteractables
 {
-    //
-    // header begins.
     whenView=[[[NSBundle mainBundle] loadNibNamed:@"AddieHeaderCell" owner:self options:nil] objectAtIndex:0];
     whenView.frame=CGRectMake(0, 230, whenView.frame.size.width, whenView.frame.size.height);
     whenView.autoresizingMask=UIViewAutoresizingFlexibleTopMargin;

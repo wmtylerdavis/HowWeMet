@@ -33,6 +33,10 @@
 		634B15001738807700BCBDEE /* HWMStoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 634B14FF1738807700BCBDEE /* HWMStoryCell.xib */; };
 		634B15021738855300BCBDEE /* HWMMeetStoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 634B15011738855300BCBDEE /* HWMMeetStoryCell.xib */; };
 		634B15041739BFBF00BCBDEE /* HWMPhotoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 634B15031739BFBF00BCBDEE /* HWMPhotoView.xib */; };
+		634B1507173B259700BCBDEE /* navHeader.png in Resources */ = {isa = PBXBuildFile; fileRef = 634B1505173B259600BCBDEE /* navHeader.png */; };
+		634B1508173B259700BCBDEE /* navHeader@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 634B1506173B259600BCBDEE /* navHeader@2x.png */; };
+		634B150A173B2DD300BCBDEE /* Home.png in Resources */ = {isa = PBXBuildFile; fileRef = 634B1509173B2DD200BCBDEE /* Home.png */; };
+		634B150C173B2FA200BCBDEE /* Home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 634B150B173B2FA200BCBDEE /* Home@2x.png */; };
 		638C5B251722BB8100A44D71 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 638C5B241722BB8100A44D71 /* UIKit.framework */; };
 		638C5B271722BB8100A44D71 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 638C5B261722BB8100A44D71 /* Foundation.framework */; };
 		638C5B291722BB8100A44D71 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 638C5B281722BB8100A44D71 /* CoreGraphics.framework */; };
@@ -117,6 +121,10 @@
 		634B14FF1738807700BCBDEE /* HWMStoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HWMStoryCell.xib; sourceTree = "<group>"; };
 		634B15011738855300BCBDEE /* HWMMeetStoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HWMMeetStoryCell.xib; sourceTree = "<group>"; };
 		634B15031739BFBF00BCBDEE /* HWMPhotoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HWMPhotoView.xib; sourceTree = "<group>"; };
+		634B1505173B259600BCBDEE /* navHeader.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navHeader.png; sourceTree = "<group>"; };
+		634B1506173B259600BCBDEE /* navHeader@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navHeader@2x.png"; sourceTree = "<group>"; };
+		634B1509173B2DD200BCBDEE /* Home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Home.png; sourceTree = "<group>"; };
+		634B150B173B2FA200BCBDEE /* Home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Home@2x.png"; sourceTree = "<group>"; };
 		638C5B211722BB8100A44D71 /* HowWeMet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HowWeMet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		638C5B241722BB8100A44D71 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		638C5B261722BB8100A44D71 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -285,6 +293,7 @@
 				63B2B86B172323D200264B63 /* HWMLeftViewController.m */,
 				63B2B86F172323DF00264B63 /* HWMRightViewController.h */,
 				63B2B870172323DF00264B63 /* HWMRightViewController.m */,
+				634B1509173B2DD200BCBDEE /* Home.png */,
 				638C5B3C1722BB8100A44D71 /* HWMViewController.h */,
 				638C5B3D1722BB8100A44D71 /* HWMViewController.m */,
 				634B14F21735F54700BCBDEE /* HWMMeetViewController.h */,
@@ -317,6 +326,9 @@
 		638C5B2B1722BB8100A44D71 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				634B150B173B2FA200BCBDEE /* Home@2x.png */,
+				634B1505173B259600BCBDEE /* navHeader.png */,
+				634B1506173B259600BCBDEE /* navHeader@2x.png */,
 				634B14F71735F7B100BCBDEE /* followUserActivityCellBg.png */,
 				634B14F81735F7B100BCBDEE /* followUserActivityCellBg@2x.png */,
 				634B14E51733259B00BCBDEE /* KGModal.h */,
@@ -487,6 +499,10 @@
 				634B15001738807700BCBDEE /* HWMStoryCell.xib in Resources */,
 				634B15021738855300BCBDEE /* HWMMeetStoryCell.xib in Resources */,
 				634B15041739BFBF00BCBDEE /* HWMPhotoView.xib in Resources */,
+				634B1507173B259700BCBDEE /* navHeader.png in Resources */,
+				634B1508173B259700BCBDEE /* navHeader@2x.png in Resources */,
+				634B150A173B2DD300BCBDEE /* Home.png in Resources */,
+				634B150C173B2FA200BCBDEE /* Home@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
