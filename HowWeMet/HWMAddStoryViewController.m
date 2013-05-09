@@ -11,6 +11,7 @@
 #import "HWMFacebookImagesViewController.h"
 #import "HWMFacebookPlaceViewController.h"
 #import "KGModal.h"
+#import "HWMFBOpenGraphAction.h"
 #import <AVFoundation/AVFoundation.h>
 #import <MobileCoreServices/UTCoreTypes.h>
 #import <MediaPlayer/MPMoviePlayerController.h>
@@ -25,7 +26,7 @@ NSString* const kMeetActionSheetPicFromFacebook=@"Pick from Facebook Photos";
 NSString* const kMeetActionSheetCancel=@"Cancel";
 
 @interface HWMAddStoryViewController ()
-
+- (id<HWMFBOpenGraphObject>)meetObjectforMeet:(NSString *)meet : (NSString*) text;
 @end
 
 @implementation HWMAddStoryViewController
@@ -33,6 +34,73 @@ NSString* const kMeetActionSheetCancel=@"Cancel";
 @synthesize meet = _meet;
 @synthesize howWeMetImage;
 @synthesize selectedPlace = _selectedPlace;
+
+// FBSample logic
+// This is a helper function that returns an FBGraphObject representing a meal
+- (id<HWMFBOpenGraphObject>)meetObjectforMeet:(NSString *)meet : (NSString*) text {
+    
+    // This URL is specific to this sample, and can be used to
+    // create arbitrary OG objects for this app; your OG objects
+    // will have URLs hosted by your server.
+    NSString *format =
+    @"https://guarded-wave-5266.herokuapp.com/request.php?"
+    @"fb:app_id=118613704982422&og:type=%@&"
+    @"og:title=%@&og:description=%%22%@%%22&howmuchapp:requestID=%@";
+    
+    // We create an FBGraphObject object, but we can treat it as
+    // an SCOGMeal with typed properties, etc. See <FacebookSDK/FBGraphObject.h>
+    // for more details.
+    // We create an FBGraphObject object, but we can treat it as an SCOGMeal with typed
+    // properties, etc. See <FacebookSDK/FBGraphObject.h> for more details.
+    id<HWMFBOpenGraphObject> result = (id<HWMFBOpenGraphObject>)[FBGraphObject graphObject];
+    
+    // Give it a URL that will echo back the name of the meal as its title,
+    // description, and body.
+//    NSLog(@"%@", _thisRequest.requestID);
+//    result.url = [NSString stringWithFormat:format,
+//                  @"howmuchapp:request", request, text, (long)_thisRequest.requestID];
+    
+    return result;
+}
+
+// FBSample logic
+// Creates the Open Graph Action.
+- (void)postOpenGraphAction
+{
+    // First create the Open Graph meal object for the meal we ate.
+    id<HWMFBOpenGraphObject> requestObject = [self meetObjectforMeet :[_meet objectForKey:@"Story"] :[_meet objectForKey:@"Relationship"]];
+    
+    // Now create an Open Graph eat action with the meal, our location,
+    // and the people we were with.
+    id<HWMMeetAction> action =
+    (id<HWMMeetAction>)[FBGraphObject graphObject];
+    action.meet = requestObject;
+//    NSString * openGraphMessage = [NSString stringWithFormat:@"requests @[%@] %@", requestTarget.socialNetorkID, requestTitle.text];
+//    action.message = openGraphMessage;
+    
+    [FBSettings setLoggingBehavior:[NSSet setWithObjects:FBLoggingBehaviorFBRequests, FBLoggingBehaviorFBURLConnections, nil]];
+    
+    [FBRequestConnection startForPostWithGraphPath:@"me/howmuchapp:make"
+                                       graphObject:action
+                                 completionHandler:
+     ^(FBRequestConnection *connection, id result, NSError *error) {
+         NSString *alertText;
+         if (!error) {
+             alertText = [NSString stringWithFormat:
+                          @"Posted Request to Facebook"];
+         } else {
+             alertText = [NSString stringWithFormat:
+                          @"Sorry we couldn't post to Facebook"];
+         }
+         [[[UIAlertView alloc] initWithTitle:@"Result"
+                                     message:alertText
+                                    delegate:nil
+                           cancelButtonTitle:@"Thanks!"
+                           otherButtonTitles:nil]
+          show];
+     }
+     ];
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

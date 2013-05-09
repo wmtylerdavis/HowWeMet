@@ -125,6 +125,7 @@
 		634B1506173B259600BCBDEE /* navHeader@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navHeader@2x.png"; sourceTree = "<group>"; };
 		634B1509173B2DD200BCBDEE /* Home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Home.png; sourceTree = "<group>"; };
 		634B150B173B2FA200BCBDEE /* Home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Home@2x.png"; sourceTree = "<group>"; };
+		634B150D173C408900BCBDEE /* HWMFBOpenGraphAction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWMFBOpenGraphAction.h; sourceTree = "<group>"; };
 		638C5B211722BB8100A44D71 /* HowWeMet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HowWeMet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		638C5B241722BB8100A44D71 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		638C5B261722BB8100A44D71 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -319,6 +320,7 @@
 				634B14E21730689100BCBDEE /* HWMMappableObject.h */,
 				63EA4C271728B68200DE0A97 /* Nibs */,
 				638C5B2B1722BB8100A44D71 /* Supporting Files */,
+				634B150D173C408900BCBDEE /* HWMFBOpenGraphAction.h */,
 			);
 			path = HowWeMet;
 			sourceTree = "<group>";
