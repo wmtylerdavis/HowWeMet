@@ -48,9 +48,7 @@
                 NSPredicate *pred = [NSPredicate predicateWithFormat:@"(id == %@)",self.fbUserID];
                 facebookSucks = [origData filteredArrayUsingPredicate:pred];
                 if (facebookSucks.count == 0) {
-                    //NSLog(@"%@", [_facebookData objectAtIndex:i]);
                     [discardedItems addObject:item];
-//                    [_facebookData removeObjectAtIndex:i];
                 }
             }
             [_facebookData removeObjectsInArray:discardedItems];

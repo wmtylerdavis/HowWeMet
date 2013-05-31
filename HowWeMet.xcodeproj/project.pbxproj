@@ -25,7 +25,6 @@
 		634B14F01735509E00BCBDEE /* HWMFacebookPlaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 634B14EE1735509D00BCBDEE /* HWMFacebookPlaceViewController.m */; };
 		634B14F11735509E00BCBDEE /* HWMFacebookPlaceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 634B14EF1735509D00BCBDEE /* HWMFacebookPlaceViewController.xib */; };
 		634B14F51735F54700BCBDEE /* HWMMeetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 634B14F31735F54700BCBDEE /* HWMMeetViewController.m */; };
-		634B14F61735F54700BCBDEE /* HWMMeetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 634B14F41735F54700BCBDEE /* HWMMeetViewController.xib */; };
 		634B14F91735F7B100BCBDEE /* followUserActivityCellBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 634B14F71735F7B100BCBDEE /* followUserActivityCellBg.png */; };
 		634B14FA1735F7B100BCBDEE /* followUserActivityCellBg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 634B14F81735F7B100BCBDEE /* followUserActivityCellBg@2x.png */; };
 		634B14FC1735FF3D00BCBDEE /* HWMMeetViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 634B14FB1735FF3D00BCBDEE /* HWMMeetViewHeader.xib */; };
@@ -37,6 +36,12 @@
 		634B1508173B259700BCBDEE /* navHeader@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 634B1506173B259600BCBDEE /* navHeader@2x.png */; };
 		634B150A173B2DD300BCBDEE /* Home.png in Resources */ = {isa = PBXBuildFile; fileRef = 634B1509173B2DD200BCBDEE /* Home.png */; };
 		634B150C173B2FA200BCBDEE /* Home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 634B150B173B2FA200BCBDEE /* Home@2x.png */; };
+		634B1522175104C600BCBDEE /* HWMFriendStoryDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 634B151E175104C600BCBDEE /* HWMFriendStoryDataSource.m */; };
+		634B1523175104C600BCBDEE /* HWMFriendStoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 634B1520175104C600BCBDEE /* HWMFriendStoryViewController.m */; };
+		634B1524175104C600BCBDEE /* HWMFriendStoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 634B1521175104C600BCBDEE /* HWMFriendStoryViewController.xib */; };
+		634B1526175108B300BCBDEE /* HWMLeftSidebarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 634B1525175108B300BCBDEE /* HWMLeftSidebarCell.xib */; };
+		634B15281751701700BCBDEE /* HWMCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 634B15271751701500BCBDEE /* HWMCommentCell.xib */; };
+		634B152A1751722A00BCBDEE /* HWMCommentFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 634B15291751722800BCBDEE /* HWMCommentFooter.xib */; };
 		638C5B251722BB8100A44D71 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 638C5B241722BB8100A44D71 /* UIKit.framework */; };
 		638C5B271722BB8100A44D71 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 638C5B261722BB8100A44D71 /* Foundation.framework */; };
 		638C5B291722BB8100A44D71 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 638C5B281722BB8100A44D71 /* CoreGraphics.framework */; };
@@ -113,7 +118,6 @@
 		634B14EF1735509D00BCBDEE /* HWMFacebookPlaceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HWMFacebookPlaceViewController.xib; sourceTree = "<group>"; };
 		634B14F21735F54700BCBDEE /* HWMMeetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWMMeetViewController.h; sourceTree = "<group>"; };
 		634B14F31735F54700BCBDEE /* HWMMeetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWMMeetViewController.m; sourceTree = "<group>"; };
-		634B14F41735F54700BCBDEE /* HWMMeetViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HWMMeetViewController.xib; sourceTree = "<group>"; };
 		634B14F71735F7B100BCBDEE /* followUserActivityCellBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = followUserActivityCellBg.png; sourceTree = "<group>"; };
 		634B14F81735F7B100BCBDEE /* followUserActivityCellBg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "followUserActivityCellBg@2x.png"; sourceTree = "<group>"; };
 		634B14FB1735FF3D00BCBDEE /* HWMMeetViewHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HWMMeetViewHeader.xib; sourceTree = "<group>"; };
@@ -126,6 +130,14 @@
 		634B1509173B2DD200BCBDEE /* Home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Home.png; sourceTree = "<group>"; };
 		634B150B173B2FA200BCBDEE /* Home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Home@2x.png"; sourceTree = "<group>"; };
 		634B150D173C408900BCBDEE /* HWMFBOpenGraphAction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWMFBOpenGraphAction.h; sourceTree = "<group>"; };
+		634B151D175104C600BCBDEE /* HWMFriendStoryDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWMFriendStoryDataSource.h; sourceTree = "<group>"; };
+		634B151E175104C600BCBDEE /* HWMFriendStoryDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWMFriendStoryDataSource.m; sourceTree = "<group>"; };
+		634B151F175104C600BCBDEE /* HWMFriendStoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWMFriendStoryViewController.h; sourceTree = "<group>"; };
+		634B1520175104C600BCBDEE /* HWMFriendStoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWMFriendStoryViewController.m; sourceTree = "<group>"; };
+		634B1521175104C600BCBDEE /* HWMFriendStoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HWMFriendStoryViewController.xib; sourceTree = "<group>"; };
+		634B1525175108B300BCBDEE /* HWMLeftSidebarCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HWMLeftSidebarCell.xib; path = HowWeMet/HWMLeftSidebarCell.xib; sourceTree = "<group>"; };
+		634B15271751701500BCBDEE /* HWMCommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HWMCommentCell.xib; sourceTree = "<group>"; };
+		634B15291751722800BCBDEE /* HWMCommentFooter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HWMCommentFooter.xib; sourceTree = "<group>"; };
 		638C5B211722BB8100A44D71 /* HowWeMet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HowWeMet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		638C5B241722BB8100A44D71 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		638C5B261722BB8100A44D71 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -237,6 +249,7 @@
 		638C5B181722BB8100A44D71 = {
 			isa = PBXGroup;
 			children = (
+				634B1525175108B300BCBDEE /* HWMLeftSidebarCell.xib */,
 				63EA4C4D172A0CCD00DE0A97 /* EGOCache.h */,
 				63EA4C4E172A0CCD00DE0A97 /* EGOCache.m */,
 				6335A93E1727566E007C1508 /* iconBig.png */,
@@ -284,6 +297,10 @@
 		638C5B2A1722BB8100A44D71 /* HowWeMet */ = {
 			isa = PBXGroup;
 			children = (
+				634B151D175104C600BCBDEE /* HWMFriendStoryDataSource.h */,
+				634B151E175104C600BCBDEE /* HWMFriendStoryDataSource.m */,
+				634B151F175104C600BCBDEE /* HWMFriendStoryViewController.h */,
+				634B1520175104C600BCBDEE /* HWMFriendStoryViewController.m */,
 				638C5B331722BB8100A44D71 /* HWMAppDelegate.h */,
 				638C5B341722BB8100A44D71 /* HWMAppDelegate.m */,
 				63EA4C241728AFE900DE0A97 /* HowWeMetAPI.h */,
@@ -366,7 +383,7 @@
 		63EA4C271728B68200DE0A97 /* Nibs */ = {
 			isa = PBXGroup;
 			children = (
-				634B14F41735F54700BCBDEE /* HWMMeetViewController.xib */,
+				634B1521175104C600BCBDEE /* HWMFriendStoryViewController.xib */,
 				634B14EF1735509D00BCBDEE /* HWMFacebookPlaceViewController.xib */,
 				634B14E31733232400BCBDEE /* HWMrelationships.xib */,
 				63EA4C73172F52B700DE0A97 /* HWMFacebookImagesViewController.xib */,
@@ -384,6 +401,8 @@
 				634B14FF1738807700BCBDEE /* HWMStoryCell.xib */,
 				634B15011738855300BCBDEE /* HWMMeetStoryCell.xib */,
 				634B15031739BFBF00BCBDEE /* HWMPhotoView.xib */,
+				634B15271751701500BCBDEE /* HWMCommentCell.xib */,
+				634B15291751722800BCBDEE /* HWMCommentFooter.xib */,
 			);
 			name = Nibs;
 			sourceTree = "<group>";
@@ -493,7 +512,6 @@
 				634B14E41733232400BCBDEE /* HWMrelationships.xib in Resources */,
 				634B14EC17354FB500BCBDEE /* HWMPlaceCell.xib in Resources */,
 				634B14F11735509E00BCBDEE /* HWMFacebookPlaceViewController.xib in Resources */,
-				634B14F61735F54700BCBDEE /* HWMMeetViewController.xib in Resources */,
 				634B14F91735F7B100BCBDEE /* followUserActivityCellBg.png in Resources */,
 				634B14FA1735F7B100BCBDEE /* followUserActivityCellBg@2x.png in Resources */,
 				634B14FC1735FF3D00BCBDEE /* HWMMeetViewHeader.xib in Resources */,
@@ -505,6 +523,10 @@
 				634B1508173B259700BCBDEE /* navHeader@2x.png in Resources */,
 				634B150A173B2DD300BCBDEE /* Home.png in Resources */,
 				634B150C173B2FA200BCBDEE /* Home@2x.png in Resources */,
+				634B1524175104C600BCBDEE /* HWMFriendStoryViewController.xib in Resources */,
+				634B1526175108B300BCBDEE /* HWMLeftSidebarCell.xib in Resources */,
+				634B15281751701700BCBDEE /* HWMCommentCell.xib in Resources */,
+				634B152A1751722A00BCBDEE /* HWMCommentFooter.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -559,6 +581,8 @@
 				634B14EA17354D6100BCBDEE /* HWMFacebookPlaceDataSource.m in Sources */,
 				634B14F01735509E00BCBDEE /* HWMFacebookPlaceViewController.m in Sources */,
 				634B14F51735F54700BCBDEE /* HWMMeetViewController.m in Sources */,
+				634B1522175104C600BCBDEE /* HWMFriendStoryDataSource.m in Sources */,
+				634B1523175104C600BCBDEE /* HWMFriendStoryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

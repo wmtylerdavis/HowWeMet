@@ -37,7 +37,7 @@
         {
             _facebookData = [result objectForKey:@"data"];
             
-            //something with parse
+            //parse
             PFQuery* storyQuery=[PFQuery queryWithClassName:@"Meet"];
             [storyQuery whereKey:@"Owner" equalTo:[PFUser currentUser]];
             
@@ -50,8 +50,6 @@
                     {
                         //no way this works
                         [_facebookData setObject:[_stories objectForKey:[_facebookData[i] objectForKey:@"id"]] atIndexedSubscript:i];
-                        
-                        //[_stories objectForKey:[_facebookData objectAtIndex:i] objectForKey:@"id"];
                     }
                 }
                 
@@ -63,9 +61,10 @@
                 _data=[_data sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
                     return NSOrderedDescending;
                 }];
-                NSLog(@"%@", _data);
                 
+                NSLog(@"%@", _data);
                 _origData=_data;
+                
                 [self fireDataCompletedDelegate];
             }];
 

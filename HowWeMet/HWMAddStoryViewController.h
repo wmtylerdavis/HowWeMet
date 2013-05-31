@@ -51,7 +51,10 @@ TDDatePickerControllerDelegate,EGOImageLoaderObserver, HWMFacebookPhotoPickerDel
 @property (strong, nonatomic) IBOutlet HWMGrayButton *privacyButton;
 @property (nonatomic, assign) int imageType;
 
+@property (nonatomic, retain) UIScrollView* scrollView;
+
 @property (nonatomic, retain) PFObject* meet;
+
 @property (strong, nonatomic) IBOutlet HWMGrayButton *followingRelationship;
 @property (strong, nonatomic) IBOutlet HWMGrayButton *buddiesRelationship;
 @property (strong, nonatomic) IBOutlet HWMGrayButton *familiesRelationship;

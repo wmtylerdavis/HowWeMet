@@ -14,9 +14,6 @@
 
 @interface HWMViewController : UIViewController <UITableViewDelegate, HWMDataSourceDelegate, UISearchBarDelegate>
 {
-    // data sources for each tab
-    // featured, facebook, twitter, search
-    
     //NSArray* _dataSources;
     UITapGestureRecognizer* tap;
 }

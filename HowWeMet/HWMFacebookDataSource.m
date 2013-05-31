@@ -52,8 +52,11 @@
             [friendQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
                 if (!error) {
                     // The find succeeded.
-                    NSLog(@"Successfully retrieved %d scores.", objects.count);
+                    NSLog(@"Successfully retrieved %d users.", objects.count);
                     friendUsers = objects;
+                    friendUsers = [friendUsers sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+                        return [[obj2 objectForKey:@"Name"] localizedCaseInsensitiveCompare:[obj1 objectForKey:@"Name"]];
+                    }];
                 } else {
                     // Log details of the failure
                     NSLog(@"Error: %@ %@", error, [error userInfo]);

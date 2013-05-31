@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HWMLeftViewController : UIViewController
+@interface HWMLeftViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+{
+    NSMutableArray* _tableData;
+}
+
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UITableViewCell *headerCell;
+@property (strong, nonatomic) IBOutlet UILabel *headerLabel;
+@property (strong, nonatomic) IBOutlet UILabel *howWeMetLabel;
 
 @end

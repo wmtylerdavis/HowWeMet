@@ -33,6 +33,7 @@ NSString* const kMeetActionSheetCancel=@"Cancel";
 
 @synthesize meet = _meet;
 @synthesize howWeMetImage;
+@synthesize scrollView;
 @synthesize selectedPlace = _selectedPlace;
 
 // FBSample logic
@@ -42,10 +43,11 @@ NSString* const kMeetActionSheetCancel=@"Cancel";
     // This URL is specific to this sample, and can be used to
     // create arbitrary OG objects for this app; your OG objects
     // will have URLs hosted by your server.
-    NSString *format =
-    @"https://guarded-wave-5266.herokuapp.com/request.php?"
-    @"fb:app_id=118613704982422&og:type=%@&"
-    @"og:title=%@&og:description=%%22%@%%22&howmuchapp:requestID=%@";
+//    NSString *format =
+//    @"https://guarded-wave-5266.herokuapp.com/request.php?"
+//    @"fb:app_id=118613704982422&og:type=%@&"
+//    @"og:title=%@&og:description=%%22%@%%22&howmuchapp:requestID=%@";
+
     
     // We create an FBGraphObject object, but we can treat it as
     // an SCOGMeal with typed properties, etc. See <FacebookSDK/FBGraphObject.h>
@@ -57,7 +59,7 @@ NSString* const kMeetActionSheetCancel=@"Cancel";
     // Give it a URL that will echo back the name of the meal as its title,
     // description, and body.
 //    NSLog(@"%@", _thisRequest.requestID);
-//    result.url = [NSString stringWithFormat:format,
+   // result.url = [NSString stringWithFormat:profile,
 //                  @"howmuchapp:request", request, text, (long)_thisRequest.requestID];
     
     return result;
@@ -75,24 +77,30 @@ NSString* const kMeetActionSheetCancel=@"Cancel";
     id<HWMMeetAction> action =
     (id<HWMMeetAction>)[FBGraphObject graphObject];
     action.meet = requestObject;
-//    NSString * openGraphMessage = [NSString stringWithFormat:@"requests @[%@] %@", requestTarget.socialNetorkID, requestTitle.text];
-//    action.message = openGraphMessage;
+    NSString * openGraphMessage = [NSString stringWithFormat:@"%@", self.howWeMetStory.text];
+    action.message = openGraphMessage;
+    
+    NSDateFormatter* fbDateFormatter = [[NSDateFormatter alloc] init];
+    [fbDateFormatter setDateFormat:@"yyyy-MM-dd"];
+    NSString* dateString=[fbDateFormatter stringFromDate:selectedDate];
+    
+    NSString* post = [NSString stringWithFormat:@"me/howwemetapp:meet?profile=%@&start_time=%@T15:18:26-08:00&end_time=%@T15:18:27-08:00&message=%@&place=%@", dateString, dateString,[self.meet objectForKey:@"FacebookID"], _howWeMetStory.text, [self.meet  objectForKey:@"Place"]];
     
     [FBSettings setLoggingBehavior:[NSSet setWithObjects:FBLoggingBehaviorFBRequests, FBLoggingBehaviorFBURLConnections, nil]];
     
-    [FBRequestConnection startForPostWithGraphPath:@"me/howmuchapp:make"
-                                       graphObject:action
+    [FBRequestConnection startForPostWithGraphPath:post
+                                       graphObject:nil
                                  completionHandler:
      ^(FBRequestConnection *connection, id result, NSError *error) {
          NSString *alertText;
          if (!error) {
              alertText = [NSString stringWithFormat:
-                          @"Posted Request to Facebook"];
+                          @"Posted Meet to Facebook"];
          } else {
              alertText = [NSString stringWithFormat:
                           @"Sorry we couldn't post to Facebook"];
          }
-         [[[UIAlertView alloc] initWithTitle:@"Result"
+         [[[UIAlertView alloc] initWithTitle:@"Facebook"
                                      message:alertText
                                     delegate:nil
                            cancelButtonTitle:@"Thanks!"
@@ -165,6 +173,12 @@ NSString* const kMeetActionSheetCancel=@"Cancel";
     // Do any additional setup after loading the view from its nib.
     self.title = @"Edit Story";
     
+    self.scrollView=[[UIScrollView alloc] initWithFrame:self.view.frame];
+    [self.scrollView addSubview:self.view];
+    self.view=self.scrollView;
+    self.view.clipsToBounds = YES;
+    self.scrollView.contentSize=CGSizeMake(self.view.frame.size.width, self.view.frame.size.height+(self.view.frame.size.height/2)+5);
+    [self.scrollView setScrollEnabled:NO];
     // [self registerForKeyboardNotifications];
     self.howWeMetStory.delegate = self;
     [self setAccessoryForTextField:self.howWeMetStory];
@@ -504,6 +518,7 @@ NSString* const kMeetActionSheetCancel=@"Cancel";
     }
     else {
         [self triggerSave:newMeet];
+        [self postOpenGraphAction];
     }
     
 }

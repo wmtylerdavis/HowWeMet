@@ -1,52 +1,56 @@
 //
-//  HWMRightViewController.m
+//  HWMFriendStoryViewController.m
 //  HowWeMet
 //
-//  Created by Tyler Davis on 4/20/13.
+//  Created by Tyler Davis on 5/22/13.
 //  Copyright (c) 2013 Tyler Davis. All rights reserved.
 //
 
-#import "HWMRightViewController.h"
 #import "HWMFriendStoryViewController.h"
-#import "JASidePanelController.h"
-#import "UIViewController+JASidePanel.h"
+#import "HWMMeetViewController.h"
 
-@interface HWMRightViewController ()
+@interface HWMFriendStoryViewController ()
 
 @end
 
-@implementation HWMRightViewController
-
+@implementation HWMFriendStoryViewController
+@synthesize customer = _customer;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    self.title = @"Friends";
+    self.title = @"How We Met";
     [self registerForKeyboardNotifications];
-    [[[self navigationController] navigationBar] setTintColor:[[HowWeMetAPI sharedInstance] redColor]];
     
-    self.headerCell.backgroundColor = [[HowWeMetAPI sharedInstance] redColor];
-    self.headerLabel.font = [UIFont fontWithName:@"Chalkduster" size:16.0];
-    self.headerLabel.text = @"Friends";
     self.tableView.delegate=self;
     self.tableView.backgroundColor = [UIColor darkGrayColor];
-    self.searchBar.tintColor = [UIColor darkGrayColor];
+    self.tableView.separatorStyle= UITableViewCellSeparatorStyleNone;
     self.tableView.separatorColor=[UIColor clearColor];
     
-    _dataSource =[[HWMFacebookDataSource alloc] init];
-    _dataSource.delegate=self;
-
-    self.tableView.dataSource=_dataSource;
-    [self.tableView reloadData];
-    
-    self.searchBar.delegate = self;
-    
+    self.noDataLabel.font = [UIFont fontWithName:@"Chalkduster" size:18.0];
     tap = [[UITapGestureRecognizer alloc]
            initWithTarget:self
            action:@selector(keyboardWillHide:)];
-    tap.enabled = NO;
+    tap.enabled=NO;
     
     [self.view addGestureRecognizer:tap];
+    // self.navigationController.navigationItem.hidesBackButton = YES;
+    
+    _dataSource =[[HWMFriendStoryDataSource alloc] init];
+    _dataSource.customer = _customer;
+    _dataSource.delegate=self;
+    
+    self.tableView.dataSource=_dataSource;
+    [self.tableView reloadData];
+    [_dataSource refresh];
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [_dataSource refresh];
+    
+    if([self.tableView indexPathForSelectedRow])
+        [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:NO];
 }
 
 - (void)registerForKeyboardNotifications
@@ -58,28 +62,19 @@
 
 - (void)keyboardWillShow:(NSNotification *)notification {
     tap.enabled = YES;
-//    NSDictionary* info = [notification userInfo];
-//    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
-//    [UIView animateWithDuration:0.3f animations:^{
-//        self.view.frame=CGRectMake(self.view.frame.origin.x, -kbSize.height, self.view.frame.size.width, self.view.frame.size.height);
-//    }];
+    // NSDictionary* info = [notification userInfo];
+    //    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    //    [UIView animateWithDuration:0.3f animations:^{
+    //        self.view.frame=CGRectMake(self.view.frame.origin.x, -kbSize.height, self.view.frame.size.width, self.view.frame.size.height);
+    //    }];
 }
 
 - (void)keyboardWillHide:(NSNotification *)notification {
-    tap.enabled = NO;
+    tap.enabled=NO;
     [UIView animateWithDuration:0.3f animations:^{
         self.view.frame=CGRectMake(self.view.frame.origin.x, 0, self.view.frame.size.width, self.view.frame.size.height);
     }];
     [self.view endEditing:YES];
-}
-
-
--(void)viewDidAppear:(BOOL)animated
-{
-    [_dataSource refresh];
-    
-    if([self.tableView indexPathForSelectedRow])
-        [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:NO];
 }
 
 - (void)didReceiveMemoryWarning
@@ -99,32 +94,11 @@
 
 -(float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    HWMGenericDataSource* dataSource=self.tableView.dataSource;
-    return [dataSource measureCell:indexPath];
+    if ([[_dataSource.data objectAtIndex:indexPath.row] objectForKey:@"FacebookID"]) {
+        return 200.0f;
+    }
+    return 100.0f;
 }
-
--(float)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    return 0.0f;
-}
-
-//-(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-//{
-//    UIView* header=[[[NSBundle mainBundle] loadNibNamed:@"HWMRightSectionHeader" owner:self options:nil] objectAtIndex:0];
-//    header.autoresizingMask = YES;
-//    UIImageView* image=(UIImageView*)[header viewWithTag:2];
-//    UILabel* label=(UILabel*)[header viewWithTag:1];
-//    
-//    [image setContentMode:UIViewContentModeCenter];
-//    [label setFont:[UIFont fontWithName:@"Chalkduster" size:17.0f]];
-//    label.textColor = [UIColor whiteColor];
-//    //[image setImage:[UIImage imageNamed:@"tabBarProfile"]];
-//    
-//    header.backgroundColor = [[HowWeMetAPI sharedInstance] redColor];
-//    label.text=@"Friends";
-//    
-//    return header;
-//}
 
 -(void)goToFriendProfile:(NSNumber*)customerID
 {
@@ -155,16 +129,16 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //hmmm
-    if ([[_dataSource.data objectAtIndex:indexPath.row] objectForKey:@"installed"]) {
-        
-        HWMFriendStoryViewController* friendStoryView = [[HWMFriendStoryViewController alloc] init];
-        NSLog(@"%@", [_dataSource.friendUsers objectAtIndex:indexPath.row]);
-        friendStoryView.customer = [_dataSource.friendUsers objectAtIndex:indexPath.row];
-        
-        self.sidePanelController.centerPanel = [[UINavigationController alloc] initWithRootViewController:friendStoryView];
+    PFObject *meet;
+    NSDictionary* friend = [_dataSource.data objectAtIndex:indexPath.row];
+    // Create the object.
+    if ([friend objectForKey:@"FacebookID"]) {
+        meet = (PFObject*)friend;
+        HWMMeetViewController* storyController = [[HWMMeetViewController alloc] init];
+        storyController.meet = meet;
+        storyController.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:storyController animated:YES];
     }
-    else
-        [self inviteFacebookFriend:[[_dataSource.data objectAtIndex:indexPath.row] objectForKey:@"id"]];
 }
 
 -(void)dataSource:(HWMGenericDataSource *)dataSource dataServiceUnavailable:(BOOL)unavailable reason:(NSString *)reason
@@ -179,6 +153,10 @@
     
     if(dataSource.data.count>0)
         [self toggleNoDataMessage:NO message:nil];
+    else
+    {
+        [self emptyFeedMessageForCurrentSegment];
+    }
 }
 
 -(void)dataSource:(HWMGenericDataSource *)dataSource error:(NSError *)error
@@ -187,10 +165,15 @@
     
     [self.tableView reloadData];
 }
+-(void)emptyFeedMessageForCurrentSegment
+{
+    [self toggleNoDataMessage:YES message:[NSString stringWithFormat:@"%@ has no public meets yet", [_customer objectForKey:@"Name"]]];
+}
 
 -(void)toggleNoDataMessage:(BOOL)show message:(NSString*)message
 {
-    
+    self.noDataLabel.text=message;
+    self.noDataLabel.hidden=!show;
 }
 
 -(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
@@ -202,6 +185,11 @@
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
     [self.view endEditing:YES];
+    
+    if(searchBar.text==nil || searchBar.text.length==0)
+    {
+        [self.tableView reloadData];
+    }
 }
 
 -(void)inviteFacebookFriend: (NSString*) friend
@@ -213,7 +201,7 @@
     
     [FBWebDialogs
      presentRequestsDialogModallyWithSession:nil
-     message:@"How We Met allows you to keep track of your relationships. How did you meet your friends? Hurray, before you forget!"
+     message:@"Check out this app! Make challenges. Make Money!"
      title:nil
      parameters:params
      handler:nil];
@@ -221,10 +209,14 @@
 }
 
 - (void)viewDidUnload {
-    [self setHeaderCell:nil];
-    [self setHeaderLabel:nil];
-    [self setSearchBar:nil];
+    //[self setSearchBar:nil];
+    [self setNoDataLabel:nil];
     [super viewDidUnload];
 }
-@end
 
+-(void)dealloc
+{
+    self.tableView=nil;
+}
+
+@end

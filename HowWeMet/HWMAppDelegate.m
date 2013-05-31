@@ -252,7 +252,7 @@ NSString *const FBSessionStateChangedNotification = @"HowWeMet.HowWeMet:FBSessio
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
     PFACL *defaultACL = [PFACL ACL];
-    [defaultACL setPublicReadAccess:NO];
+    [defaultACL setPublicReadAccess:YES];
     [PFACL setDefaultACL:defaultACL withAccessForCurrentUser:YES];
     
     // Register for remote notfications with the UA Library. This call is required.

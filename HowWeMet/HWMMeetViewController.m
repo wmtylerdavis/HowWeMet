@@ -21,14 +21,52 @@
 @synthesize profileImage2 = _profileImage2;
 @synthesize activityTable = _activityTable;
 @synthesize headerController = _headerController;
+@synthesize tableData = _tableData;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        //[self registerForKeyboardNotifications];
     }
     return self;
+}
+
+- (void)registerForKeyboardNotifications
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillShow:)
+                                                 name:UIKeyboardDidShowNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillHide:)
+                                                 name:UIKeyboardWillHideNotification object:nil];
+    
+}
+
+- (void)keyboardWillShow:(NSNotification *)notification {
+    tap.enabled = YES;
+    NSDictionary* info = [notification userInfo];
+    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    [UIView animateWithDuration:0.3f animations:^{
+        self.view.frame=CGRectMake(self.view.frame.origin.x, -kbSize.height, self.view.frame.size.width, self.view.frame.size.height);
+    }];
+}
+
+- (void)keyboardWillHide:(NSNotification *)notification {
+    tap.enabled = NO;
+    [UIView animateWithDuration:0.3f animations:^{
+        self.view.frame=CGRectMake(self.view.frame.origin.x, 0, self.view.frame.size.width, self.view.frame.size.height);
+    }];
+    [self.view endEditing:YES];
+    
+}
+
+-(void)dismissKeyboard
+{
+    tap.enabled = NO;
+    [self.view endEditing:YES];
 }
 
 - (void)viewDidLoad
@@ -39,9 +77,38 @@
     
     [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"Edit" style:UIBarButtonItemStylePlain target:self action:@selector(editMeet:)]];
     
+    tap = [[UITapGestureRecognizer alloc]
+           initWithTarget:self
+           action:@selector(keyboardWillHide:)];
     
-    _activityTable.tableHeaderView=[[[NSBundle mainBundle] loadNibNamed:@"HWMMeetViewHeader" owner:self options:nil] objectAtIndex:0];
-    _activityTable.tableHeaderView.autoresizingMask =YES;
+    [self.view addGestureRecognizer:tap];
+}
+
+-(float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if(self.tableData==nil)
+        return 44.0f;
+    
+    float startingHeight=44.0f;
+    
+    PFUser* userData=[[self.tableData objectAtIndex:indexPath.row] objectForKey:@"FromUser"];
+    NSString* activityLabel=[NSString stringWithFormat:@"%@: %@", [userData objectForKey:@"Name"], [[self.tableData objectAtIndex:indexPath.row] objectForKey:@"Content"]];
+    
+    CGSize theStringSize = [activityLabel sizeWithFont:[UIFont systemFontOfSize:12.0f] constrainedToSize:CGSizeMake(254, MAXFLOAT) lineBreakMode:UILineBreakModeWordWrap];
+    
+    return startingHeight+theStringSize.height;
+}
+
+-(void)loadView
+{
+    [super loadView];
+    
+    self.activityTable=[[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-47)];
+    self.activityTable.autoresizingMask=UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleBottomMargin;
+    [self.view addSubview:self.activityTable];
+    
+    self.activityTable.tableHeaderView=[[[NSBundle mainBundle] loadNibNamed:@"HWMMeetViewHeader" owner:self options:nil] objectAtIndex:0];
+    self.activityTable.tableHeaderView.autoresizingMask =YES;
     self.activityTable.tableHeaderView.clipsToBounds = YES;
     
     self.profileImage1 = (FBProfilePictureView*)[_activityTable.tableHeaderView viewWithTag:1];
@@ -56,28 +123,48 @@
     self.nameLabel1.text = [self.meet objectForKey:@"OwnerName"];
     self.nameLabel2.text = [self.meet objectForKey:@"FriendName"];
     
-    if([_meet objectForKey:@"Photo"])
-    {
-        [self loadPhoto];
-    }
-    [self loadInteractables];
-    
     self.activityTable.delegate=self;
-    //self.activityTable.dataSource= _activityDataSource;
-    self.activityTable.separatorColor=[UIColor clearColor];
+    self.activityTable.dataSource= self;
+    self.activityTable.separatorColor=[UIColor whiteColor];
     self.activityTable.backgroundColor=[UIColor darkGrayColor];
-    [[self view] addSubview:_activityTable];
+
+    [self loadInteractables];
+    self.activityTable.tableHeaderView=self.activityTable.tableHeaderView;
+    [self.view addSubview:self.activityTable];
+    
+    //
+    // Footer begins.
+    commentsFooter=[[[NSBundle mainBundle] loadNibNamed:@"HWMCommentFooter" owner:self options:nil] objectAtIndex:0];
+    //commentsFooter.frame=CGRectMake(0, self.view.frame.size.height-self.view.frame.origin.y-26, 320, 47);
+    commentsFooter.frame=CGRectMake(0, self.view.frame.size.height, commentsFooter.frame.size.width, commentsFooter.frame.size.height);
+    self.view.frame=CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, self.view.frame.size.height+commentsFooter.frame.size.height);
+    commentsFooter.autoresizingMask=UIViewAutoresizingFlexibleTopMargin;
+    commentsFooter.backgroundColor = [[HowWeMetAPI sharedInstance] redColor];
+    commentsFooter.userInteractionEnabled=YES;
+    //commentsFooter.clipsToBounds=YES;
+    
+    [self.view addSubview:commentsFooter];
+    
+    commentField=(UITextField*)[commentsFooter viewWithTag:1];
+    
+    UIButton* addCommentButton=(UIButton*)[commentsFooter viewWithTag:2];
+    [addCommentButton addTarget:self action:@selector(addComment:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view layoutSubviews];
 }
 
 -(void)loadInteractables
 {
+    if([_meet objectForKey:@"Photo"])
+    {
+        [self loadPhoto];
+    }
     whenView=[[[NSBundle mainBundle] loadNibNamed:@"AddieHeaderCell" owner:self options:nil] objectAtIndex:0];
     whenView.frame=CGRectMake(0, 230, whenView.frame.size.width, whenView.frame.size.height);
     whenView.autoresizingMask=UIViewAutoresizingFlexibleTopMargin;
     whereView=[[[NSBundle mainBundle] loadNibNamed:@"AddieHeaderCell" owner:self options:nil] objectAtIndex:0];
     whereView.frame=CGRectMake(0, 230, whereView.frame.size.width, whereView.frame.size.height);
     
-    // whip up the story cell for all who might desire it
     storyCell=[[[NSBundle mainBundle] loadNibNamed:@"HWMMeetStoryCell" owner:self options:nil] objectAtIndex:0];
     
     UILabel* storyLabel = (UILabel*)[storyCell viewWithTag:1];
@@ -129,10 +216,67 @@
     [self.activityTable.tableHeaderView layoutSubviews];
 }
 
+-(void)refresh
+{
+    if(self.meet==nil) return;
+
+    PFQuery* activityQuery=[PFQuery queryWithClassName:@"Activity"];
+    [activityQuery whereKey:@"Meet" equalTo:self.meet];
+    [activityQuery includeKey:@"FromUser"];
+    [activityQuery includeKey:@"Meet"];
+    [activityQuery whereKey:@"Type" containedIn:[NSArray arrayWithObjects:[NSNumber numberWithInt:0], [NSNumber numberWithInt:0], nil]];
+    [activityQuery orderByAscending:@"createdAt"];
+    
+    [activityQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        
+        if(!error)
+        {
+            self.tableData=objects;
+            NSLog(@"%@", objects);
+            [self.activityTable   reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
+            
+        }
+        else {
+            NSLog(@"Error! %@", error.description);
+        }
+    }];
+    
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [self registerForKeyboardNotifications];
+    //[self refresh];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    [self refresh];
+}
+
+-(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell* cell=[self.activityTable dequeueReusableCellWithIdentifier:@"HWMCommentCell"];
+    if(cell==nil)
+    {
+        cell=[[[NSBundle mainBundle] loadNibNamed:@"HWMCommentCell" owner:self options:nil] objectAtIndex:0];
+    }
+    [cell contentView].backgroundColor = [UIColor darkGrayColor];
+    UILabel* commentLabel = (UILabel*)[cell viewWithTag:1];
+    commentLabel.font = [UIFont fontWithName:@"Helvetica" size:12.0];
+    
+    PFUser* userData=[[self.tableData objectAtIndex:indexPath.row] objectForKey:@"FromUser"];
+    NSString* commentText=[NSString stringWithFormat:@"%@: %@", [userData objectForKey:@"Name"], [[self.tableData objectAtIndex:indexPath.row] objectForKey:@"Content"]];
+    commentLabel.text = commentText;
+    
+    return cell;
+}
+
 -(void)loadPhoto
 {
     photoView=[[[NSBundle mainBundle] loadNibNamed:@"HWMPhotoView" owner:self options:nil] objectAtIndex:0];
-    photoView.frame=CGRectMake(0, 230, photoView.frame.size.width, photoView.frame.size.height);
+    photoView.frame=CGRectMake(0, 90, photoView.frame.size.width, photoView.frame.size.height);
     
     UIImageView* image=(UIImageView*)[photoView viewWithTag:1];
     
@@ -156,26 +300,43 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(int)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    if(self.tableData==nil) return 1;
+    return self.tableData.count;
+}
+
+-(int)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+   //
+}
+
+-(void)addComment:(id)sender
+{
+    //UITextField* commentField=(UITextField*)[self.tableView.tableFooterView viewWithTag:1];
+    if(commentField.text==nil || commentField.text.length==0)
+        return;
     
-}
-
--(float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    //return [_activityDataSource measureCell:indexPath];
-    return 100.0f;
-}
--(float)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    return 0.0f;
-    //return 65.0f;
-}
-
--(void)viewDidAppear:(BOOL)animated
-{
-//    [self refresh];
-//    [_activityDataSource refresh];
+    PFObject* commentActivity=[PFObject objectWithClassName:@"Activity"];
+    [commentActivity setObject:commentField.text forKey:@"Content"];
+    [commentActivity setObject:[PFUser currentUser] forKey:@"FromUser"];
+    [commentActivity setObject:self.meet forKey:@"Meet"];
+    [commentActivity setObject:[NSNumber numberWithInt:0] forKey:@"Type"];
+    
+    commentField.text=@"";
+    
+    [self.view endEditing:YES];
+    
+    [commentActivity saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        [PFPush subscribeToChannelInBackground:[NSString stringWithFormat:@"Meet%@", self.meet.objectId]];
+        
+        [self refresh];
+    }];
 }
 
 - (void)viewDidUnload
