@@ -14,8 +14,6 @@
 		<dict>
 			<key>CFBundleIconFiles</key>
 			<array>
-				<string>iPhoneIcon_Small.png</string>
-				<string>iPhoneIcon_Big.png</string>
 				<string>iconSmall.png</string>
 				<string>iconBig.png</string>
 			</array>

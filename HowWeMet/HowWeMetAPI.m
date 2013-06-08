@@ -11,6 +11,7 @@
 @implementation HowWeMetAPI
 
 @synthesize redColor = _redColor;
+@synthesize automaticFacebookPost = _automaticFacebookPost;
 
 +(HowWeMetAPI*)sharedInstance
 {
@@ -27,10 +28,30 @@
 -(UIColor*)redColor
 {
     if (!_redColor) {
-        //_redColor= [UIColor colorWithRed:0.36f green:0.04f blue:0.2f alpha:1.0f];
         _redColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"navHeader"]];
     }
     return _redColor;
+}
+
+-(void) setAutomaticFacebookPost: (BOOL) autoFacebookPost
+{
+    _automaticFacebookPost = autoFacebookPost;
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setBool:autoFacebookPost forKey:@"AutomaticFacebookPost"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+}
+
+-(BOOL)automaticFacebookPost
+{
+    if([[NSUserDefaults standardUserDefaults] objectForKey:@"AutomaticFacebookPost"])
+    {
+        _automaticFacebookPost=[[NSUserDefaults standardUserDefaults] boolForKey:@"AutomaticFacebookPost"];
+    }
+    else {
+        [self setAutomaticFacebookPost:YES];
+    }
+    return _automaticFacebookPost;
 }
 
 @end

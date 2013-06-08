@@ -53,10 +53,17 @@
                 if (!error) {
                     // The find succeeded.
                     NSLog(@"Successfully retrieved %d users.", objects.count);
-                    friendUsers = objects;
-                    friendUsers = [friendUsers sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
-                        return [[obj2 objectForKey:@"Name"] localizedCaseInsensitiveCompare:[obj1 objectForKey:@"Name"]];
-                    }];
+                    //friendUsers = objects;
+                    friendUsers = [[NSMutableDictionary alloc] init];
+                    for (NSDictionary* friend in objects)
+                    {
+                        NSLog(@"%@", friend);
+                        [friendUsers setObject:friend forKey:[friend objectForKey:@"facebookID"]];
+                    }
+                    
+//                    friendUsers = [friendUsers sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+//                        return [[obj2 objectForKey:@"Name"] localizedCaseInsensitiveCompare:[obj1 objectForKey:@"Name"]];
+//                    }];
                 } else {
                     // Log details of the failure
                     NSLog(@"Error: %@ %@", error, [error userInfo]);

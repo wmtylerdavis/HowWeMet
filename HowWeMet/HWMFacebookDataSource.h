@@ -11,6 +11,7 @@
 
 @interface HWMFacebookDataSource : HWMGenericDataSource
 
-@property(nonatomic, retain) NSArray *friendUsers;
+//@property(nonatomic, retain) NSArray *friendUsers;
+@property(nonatomic, retain) NSMutableDictionary *friendUsers;
 
 @end

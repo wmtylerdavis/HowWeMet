@@ -12,6 +12,10 @@
 #import "JASidePanelController.h"
 #import "UIViewController+JASidePanel.h"
 #import <Parse/Parse.h>
+#import <UserVoice.h>
+#import <UVRootViewController.h>
+#import <UVSession.h>
+#import <UVNavigationController.h>
 
 @interface HWMLeftViewController ()
 
@@ -47,7 +51,8 @@
     
     _tableData=[NSMutableArray arrayWithArray:@[@"Home",
                 @"Post to Facebook",
-                @"Feedback & Support"]];
+                @"Feedback & Support",
+                @"Logout"]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -85,12 +90,29 @@
         factbookSwitch.hidden = NO;
         factbookSwitch.backgroundColor = [UIColor whiteColor];
         [factbookSwitch setOnTintColor:[[HowWeMetAPI sharedInstance] redColor]];
+        if ([[HowWeMetAPI sharedInstance] automaticFacebookPost] ) {
+            [factbookSwitch setOn:YES];
+        }
+        else {
+            [factbookSwitch setOn:NO];
+        }
+        [factbookSwitch addTarget: self action: @selector(facebookSwitchFlip:) forControlEvents:UIControlEventValueChanged];
     }
     else {
         factbookSwitch.hidden = YES;
     }
     
     return cell;
+}
+
+- (IBAction) facebookSwitchFlip: (id) sender {
+    UISwitch *onoff = (UISwitch *) sender;
+    if (onoff.on) {
+        [[HowWeMetAPI sharedInstance] setAutomaticFacebookPost:YES];
+    }
+    else {
+        [[HowWeMetAPI sharedInstance] setAutomaticFacebookPost:NO];
+    }
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -103,6 +125,26 @@
             self.sidePanelController.centerPanel = [[UINavigationController alloc] initWithRootViewController:viewControl];
         }
             break;
+        case 2: // feedback & support
+        {
+            UVConfig *config = [UVConfig configWithSite:@"howwemet.uservoice.com"
+                                                 andKey:@"jnZwHDOZXuUyPAkj7w39Q"
+                                              andSecret:@"AT6NicsRYAohEsoiVURrib7PowSMCnMWBEr8WzgU8A"];
+            
+            [UserVoice presentUserVoiceInterfaceForParentViewController:self andConfig:config];
+            
+            [config setCustomFields:@{@"Type":@"Support Request"}];
+            
+            [UserVoice presentUserVoiceInterfaceForParentViewController:self.sidePanelController andConfig:config];
+            
+            break;
+        }
+        case 3:
+        {
+            [PFUser logOut];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"appSwitchToWelcome" object:nil];
+            break;
+        }
         default:
             break;
     }

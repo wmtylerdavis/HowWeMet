@@ -15,8 +15,11 @@
 }
 
 @property (strong,nonatomic) UIColor* redColor;
+@property (nonatomic, assign) BOOL automaticFacebookPost;
 
 -(UIColor*)redColor;
-
 +(HowWeMetAPI*)sharedInstance;
+-(void) setAutomaticFacebookPost: (BOOL) autoFacebookPost;
+-(BOOL)automaticFacebookPost;
+
 @end

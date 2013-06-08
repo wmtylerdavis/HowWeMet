@@ -157,11 +157,23 @@
     //hmmm
     if ([[_dataSource.data objectAtIndex:indexPath.row] objectForKey:@"installed"]) {
         
+        NSString* facebookID = [[_dataSource.data objectAtIndex:indexPath.row] objectForKey:@"id"];
         HWMFriendStoryViewController* friendStoryView = [[HWMFriendStoryViewController alloc] init];
-        NSLog(@"%@", [_dataSource.friendUsers objectAtIndex:indexPath.row]);
-        friendStoryView.customer = [_dataSource.friendUsers objectAtIndex:indexPath.row];
-        
-        self.sidePanelController.centerPanel = [[UINavigationController alloc] initWithRootViewController:friendStoryView];
+        //NSLog(@"%@", [_dataSource.friendUsers objectAtIndex:indexPath.row]);
+        if ([_dataSource.friendUsers objectForKey:facebookID]) {
+            NSLog(@"%@", [_dataSource.friendUsers objectForKey:facebookID]);
+            friendStoryView.customer = [_dataSource.friendUsers objectForKey:facebookID];
+            self.sidePanelController.centerPanel = [[UINavigationController alloc] initWithRootViewController:friendStoryView];
+        }
+        else {
+            [[[UIAlertView alloc] initWithTitle:@"Facebook Friend"
+                                        message:[NSString stringWithFormat:@"It doesn't seem like %@ finished the login process", [[_dataSource.data objectAtIndex:indexPath.row] objectForKey:@"name"]]
+                                       delegate:nil
+                              cancelButtonTitle:@"Sorry..."
+                              otherButtonTitles:nil]
+             show];
+            
+        }
     }
     else
         [self inviteFacebookFriend:[[_dataSource.data objectAtIndex:indexPath.row] objectForKey:@"id"]];
@@ -213,7 +225,7 @@
     
     [FBWebDialogs
      presentRequestsDialogModallyWithSession:nil
-     message:@"How We Met allows you to keep track of your relationships. How did you meet your friends? Hurray, before you forget!"
+     message:@"HowWeMet is a fun way to interact with your Facebook friends. It allows you to add the details, publicly or privately, of how you met your friends and easily post your story to your Facebook timeline when it actually happened."
      title:nil
      parameters:params
      handler:nil];

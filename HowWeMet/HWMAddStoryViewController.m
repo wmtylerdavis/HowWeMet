@@ -10,6 +10,9 @@
 #import "HowWeMetAPI.h"
 #import "HWMFacebookImagesViewController.h"
 #import "HWMFacebookPlaceViewController.h"
+#import "HWMViewController.h"
+#import "JASidePanelController.h"
+#import "UIViewController+JASidePanel.h"
 #import "KGModal.h"
 #import "HWMFBOpenGraphAction.h"
 #import <AVFoundation/AVFoundation.h>
@@ -79,17 +82,18 @@ NSString* const kMeetActionSheetCancel=@"Cancel";
     action.meet = requestObject;
     NSString * openGraphMessage = [NSString stringWithFormat:@"%@", self.howWeMetStory.text];
     action.message = openGraphMessage;
+    action.place = [self.meet objectForKey:@"Place"];
     
     NSDateFormatter* fbDateFormatter = [[NSDateFormatter alloc] init];
     [fbDateFormatter setDateFormat:@"yyyy-MM-dd"];
-    NSString* dateString=[fbDateFormatter stringFromDate:selectedDate];
+    NSString* dateString= [NSString stringWithFormat:@"%@T15:18:26-08:00", [fbDateFormatter stringFromDate:[self.meet objectForKey:@"DateDate"]]];
+    NSString* dateString2= [NSString stringWithFormat:@"%@T15:18:27-08:00", [fbDateFormatter stringFromDate:[self.meet objectForKey:@"DateDate"]]];
     
-    NSString* post = [NSString stringWithFormat:@"me/howwemetapp:meet?profile=%@&start_time=%@T15:18:26-08:00&end_time=%@T15:18:27-08:00&message=%@&place=%@", dateString, dateString,[self.meet objectForKey:@"FacebookID"], _howWeMetStory.text, [self.meet  objectForKey:@"Place"]];
-    
+    NSString* post = [NSString stringWithFormat:@"me/howwemetapp:meet?profile=%@&start_time=%@&end_time=%@&fb:explicitly_shared=true",[self.meet objectForKey:@"FacebookID"], dateString, dateString2];
     [FBSettings setLoggingBehavior:[NSSet setWithObjects:FBLoggingBehaviorFBRequests, FBLoggingBehaviorFBURLConnections, nil]];
     
     [FBRequestConnection startForPostWithGraphPath:post
-                                       graphObject:nil
+                                       graphObject:action
                                  completionHandler:
      ^(FBRequestConnection *connection, id result, NSError *error) {
          NSString *alertText;
@@ -148,10 +152,6 @@ NSString* const kMeetActionSheetCancel=@"Cancel";
 {
     tap.enabled = NO;
     [self.view endEditing:YES];
-}
-
-- (void) textViewDidBeginEditing:(UITextView *) textView {
-    [textView setText:@"We met "];
 }
 
 -(void)setAccessoryForTextField:(id)field
@@ -334,9 +334,22 @@ NSString* const kMeetActionSheetCancel=@"Cancel";
         [_locationLabel setText:[[self.meet objectForKey:@"Place"] objectForKey:@"name"]];
     }
     
+    if ([self.meet objectForKey:@"Story"]) {
+        self.howWeMetStory.text = [self.meet objectForKey:@"Story"];
+    }
+    
     self.friendName.text=[self.meet objectForKey:@"FriendName"];
     [self.friendAvatar setImageURL:[self.meet objectForKey:@"FriendAvatarURL"]];
     
+}
+
+- (void) textViewDidBeginEditing:(UITextView *) textView {
+    if ([self.meet objectForKey:@"Story"]) {
+        self.howWeMetStory.text = [self.meet objectForKey:@"Story"];
+    }
+    else {
+        self.howWeMetStory.text = @"We met ";
+    }
 }
 
 -(void)imagePickerActionSheet:(UIActionSheet*)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
@@ -518,7 +531,6 @@ NSString* const kMeetActionSheetCancel=@"Cancel";
     }
     else {
         [self triggerSave:newMeet];
-        [self postOpenGraphAction];
     }
     
 }
@@ -544,8 +556,12 @@ NSString* const kMeetActionSheetCancel=@"Cancel";
     [newMeet saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if(succeeded)
         {
+            if ([[HowWeMetAPI sharedInstance] automaticFacebookPost] && !_isPrivate) {
+                 [self postOpenGraphAction];
+            }
             NSLog(@"Holy crap");
-            [self.navigationController popViewControllerAnimated:YES];
+            HWMViewController* mainView = [[HWMViewController alloc] init];
+            self.sidePanelController.centerPanel = [[UINavigationController alloc] initWithRootViewController:mainView];
         }
     }];
 }
