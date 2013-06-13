@@ -94,7 +94,7 @@
     PFUser* userData=[[self.tableData objectAtIndex:indexPath.row] objectForKey:@"FromUser"];
     NSString* activityLabel=[NSString stringWithFormat:@"%@: %@", [userData objectForKey:@"Name"], [[self.tableData objectAtIndex:indexPath.row] objectForKey:@"Content"]];
     
-    CGSize theStringSize = [activityLabel sizeWithFont:[UIFont systemFontOfSize:12.0f] constrainedToSize:CGSizeMake(254, MAXFLOAT) lineBreakMode:UILineBreakModeWordWrap];
+    CGSize theStringSize = [activityLabel sizeWithFont:[UIFont systemFontOfSize:12.0f] constrainedToSize:CGSizeMake(254, MAXFLOAT) lineBreakMode:NSLineBreakByWordWrapping];
     
     return startingHeight+theStringSize.height;
 }

@@ -117,7 +117,7 @@
         
         //storyLabel.frame = CGRectMake(storyLabel.frame.origin.x, storyLabel.frame.origin.y, storyLabel.frame.size.width, storyLabel.frame.size.height);
         [storyLabel setFont:[UIFont fontWithName:@"Helvetica" size:14.0f]];
-        storyLabel.lineBreakMode = UILineBreakModeTailTruncation | UILineBreakModeWordWrap;
+        storyLabel.lineBreakMode = NSLineBreakByTruncatingTail | NSLineBreakByWordWrapping;
         storyLabel.text = [fbFriend objectForKey:@"Story"];
         [storyLabel setNumberOfLines:0];
         if (storyLabel.text.length < 100) {

@@ -87,7 +87,7 @@
         [nameLabel setFont:[UIFont fontWithName:@"Chalkduster" size:14.0f]];
         
         [storyLabel setFont:[UIFont fontWithName:@"Helvetica" size:14.0f]];
-        storyLabel.lineBreakMode = UILineBreakModeTailTruncation | UILineBreakModeWordWrap;
+        storyLabel.lineBreakMode = NSLineBreakByTruncatingTail | NSLineBreakByWordWrapping;
         storyLabel.text = [fbFriend objectForKey:@"Story"];
         [storyLabel setNumberOfLines:0];
         if (storyLabel.text.length < 100) {
