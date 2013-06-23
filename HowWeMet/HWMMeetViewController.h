@@ -11,7 +11,7 @@
 #import <FacebookSDK.h>
 #import "HWMGrayButton.h"
 
-@interface HWMMeetViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface HWMMeetViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UIActionSheetDelegate>
 {
     UIView* photoView;
     UIView* whenView;

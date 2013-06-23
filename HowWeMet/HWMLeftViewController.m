@@ -52,6 +52,7 @@
     _tableData=[NSMutableArray arrayWithArray:@[@"Home",
                 @"Post to Facebook",
                 @"Feedback & Support",
+                @"Terms of Service",
                 @"Logout"]];
 }
 
@@ -140,6 +141,18 @@
             break;
         }
         case 3:
+        {
+            UIWebView* webView = [[UIWebView alloc] initWithFrame:self.view.frame];
+            NSURLRequest *requestObj = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://howwemetapp.tumblr.com/terms"]];
+            [webView loadRequest:requestObj];
+            webView.scalesPageToFit = YES;
+            UIViewController* viewControl =[[UIViewController alloc] init];
+            [viewControl.view addSubview:webView];
+            viewControl.title = @"Terms";
+            self.sidePanelController.centerPanel = [[UINavigationController alloc] initWithRootViewController:viewControl];
+            break;
+        }
+        case 4:
         {
             [PFUser logOut];
             [[NSNotificationCenter defaultCenter] postNotificationName:@"appSwitchToWelcome" object:nil];

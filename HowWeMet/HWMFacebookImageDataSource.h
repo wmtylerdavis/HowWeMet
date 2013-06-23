@@ -17,7 +17,6 @@
 @optional
 -(void)dataSource:(HWMFacebookImageDataSource*)dataSource error:(NSError*)error;
 -(void)dataSource:(HWMFacebookImageDataSource*)dataSource dataServiceUnavailable:(BOOL)unavailable reason:(NSString*)reason;
--(void)dataSource:(HWMFacebookImageDataSource*)dataSource profilePictureTapped:(EGOImageButton*)sender;
 
 @end
 
@@ -42,7 +41,6 @@
 
 -(void)refresh;
 -(void)performFilter:(NSPredicate*)predicate;
-
 -(float)measureCell:(NSIndexPath*)cellPath;
 
 @end

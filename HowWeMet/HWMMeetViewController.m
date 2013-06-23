@@ -8,6 +8,7 @@
 
 #import "HWMMeetViewController.h"
 #import "HWMAddStoryViewController.h"
+#import "HWMReportViewController.h"
 
 @interface HWMMeetViewController ()
 
@@ -75,7 +76,12 @@
     
     self.title = @"The Story";
     
-    [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"Edit" style:UIBarButtonItemStylePlain target:self action:@selector(editMeet:)]];
+    if ([[_meet objectForKey:@"Owner"] isEqual:[PFUser currentUser]]) {
+        [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"Edit" style:UIBarButtonItemStylePlain target:self action:@selector(editMeet:)]];
+    }
+    else {
+        [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"Report" style:UIBarButtonItemStylePlain target:self action:@selector(reportMeet:)]];
+    }
     
     tap = [[UITapGestureRecognizer alloc]
            initWithTarget:self
@@ -354,6 +360,53 @@
     HWMAddStoryViewController* editStory = [[HWMAddStoryViewController alloc] init];
     editStory.meet = self.meet;
     [self.navigationController pushViewController:editStory animated:YES];
+}
+
+-(void)shareRequest:(id)sender
+{
+   UIActionSheet* actionSheet=[[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Share", @"Report", nil];
+    
+    [actionSheet showInView:[self.navigationController view]];
+}
+
+-(void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    NSString* buttonText=[actionSheet buttonTitleAtIndex:buttonIndex];
+    if([buttonText isEqualToString:@"Share"])
+    {
+        [self shareMeetFromAction:nil];
+    }
+    else if([buttonText isEqualToString:@"Report"])
+    {
+        [self reportMeet:nil];
+    }
+    else if (buttonIndex == [actionSheet cancelButtonIndex])
+    {
+        return;
+    }
+}
+
+-(void)shareMeetFromAction:(id)sender
+{
+    NSArray *activityItems;
+    
+    NSString* string = [_meet objectForKey:@"Story"];
+    
+    activityItems = @[string];
+    
+    UIActivityViewController *activityController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
+    [activityController setCompletionHandler:^(NSString *activityType, BOOL completed) {
+//        if (completed)
+//            [ALToastView toastInView:self.view withText:[NSString stringWithFormat:@"%@ shared!", _requestData.title]];
+    }];
+    [self presentViewController:activityController animated:YES completion:nil];
+}
+
+-(void)reportMeet:(id)sender
+{
+    HWMReportViewController* reportView = [[HWMReportViewController alloc] init];
+    reportView.meet = _meet;
+    [self.navigationController pushViewController:reportView animated:YES];
 }
 
 -(void)dismiss:(id)sender

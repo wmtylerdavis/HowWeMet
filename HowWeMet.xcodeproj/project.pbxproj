@@ -64,6 +64,8 @@
 		63B2B872172323DF00264B63 /* HWMRightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B2B870172323DF00264B63 /* HWMRightViewController.m */; };
 		63B2B873172323DF00264B63 /* HWMRightViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B2B871172323DF00264B63 /* HWMRightViewController.xib */; };
 		63B2B87517232D3F00264B63 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63B2B87417232D3F00264B63 /* CoreData.framework */; };
+		63DA11D51770F864002BEF11 /* HWMReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DA11D31770F863002BEF11 /* HWMReportViewController.m */; };
+		63DA11D61770F864002BEF11 /* HWMReportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63DA11D41770F863002BEF11 /* HWMReportViewController.xib */; };
 		63EA4C261728AFE900DE0A97 /* HowWeMetAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EA4C251728AFE900DE0A97 /* HowWeMetAPI.m */; };
 		63EA4C2A1728C10D00DE0A97 /* HWMGrayButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EA4C291728C10D00DE0A97 /* HWMGrayButton.m */; };
 		63EA4C2D1728C40500DE0A97 /* bigGrayButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 63EA4C2B1728C40500DE0A97 /* bigGrayButton.png */; };
@@ -168,6 +170,9 @@
 		63B2B870172323DF00264B63 /* HWMRightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWMRightViewController.m; sourceTree = "<group>"; };
 		63B2B871172323DF00264B63 /* HWMRightViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HWMRightViewController.xib; sourceTree = "<group>"; };
 		63B2B87417232D3F00264B63 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		63DA11D21770F863002BEF11 /* HWMReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWMReportViewController.h; sourceTree = "<group>"; };
+		63DA11D31770F863002BEF11 /* HWMReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWMReportViewController.m; sourceTree = "<group>"; };
+		63DA11D41770F863002BEF11 /* HWMReportViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HWMReportViewController.xib; sourceTree = "<group>"; };
 		63EA4C241728AFE900DE0A97 /* HowWeMetAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HowWeMetAPI.h; sourceTree = "<group>"; };
 		63EA4C251728AFE900DE0A97 /* HowWeMetAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HowWeMetAPI.m; sourceTree = "<group>"; };
 		63EA4C281728C10D00DE0A97 /* HWMGrayButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWMGrayButton.h; sourceTree = "<group>"; };
@@ -338,6 +343,9 @@
 				63EA4C271728B68200DE0A97 /* Nibs */,
 				638C5B2B1722BB8100A44D71 /* Supporting Files */,
 				634B150D173C408900BCBDEE /* HWMFBOpenGraphAction.h */,
+				63DA11D21770F863002BEF11 /* HWMReportViewController.h */,
+				63DA11D31770F863002BEF11 /* HWMReportViewController.m */,
+				63DA11D41770F863002BEF11 /* HWMReportViewController.xib */,
 			);
 			path = HowWeMet;
 			sourceTree = "<group>";
@@ -527,6 +535,7 @@
 				634B1526175108B300BCBDEE /* HWMLeftSidebarCell.xib in Resources */,
 				634B15281751701700BCBDEE /* HWMCommentCell.xib in Resources */,
 				634B152A1751722A00BCBDEE /* HWMCommentFooter.xib in Resources */,
+				63DA11D61770F864002BEF11 /* HWMReportViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -583,6 +592,7 @@
 				634B14F51735F54700BCBDEE /* HWMMeetViewController.m in Sources */,
 				634B1522175104C600BCBDEE /* HWMFriendStoryDataSource.m in Sources */,
 				634B1523175104C600BCBDEE /* HWMFriendStoryViewController.m in Sources */,
+				63DA11D51770F864002BEF11 /* HWMReportViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

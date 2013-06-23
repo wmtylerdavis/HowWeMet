@@ -19,7 +19,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    self.title = @"How We Met";
+    self.title = [_customer objectForKey:@"Name"];
     [self registerForKeyboardNotifications];
     
     self.tableView.delegate=self;
