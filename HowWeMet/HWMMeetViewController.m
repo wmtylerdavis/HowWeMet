@@ -76,7 +76,7 @@
     
     self.title = @"The Story";
     
-    if ([[_meet objectForKey:@"Owner"] isEqual:[PFUser currentUser]]) {
+    if ([[_meet objectForKey:@"OwnerFacebookID"] isEqual:[[PFUser currentUser] objectForKey:@"facebookID"] ]) {
         [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"Edit" style:UIBarButtonItemStylePlain target:self action:@selector(editMeet:)]];
     }
     else {
@@ -128,6 +128,10 @@
     self.nameLabel2.font=[UIFont fontWithName:@"Chalkduster" size:12.0f];
     self.nameLabel1.text = [self.meet objectForKey:@"OwnerName"];
     self.nameLabel2.text = [self.meet objectForKey:@"FriendName"];
+    [self.nameLabel1 setAdjustsFontSizeToFitWidth:YES];
+    [self.nameLabel1 setMinimumScaleFactor:0.5];
+    [self.nameLabel2 setAdjustsFontSizeToFitWidth:YES];
+    [self.nameLabel2 setMinimumScaleFactor:0.5];
     
     self.activityTable.delegate=self;
     self.activityTable.dataSource= self;
@@ -308,7 +312,7 @@
 
 -(int)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if(self.tableData==nil) return 1;
+    if(self.tableData==nil) return 0;
     return self.tableData.count;
 }
 
@@ -359,6 +363,7 @@
 {
     HWMAddStoryViewController* editStory = [[HWMAddStoryViewController alloc] init];
     editStory.meet = self.meet;
+    editStory.shouldShowTrash = YES;
     [self.navigationController pushViewController:editStory animated:YES];
 }
 

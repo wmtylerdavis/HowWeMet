@@ -85,6 +85,8 @@
         
         [nameLabel setText:[NSString stringWithFormat:@"%@", [fbFriend objectForKey:@"FriendName"]]];
         [nameLabel setFont:[UIFont fontWithName:@"Chalkduster" size:14.0f]];
+        [nameLabel setAdjustsFontSizeToFitWidth:YES];
+        [nameLabel setMinimumScaleFactor:0.5];
         
         [storyLabel setFont:[UIFont fontWithName:@"Helvetica" size:14.0f]];
         storyLabel.lineBreakMode = NSLineBreakByTruncatingTail | NSLineBreakByWordWrapping;
@@ -97,13 +99,16 @@
         dateLabel.text = [fbFriend objectForKey:@"Date"];
         
         UIImageView* image=(UIImageView*)[cell viewWithTag:9];
-        
-        if ([fbFriend objectForKey:@"Photo"] != [NSNull null]) {
+        image.hidden = NO;
+        if (!IS_NULL_OR_NIL([fbFriend objectForKey:@"Photo"])) {
             PFFile* imgFileData=[fbFriend objectForKey:@"Photo"];
             [imgFileData getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
                 UIImage* feedImage=[UIImage imageWithData:data];
                 image.image=feedImage;
             }];
+        }
+        else {
+            image.hidden = YES;
         }
         
     }

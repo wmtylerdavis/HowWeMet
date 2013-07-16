@@ -42,13 +42,15 @@
             NSMutableArray *discardedItems = [NSMutableArray array];
             
             for (id item in _facebookData) {
-                NSArray* facebookSucks = [[item objectForKey:@"tags"] objectForKey:@"data"];
-                NSArray* origData = facebookSucks;
-                NSLog(@"%@", self.fbUserID);
-                NSPredicate *pred = [NSPredicate predicateWithFormat:@"(id == %@)",self.fbUserID];
-                facebookSucks = [origData filteredArrayUsingPredicate:pred];
-                if (facebookSucks.count == 0) {
-                    [discardedItems addObject:item];
+                @autoreleasepool {
+                    NSArray* facebookSucks = [[item objectForKey:@"tags"] objectForKey:@"data"];
+                    NSArray* origData = facebookSucks;
+                    NSLog(@"%@", self.fbUserID);
+                    NSPredicate *pred = [NSPredicate predicateWithFormat:@"(id == %@)",self.fbUserID];
+                    facebookSucks = [origData filteredArrayUsingPredicate:pred];
+                    if (facebookSucks.count == 0) {
+                        [discardedItems addObject:item];
+                    }
                 }
             }
             [_facebookData removeObjectsInArray:discardedItems];

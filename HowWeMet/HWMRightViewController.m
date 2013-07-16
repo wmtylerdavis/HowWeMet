@@ -41,6 +41,8 @@
     
     self.searchBar.delegate = self;
     
+    self.noDataLabel.font = [UIFont fontWithName:@"Chalkduster" size:18.0];
+    
     tap = [[UITapGestureRecognizer alloc]
            initWithTarget:self
            action:@selector(keyboardWillHide:)];
@@ -108,23 +110,16 @@
     return 0.0f;
 }
 
-//-(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-//{
-//    UIView* header=[[[NSBundle mainBundle] loadNibNamed:@"HWMRightSectionHeader" owner:self options:nil] objectAtIndex:0];
-//    header.autoresizingMask = YES;
-//    UIImageView* image=(UIImageView*)[header viewWithTag:2];
-//    UILabel* label=(UILabel*)[header viewWithTag:1];
-//    
-//    [image setContentMode:UIViewContentModeCenter];
-//    [label setFont:[UIFont fontWithName:@"Chalkduster" size:17.0f]];
-//    label.textColor = [UIColor whiteColor];
-//    //[image setImage:[UIImage imageNamed:@"tabBarProfile"]];
-//    
-//    header.backgroundColor = [[HowWeMetAPI sharedInstance] redColor];
-//    label.text=@"Friends";
-//    
-//    return header;
-//}
+-(void)emptyFeedMessageForCurrentSegment
+{
+    [self toggleNoDataMessage:YES message:[NSString stringWithFormat:@"No friends on HowWeMet... Creating a Meet will help notify them about the App!"]];
+}
+
+-(void)toggleNoDataMessage:(BOOL)show message:(NSString*)message
+{
+    self.noDataLabel.text=message;
+    self.noDataLabel.hidden=!show;
+}
 
 -(void)goToFriendProfile:(NSNumber*)customerID
 {
@@ -155,28 +150,23 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //hmmm
-    if ([[_dataSource.data objectAtIndex:indexPath.row] objectForKey:@"installed"]) {
-        
-        NSString* facebookID = [[_dataSource.data objectAtIndex:indexPath.row] objectForKey:@"id"];
-        HWMFriendStoryViewController* friendStoryView = [[HWMFriendStoryViewController alloc] init];
-        //NSLog(@"%@", [_dataSource.friendUsers objectAtIndex:indexPath.row]);
-        if ([_dataSource.friendUsers objectForKey:facebookID]) {
-            NSLog(@"%@", [_dataSource.friendUsers objectForKey:facebookID]);
-            friendStoryView.customer = [_dataSource.friendUsers objectForKey:facebookID];
-            self.sidePanelController.centerPanel = [[UINavigationController alloc] initWithRootViewController:friendStoryView];
-        }
-        else {
-            [[[UIAlertView alloc] initWithTitle:@"Facebook Friend"
-                                        message:[NSString stringWithFormat:@"It doesn't seem like %@ finished the login process", [[_dataSource.data objectAtIndex:indexPath.row] objectForKey:@"name"]]
-                                       delegate:nil
-                              cancelButtonTitle:@"Sorry..."
-                              otherButtonTitles:nil]
-             show];
-            
-        }
+    NSString* facebookID = [[_dataSource.data objectAtIndex:indexPath.row] objectForKey:@"id"];
+    HWMFriendStoryViewController* friendStoryView = [[HWMFriendStoryViewController alloc] init];
+    //NSLog(@"%@", [_dataSource.friendUsers objectAtIndex:indexPath.row]);
+    if ([_dataSource.friendUsers objectForKey:facebookID]) {
+        NSLog(@"%@", [_dataSource.friendUsers objectForKey:facebookID]);
+        friendStoryView.customer = [_dataSource.friendUsers objectForKey:facebookID];
+        self.sidePanelController.centerPanel = [[UINavigationController alloc] initWithRootViewController:friendStoryView];
     }
-    else
-        [self inviteFacebookFriend:[[_dataSource.data objectAtIndex:indexPath.row] objectForKey:@"id"]];
+    else {
+        [[[UIAlertView alloc] initWithTitle:@"Facebook Friend"
+                                    message:[NSString stringWithFormat:@"It doesn't seem like %@ finished the login process", [[_dataSource.data objectAtIndex:indexPath.row] objectForKey:@"name"]]
+                                       delegate:nil
+                            cancelButtonTitle:@"Sorry..."
+                            otherButtonTitles:nil]
+            show];
+            
+    }
 }
 
 -(void)dataSource:(HWMGenericDataSource *)dataSource dataServiceUnavailable:(BOOL)unavailable reason:(NSString *)reason
@@ -191,6 +181,10 @@
     
     if(dataSource.data.count>0)
         [self toggleNoDataMessage:NO message:nil];
+    else
+    {
+        [self emptyFeedMessageForCurrentSegment];
+    }
 }
 
 -(void)dataSource:(HWMGenericDataSource *)dataSource error:(NSError *)error
@@ -198,11 +192,6 @@
     NSLog(@"dataSource error %@", error);
     
     [self.tableView reloadData];
-}
-
--(void)toggleNoDataMessage:(BOOL)show message:(NSString*)message
-{
-    
 }
 
 -(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
@@ -214,22 +203,6 @@
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
     [self.view endEditing:YES];
-}
-
--(void)inviteFacebookFriend: (NSString*) friend
-{
-    NSMutableDictionary* params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                                   @"Invite", @"title",
-                                   friend, @"to",
-                                   nil];
-    
-    [FBWebDialogs
-     presentRequestsDialogModallyWithSession:nil
-     message:@"HowWeMet is a fun way to interact with your Facebook friends. It allows you to add the details, publicly or privately, of how you met your friends and easily post your story to your Facebook timeline when it actually happened."
-     title:nil
-     parameters:params
-     handler:nil];
-    
 }
 
 - (void)viewDidUnload {

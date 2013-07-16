@@ -26,7 +26,7 @@
 @interface HWMGenericDataSource : NSObject <UITableViewDataSource>
 {
     NSString* _resourceLocation;
-    NSArray* _data;
+    NSMutableArray* _data;
     NSArray* _origData;
     NSArray* _filterSet;
     NSString* _filter;

@@ -53,7 +53,8 @@
         
     }
     else {
-    [_dataSource refresh];
+        [_dataSource refresh];
+        [self.tableView reloadData];
     }
     
     if([self.tableView indexPathForSelectedRow])
@@ -153,6 +154,7 @@
         [meet setObject:[friend objectForKey:@"name"] forKey:@"FriendName"];
         HWMAddStoryViewController* storyController = [[HWMAddStoryViewController alloc] init];
         storyController.meet = meet;
+        storyController.shouldShowTrash = NO;
         [self.navigationController pushViewController:storyController animated:YES];
     }
 }

@@ -7,6 +7,7 @@
 //
 
 #import "HWMReportViewController.h"
+#import "HWMMeetViewController.h"
 
 @interface HWMReportViewController ()
 
@@ -32,6 +33,7 @@
     // Do any additional setup after loading the view from its nib.
     _reportTextView.delegate = self;
     self.title = @"Report";
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelEdit:)];
 }
 
 -(void) viewDidAppear:(BOOL)animated
@@ -76,4 +78,7 @@
     return YES;
 }
 
+- (void) cancelEdit: (id) sender {
+    [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:self.navigationController.viewControllers.count-2] animated:YES];
+}
 @end

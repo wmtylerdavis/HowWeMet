@@ -82,6 +82,8 @@
     
     [nameLabel setText:[NSString stringWithFormat:@"%@", [fbPlace objectForKey:@"name"]]];
     [nameLabel setFont:[UIFont fontWithName:@"Chalkduster" size:12.0f]];
+    [nameLabel setAdjustsFontSizeToFitWidth:YES];
+    [nameLabel setMinimumScaleFactor:0.5];
     [categoryLabel setText:[NSString stringWithFormat:@"%@", [fbPlace objectForKey:@"category"]]];
     [categoryLabel setFont:[UIFont fontWithName:@"Chalkduster" size:12.0f]];
 

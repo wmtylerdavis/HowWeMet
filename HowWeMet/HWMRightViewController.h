@@ -20,6 +20,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *headerLabel;
 @property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UILabel *noDataLabel;
+
 @property (nonatomic, retain) HWMFacebookDataSource* dataSource;
 
 @end

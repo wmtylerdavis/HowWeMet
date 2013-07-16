@@ -61,29 +61,28 @@
                         [friendUsers setObject:friend forKey:[friend objectForKey:@"facebookID"]];
                     }
                     
-//                    friendUsers = [friendUsers sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
-//                        return [[obj2 objectForKey:@"Name"] localizedCaseInsensitiveCompare:[obj1 objectForKey:@"Name"]];
-//                    }];
                 } else {
                     // Log details of the failure
                     NSLog(@"Error: %@ %@", error, [error userInfo]);
                 }
+                
+                NSMutableArray *discardArray = [[NSMutableArray alloc] init];
+                for (NSDictionary *facebookData in _data) {
+                    if ( ![friendUsers objectForKey:[facebookData objectForKey:@"id"]]) {
+                        [discardArray addObject:facebookData];
+                    }
+                }
+                
+                [_data removeObjectsInArray:discardArray];
+                // DUBBLE SORT
+                [_data sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+                    return [[obj2 objectForKey:@"name"] localizedCaseInsensitiveCompare:[obj1 objectForKey:@"name"]];
+                }];
+                
+                _origData=_data;
+                [self fireDataCompletedDelegate];
+                
             }];
-            
-            // DUBBLE SORT
-            _data=[_data sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
-                return [[obj2 objectForKey:@"name"] localizedCaseInsensitiveCompare:[obj1 objectForKey:@"name"]];
-            }];
-            
-            _data=[_data sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
-                if([[obj1 objectForKey:@"installed"] isEqualToNumber:[NSNumber numberWithBool:YES]])
-                    return NSOrderedAscending;
-                else
-                    return NSOrderedDescending;
-            }];
-            
-            _origData=_data;
-            [self fireDataCompletedDelegate];
         }
     }];
 }
@@ -124,12 +123,10 @@
     [profilePic removeTarget:nil action:NULL forControlEvents:UIControlEventAllTouchEvents];
     [nameLabel setText:[NSString stringWithFormat:@"%@ %@", [fbFriend objectForKey:@"first_name"], [fbFriend objectForKey:@"last_name"]]];
     [nameLabel setFont:[UIFont fontWithName:@"Chalkduster" size:12.0f]];
+    [nameLabel setAdjustsFontSizeToFitWidth:YES];
+    [nameLabel setMinimumScaleFactor:0.5];
     
-    if([[fbFriend objectForKey:@"installed"] isEqualToNumber:[NSNumber numberWithBool:YES]])
-        [followersLabel setText:@"has HowWeMet"];
-    else
-        [followersLabel setText:@"Invite and connect!"];
-    
+    [followersLabel setText:@"has HowWeMet"];
     [followersLabel setFont:[UIFont fontWithName:@"Chalkduster" size:10.0f]];
     
     return cell;

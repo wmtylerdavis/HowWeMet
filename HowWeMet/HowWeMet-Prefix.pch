@@ -11,4 +11,7 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+
+    #define IS_NULL_OR_NIL(_x_) (_x_ == nil) || ([[_x_ class] isSubclassOfClass:[NSNull class]])
+
 #endif

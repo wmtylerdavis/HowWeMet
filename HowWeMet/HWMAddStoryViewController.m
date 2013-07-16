@@ -38,6 +38,7 @@ NSString* const kMeetActionSheetCancel=@"Cancel";
 @synthesize howWeMetImage;
 @synthesize scrollView;
 @synthesize selectedPlace = _selectedPlace;
+@synthesize shouldShowTrash = _shouldShowTrash;
 
 // FBSample logic
 // This is a helper function that returns an FBGraphObject representing a meal
@@ -68,10 +69,7 @@ NSString* const kMeetActionSheetCancel=@"Cancel";
     return result;
 }
 
-// FBSample logic
-// Creates the Open Graph Action.
-- (void)postOpenGraphAction
-{
+- (void) postStory {
     // First create the Open Graph meal object for the meal we ate.
     id<HWMFBOpenGraphObject> requestObject = [self meetObjectforMeet :[_meet objectForKey:@"Story"] :[_meet objectForKey:@"Relationship"]];
     
@@ -101,6 +99,7 @@ NSString* const kMeetActionSheetCancel=@"Cancel";
              alertText = [NSString stringWithFormat:
                           @"Posted Meet to Facebook"];
          } else {
+             NSLog(@"%@", error);
              alertText = [NSString stringWithFormat:
                           @"Sorry we couldn't post to Facebook"];
          }
@@ -112,6 +111,28 @@ NSString* const kMeetActionSheetCancel=@"Cancel";
           show];
      }
      ];
+}
+
+// FBSample logic
+// Creates the Open Graph Action.
+- (void)postOpenGraphAction {
+    // Ask for publish_actions permissions in context
+    if ([FBSession.activeSession.permissions
+         indexOfObject:@"publish_actions"] == NSNotFound) {
+        // Permission hasn't been granted, so ask for publish_actions
+        [FBSession openActiveSessionWithPublishPermissions:@[@"publish_actions"]
+                                           defaultAudience:FBSessionDefaultAudienceFriends
+                                              allowLoginUI:YES
+                                         completionHandler:^(FBSession *session, FBSessionState state, NSError *error) {
+                                             if (FBSession.activeSession.isOpen && !error) {
+                                                 // Publish the story if permission was granted
+                                                 [self postStory];
+                                             }
+                                         }];
+    } else {
+        // If permissions present, publish the story
+        [self postStory];
+    }
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -180,6 +201,13 @@ NSString* const kMeetActionSheetCancel=@"Cancel";
     self.scrollView.contentSize=CGSizeMake(self.view.frame.size.width, self.view.frame.size.height+(self.view.frame.size.height/2)+5);
     [self.scrollView setScrollEnabled:NO];
     // [self registerForKeyboardNotifications];
+     
+    if (_shouldShowTrash) {
+        UIBarButtonItem* deleteButton=[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(deleteTapped:)];
+        
+        [self.navigationItem setRightBarButtonItem:deleteButton];
+    }
+    
     self.howWeMetStory.delegate = self;
     [self setAccessoryForTextField:self.howWeMetStory];
     dateFormatter = [[NSDateFormatter alloc] init];
@@ -252,6 +280,7 @@ NSString* const kMeetActionSheetCancel=@"Cancel";
     
     [[KGModal sharedInstance] setShowCloseButton:YES];
     [[KGModal sharedInstance] setTapOutsideToDismiss:YES];
+    
     [[KGModal sharedInstance] showWithContentView:relationshipDialog andAnimated:YES];
 }
 
@@ -350,6 +379,12 @@ NSString* const kMeetActionSheetCancel=@"Cancel";
     else {
         self.howWeMetStory.text = @"We met ";
     }
+}
+
+- (BOOL)textViewShouldEndEditing:(UITextView *)textView {
+    
+    [self.meet setObject:self.howWeMetStory.text forKey:@"Story"];
+    return YES;
 }
 
 -(void)imagePickerActionSheet:(UIActionSheet*)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
@@ -564,6 +599,19 @@ NSString* const kMeetActionSheetCancel=@"Cancel";
             self.sidePanelController.centerPanel = [[UINavigationController alloc] initWithRootViewController:mainView];
         }
     }];
+}
+
+-(void)deleteTapped:(id)sender
+{
+    if(self.meet!=nil)
+    {
+        //[DejalBezelActivityView activityViewForView:self.view withLabel:@"Deleting..."];
+        [self.meet deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            [self.navigationController popToRootViewControllerAnimated:YES];
+            [[self.navigationController presentingViewController] dismissViewControllerAnimated:YES completion:nil];
+        }];
+    }
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 @end

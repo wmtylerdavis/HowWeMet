@@ -340,12 +340,11 @@
 				63EA4C281728C10D00DE0A97 /* HWMGrayButton.h */,
 				63EA4C291728C10D00DE0A97 /* HWMGrayButton.m */,
 				634B14E21730689100BCBDEE /* HWMMappableObject.h */,
-				63EA4C271728B68200DE0A97 /* Nibs */,
-				638C5B2B1722BB8100A44D71 /* Supporting Files */,
 				634B150D173C408900BCBDEE /* HWMFBOpenGraphAction.h */,
 				63DA11D21770F863002BEF11 /* HWMReportViewController.h */,
 				63DA11D31770F863002BEF11 /* HWMReportViewController.m */,
-				63DA11D41770F863002BEF11 /* HWMReportViewController.xib */,
+				63EA4C271728B68200DE0A97 /* Nibs */,
+				638C5B2B1722BB8100A44D71 /* Supporting Files */,
 			);
 			path = HowWeMet;
 			sourceTree = "<group>";
@@ -391,6 +390,7 @@
 		63EA4C271728B68200DE0A97 /* Nibs */ = {
 			isa = PBXGroup;
 			children = (
+				63DA11D41770F863002BEF11 /* HWMReportViewController.xib */,
 				634B1521175104C600BCBDEE /* HWMFriendStoryViewController.xib */,
 				634B14EF1735509D00BCBDEE /* HWMFacebookPlaceViewController.xib */,
 				634B14E31733232400BCBDEE /* HWMrelationships.xib */,

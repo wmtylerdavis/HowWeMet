@@ -54,13 +54,10 @@
                 }
                 
                 _data=_facebookData;
-                // DUBBLE SORT
-                _data=[_data sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
-                    return [[obj2 objectForKey:@"name"] localizedCaseInsensitiveCompare:[obj1 objectForKey:@"name"]];
-                }];
-                _data=[_data sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
-                    return NSOrderedDescending;
-                }];
+                [_data sortUsingDescriptors:
+                 [NSArray arrayWithObjects:
+                  [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES],
+                  [NSSortDescriptor sortDescriptorWithKey:@"Story" ascending:YES], nil]];
                 
                 NSLog(@"%@", _data);
                 _origData=_data;
@@ -114,6 +111,8 @@
         
         [nameLabel setText:[NSString stringWithFormat:@"%@", [fbFriend objectForKey:@"FriendName"]]];
         [nameLabel setFont:[UIFont fontWithName:@"Chalkduster" size:14.0f]];
+        [nameLabel setAdjustsFontSizeToFitWidth:YES];
+        [nameLabel setMinimumScaleFactor:0.5];
         
         //storyLabel.frame = CGRectMake(storyLabel.frame.origin.x, storyLabel.frame.origin.y, storyLabel.frame.size.width, storyLabel.frame.size.height);
         [storyLabel setFont:[UIFont fontWithName:@"Helvetica" size:14.0f]];
@@ -132,13 +131,16 @@
         //[storyLabel setText:[fbFriend objectForKey:@"Story"]];
         
         UIImageView* image=(UIImageView*)[cell viewWithTag:9];
-        
-        if ([fbFriend objectForKey:@"Photo"] != [NSNull null]) {
+        image.hidden = NO;
+        NSLog(@"%@", fbFriend);
+        if (!IS_NULL_OR_NIL([fbFriend objectForKey:@"Photo"])) {
             PFFile* imgFileData=[fbFriend objectForKey:@"Photo"];
             [imgFileData getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
                 UIImage* feedImage=[UIImage imageWithData:data];
                 image.image=feedImage;
             }];
+        } else {
+            image.hidden = YES;
         }
     
     }
@@ -162,6 +164,8 @@
         [profilePic removeTarget:nil action:NULL forControlEvents:UIControlEventAllTouchEvents];
         [nameLabel setText:[NSString stringWithFormat:@"%@ %@", [fbFriend objectForKey:@"first_name"], [fbFriend objectForKey:@"last_name"]]];
         [nameLabel setFont:[UIFont fontWithName:@"Chalkduster" size:14.0f]];
+        [nameLabel setAdjustsFontSizeToFitWidth:YES];
+        [nameLabel setMinimumScaleFactor:0.5];
         [storyLabel setFont:[UIFont fontWithName:@"Helvetica" size:14.0f]];
         [storyLabel setText:@"No story yet. Add one!"];
     }
